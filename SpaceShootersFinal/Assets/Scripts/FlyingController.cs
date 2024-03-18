@@ -6,13 +6,21 @@ public class FlyingController : MonoBehaviour
 {
     public bool pressingThrottle = false;
     public bool throttle => pressingThrottle;
+    private GameController gameController;
 
     public float pitchPower, rollPower, yawPower, enginePower, turnPower;
 
     private float activeRoll, activePitch, activeYaw, activeTurn;
-
+    private void Start()
+    {  
+        gameController = FindObjectOfType<GameController>();
+    }
     private void Update()
     {
+        if(gameController != null)
+        {
+            enginePower = gameController.GetEnginePower();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (pressingThrottle == false)

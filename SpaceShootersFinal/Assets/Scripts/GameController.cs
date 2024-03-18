@@ -2,63 +2,86 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-
 public class GameController : MonoBehaviour
 {
-        public int maxHealth = 100;
-        public int currHealth = 100;
-        public bool fired = false;
-        public float gunShotRange = 100;
-    // Start is called before the first frame update
+    public static GameController Instance { get; private set; }
+    public List<PowerUp> activePowerUps = new List<PowerUp>();
+    public float baseDamage = 20f;
+    public float baseSpeed = 100f;
+    public float currSpeedMult = 1;
+    public float currSpeedAdds = 0;
+    float currDamage;
+    float currSpeed;
+    public GameObject player;
+    private PowerUpManager powerUpManager;
+    
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
-        
+        currDamage = baseDamage;
+        currSpeed = baseSpeed;
+        powerUpManager = FindObjectOfType<PowerUpManager>();
+        DoubleSpeed doubleSpeed = new DoubleSpeed();
+        powerUpManager.RegisterPowerUp(doubleSpeed);
     }
-
     // Update is called once per frame
     void Update()
     {
-        
+        CalculateCurrentStats();
+        var doubleSpeedPowerUp = powerUpManager.GetPowerUp<DoubleSpeed>();
+        while (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("p");
+            if (doubleSpeedPowerUp != null)
+            {
+                doubleSpeedPowerUp.Activate(player);
+            }
+        } 
+        doubleSpeedPowerUp.Deactivate(player);
     }
 
-    public void setHealthAdjustment(int healthBonus) {
-        currHealth += healthBonus;
-        maxHealth += healthBonus;
-    }
-    public void PlayerGunFire()
+    void CalculateCurrentStats()
     {
-        if (fired == true)
+
+        // Apply active power-ups
+        foreach (var powerUp in activePowerUps)
         {
-        //     GameObject gunShotInstance = Instantiate(ShotPrefab, gun.position, gun.rotation);
-        //     gunShotInstance.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, gunShotRange);
- 
-            //Debug.Log("Fired playerSpeed: " + playerSpeed);
-            //Debug.Log("Fired gunShotRange: " + gunShotRange);
-            //Debug.Log("Fired throttle.value: " + gunShotInstance.GetComponent<Rigidbody>().velocity.z);
-            //Debug.Log("Fired gunshotRB speed: " + playerScript.playerSpeed);
- 
-        //     Destroy(gunShotInstance, 3f);
+            // This assumes powerUp classes affect the player directly
+            // and GameController simply keeps track of what's active.
+        }
+        currSpeed = (baseSpeed + currSpeedAdds) * currSpeedMult;
+        // Update player's stats if needed. This could be done within each powerUp's Activate/Deactivate methods.
+    }
+
+    public void ActivatePowerUp(PowerUp powerUp)
+    {
+        powerUp.Activate(player);
+        if (!activePowerUps.Contains(powerUp))
+        {
+            activePowerUps.Add(powerUp);
         }
     }
- 
-    public void FireButton(bool _fired)
+
+    public float GetEnginePower()
     {
-        fired = _fired;
+        return currSpeed;
+    }
+
+    public void SetEnginePower(float value)
+    {
+        currSpeed = value;
+        // Here you can add any validation or additional logic
+        // For example, triggering events or notifications when the value changes
     }
 }
-
-// public class HealthBonus: MonoBehaviour {
-
-//     [SerializeField]
-//     private float bonusAmount;
-    
-//     void Start() {
-//         setHealthAdjustment(bonusAmount);
-//     }
-
-// //     private void OnDestroy() {
-// //         maxHealth -= bonusAmount;
-// //     }
-// }
