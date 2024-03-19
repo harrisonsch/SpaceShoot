@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public float baseSpeed = 100f;
     public float currSpeedMult = 1;
     public float currSpeedAdds = 0;
+    public float currDamageMult = 1;
+    public float currDamageAdds= 0;
     float currDamage;
     float currSpeed;
     public GameObject player;
@@ -34,21 +36,13 @@ public class GameController : MonoBehaviour
         powerUpManager = FindObjectOfType<PowerUpManager>();
         DoubleSpeed doubleSpeed = new DoubleSpeed();
         powerUpManager.RegisterPowerUp(doubleSpeed);
+        activePowerUps.Add(doubleSpeed);
     }
     // Update is called once per frame
     void Update()
     {
         CalculateCurrentStats();
-        var doubleSpeedPowerUp = powerUpManager.GetPowerUp<DoubleSpeed>();
-        while (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("p");
-            if (doubleSpeedPowerUp != null)
-            {
-                doubleSpeedPowerUp.Activate(player);
-            }
-        } 
-        doubleSpeedPowerUp.Deactivate(player);
+        
     }
 
     void CalculateCurrentStats()
@@ -57,10 +51,10 @@ public class GameController : MonoBehaviour
         // Apply active power-ups
         foreach (var powerUp in activePowerUps)
         {
-            // This assumes powerUp classes affect the player directly
-            // and GameController simply keeps track of what's active.
+            powerUp.Activate(player);
         }
         currSpeed = (baseSpeed + currSpeedAdds) * currSpeedMult;
+        currDamage = (baseDamage + currDamageAdds) * currDamageMult;
         // Update player's stats if needed. This could be done within each powerUp's Activate/Deactivate methods.
     }
 
