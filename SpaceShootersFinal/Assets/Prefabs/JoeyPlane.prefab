@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca84123f560e4f08bb8e4aa0f52386a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpRegister: []
 --- !u!114 &2714677841454330178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcd1b74c6b9144e5bacfb3275fd0c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activePowerUps:
+  - {fileID: 11400000, guid: ee20300c2adfb4a168d0f51809a3a490, type: 2}
+  - {fileID: 11400000, guid: c7418bd741c72472a8af02c069af9086, type: 2}
   baseDamage: 20
   baseSpeed: 100
   currSpeedMult: 1

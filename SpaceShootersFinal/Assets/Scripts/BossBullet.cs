@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BossBullet : MonoBehaviour
 {
     public float speedinit = 100f;
     public float damage = 20f;
@@ -12,21 +12,21 @@ public class Bullet : MonoBehaviour
     }
     void Update()
     {
-        speed = GameController.Instance.GetEnginePower() * 4 + speedinit;
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speedinit * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("entered");
-        if(other.gameObject.tag == "enemy") {
-                Enemy enemy = other.gameObject.GetComponent<Enemy>();
-                if(enemy != null) {
-                        enemy.Damage(damage);
-                }
+        if(other.gameObject.tag == "Player") {
+                GameObject enemy = other.gameObject.transform.GetChild(5).gameObject;
+                GameController gc = enemy.gameObject.GetComponent<GameController>();
                 Destroy(gameObject);
+                if(enemy != null) {
+                        gc.Damage(damage);
+                }
+                
         }
         
-        // Add collision handling here (e.g., damage enemy, destroy bullet)
     }
 }
