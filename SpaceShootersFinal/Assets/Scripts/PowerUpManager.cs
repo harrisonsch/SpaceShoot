@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PowerUpManager : MonoBehaviour
 {
+    
     public static PowerUpManager Instance { get; private set; }
-
+    public List<PowerUp> powerUpRegister;
     private void Awake()
     {
+
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            foreach (PowerUp powerUp in powerUpRegister) {
+                RegisterPowerUp(powerUp);
+            }
         }
         else
         {

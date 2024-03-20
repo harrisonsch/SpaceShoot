@@ -34,9 +34,9 @@ public class GameController : MonoBehaviour
         currDamage = baseDamage;
         currSpeed = baseSpeed;
         powerUpManager = FindObjectOfType<PowerUpManager>();
-        DoubleSpeed doubleSpeed = new DoubleSpeed();
-        powerUpManager.RegisterPowerUp(doubleSpeed);
-        activePowerUps.Add(doubleSpeed);
+        // DoubleSpeed doubleSpeed = new DoubleSpeed();
+        // powerUpManager.RegisterPowerUp(doubleSpeed);
+        // activePowerUps.Add(doubleSpeed);
     }
     // Update is called once per frame
     void Update()
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
         // Apply active power-ups
         foreach (var powerUp in activePowerUps)
         {
-            powerUp.Activate(player);
+        //     powerUp.Activate(player);
         }
         currSpeed = (baseSpeed + currSpeedAdds) * currSpeedMult;
         currDamage = (baseDamage + currDamageAdds) * currDamageMult;
@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
 
     public void ActivatePowerUp(PowerUp powerUp)
     {
-        powerUp.Activate(player);
+        powerUp.Activate();
         if (!activePowerUps.Contains(powerUp))
         {
             activePowerUps.Add(powerUp);

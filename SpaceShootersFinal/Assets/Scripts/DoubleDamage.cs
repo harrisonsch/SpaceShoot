@@ -1,20 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[CreateAssetMenu(fileName = "DoubleDamage", menuName = "PowerUp/Damage/DoubleDamage")]
 public class DoubleDamage : PowerUp
 {
     bool isActive = false;
-    void Awake()
-    {
-        PowerUpManager.Instance.RegisterPowerUp(this);
-    }
     public DoubleDamage()
     {
         powerUpName = "DoubleDamage";
         duration = 999f; // lasts for 10 seconds
     }
 
-    public override void Activate(GameObject player)
+    public override void Activate()
     {
         if(isActive == false) {
             GameController.Instance.currDamageMult *= 2;
@@ -22,7 +19,7 @@ public class DoubleDamage : PowerUp
         }
     }
 
-    public override void Deactivate(GameObject player)
+    public override void Deactivate()
     {
         if(isActive) {
             isActive = false;

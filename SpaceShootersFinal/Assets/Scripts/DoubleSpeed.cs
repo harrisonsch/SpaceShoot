@@ -1,32 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class DoubleSpeed : PowerUp
+[CreateAssetMenu(fileName = "DoubleSpeed", menuName = "PowerUp/Speed/DoubleSpeed")]
+public class DoubleSpeed: PowerUp
 {
-    bool isActive = false;
-    void Awake()
-    {
-        PowerUpManager.Instance.RegisterPowerUp(this);
-    }
+//     bool isActive = false;
     public DoubleSpeed()
     {
         powerUpName = "DoubleSpeed";
         duration = 999f; // lasts for 10 seconds
     }
-
-    public override void Activate(GameObject player)
+    public override void Activate()
     {
-        if(isActive == false) {
+        // if(isActive == false) {
             GameController.Instance.currSpeedMult *= 2;
-            isActive = true;
-        }
+        //     isActive = true;
+        // }
     }
 
-    public override void Deactivate(GameObject player)
+    public override void Deactivate()
     {
-        if(isActive) {
-            isActive = false;
+        // if(isActive) {
+        //     isActive = false;
             GameController.Instance.currSpeedMult /= 2;
-        }
+        // }
     }
 }
