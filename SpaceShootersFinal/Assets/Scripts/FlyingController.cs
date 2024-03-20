@@ -9,6 +9,7 @@ public class FlyingController : MonoBehaviour
     private GameController gameController;
 
     public float pitchPower, rollPower, yawPower, enginePower, turnPower;
+    public float powerMult = 1f;
 
     private float activeRoll, activePitch, activeYaw, activeTurn;
     private void Start()
@@ -38,30 +39,28 @@ public class FlyingController : MonoBehaviour
         }
         if (throttle)
         {
-            transform.position += transform.forward * enginePower * Time.deltaTime;
+            transform.position += transform.forward * (enginePower * powerMult) * Time.deltaTime;
 
-            activePitch = Input.GetAxisRaw("Vertical") * pitchPower * Time.deltaTime;
-            activeRoll = Input.GetAxisRaw("Horizontal") * rollPower * Time.deltaTime;
-            activeYaw = Input.GetAxisRaw("Yaw") * yawPower * Time.deltaTime;
-            activeTurn = Input.GetAxisRaw("Turn") * turnPower * Time.deltaTime;
+            activePitch = Input.GetAxisRaw("Vertical") * (pitchPower * powerMult) * Time.deltaTime;
+            activeRoll = Input.GetAxisRaw("Horizontal") * (rollPower * powerMult) * Time.deltaTime;
+            activeYaw = Input.GetAxisRaw("Yaw") * (yawPower * powerMult) * Time.deltaTime;
+            activeTurn = Input.GetAxisRaw("Turn") * (turnPower * powerMult) * Time.deltaTime;
 
-            transform.Rotate((activePitch * pitchPower * Time.deltaTime),
-                (activeYaw * yawPower * Time.deltaTime),
-                -activeRoll * rollPower * Time.deltaTime,
+            transform.Rotate(activePitch,
+                activeYaw,
+                -activeRoll,
                 Space.Self);
 
                 transform.Rotate(Vector3.up * activeTurn);
         }
         else
         {
-            activePitch = Input.GetAxisRaw("Vertical") * (pitchPower/2) * Time.deltaTime;
-            activeRoll = Input.GetAxisRaw("Horizontal") * (rollPower/2) * Time.deltaTime;
-            activeYaw = Input.GetAxisRaw("Yaw") * (yawPower/2) * Time.deltaTime;
-            activeTurn = Input.GetAxisRaw("Turn") * (turnPower/2) * Time.deltaTime;
+            activePitch = Input.GetAxisRaw("Vertical") * ((pitchPower  * powerMult)/2) * Time.deltaTime;
+            activeRoll = Input.GetAxisRaw("Horizontal") * ((rollPower * powerMult)/2) * Time.deltaTime;
+            activeYaw = Input.GetAxisRaw("Yaw") * ((yawPower * powerMult)/2) * Time.deltaTime;
+            activeTurn = Input.GetAxisRaw("Turn") * ((turnPower * powerMult)/2) * Time.deltaTime;
 
-            transform.Rotate((activePitch * pitchPower * Time.deltaTime),
-                activeYaw * yawPower * Time.deltaTime,
-                -activeRoll * rollPower * Time.deltaTime,
+            transform.Rotate(activePitch, activeYaw, -activeRoll,
                 Space.Self);
         }
     }
