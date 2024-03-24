@@ -16,7 +16,7 @@ public class ShopInstance : MonoBehaviour
 
     void InitializeShop()
     {
-        availablePowerUps = powerUpManager.activePowerUps;
+        availablePowerUps = powerUpManager.powerUpRegister;
         for (int i = 0; i < shopItemsCount && availablePowerUps.Count > 0; i++)
         {
             int randIndex = Random.Range(0, availablePowerUps.Count);
@@ -28,7 +28,7 @@ public class ShopInstance : MonoBehaviour
     public void Purchase(PowerUp powerUp)
     {
         // Example purchase method, assumes you have a way to check player's currency
-        if (PlayerHasEnoughCurrency(powerUp.Cost))
+        if (PlayerHasEnoughCurrency(powerUp.cost))
         {
             ApplyPowerUp(powerUp);
             currentShop.Remove(powerUp);
@@ -39,7 +39,7 @@ public class ShopInstance : MonoBehaviour
         }
     }
 
-    private bool PlayerHasEnoughCurrency(int cost)
+    private bool PlayerHasEnoughCurrency(float cost)
     {
         // if bal >= cost
         // Implement check against player's currency here
@@ -49,6 +49,6 @@ public class ShopInstance : MonoBehaviour
     private void ApplyPowerUp(PowerUp powerUp)
     {
         // Assuming you have a method to apply the power-up effect
-        powerUpManager.ApplyPowerUp(powerUp);
+        GameController.Instance.ActivatePowerUp(powerUp);
     }
 }
