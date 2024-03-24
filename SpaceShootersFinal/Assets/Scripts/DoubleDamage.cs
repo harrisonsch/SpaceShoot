@@ -10,6 +10,7 @@ public class DoubleDamage : PowerUp
         powerUpName = "DoubleDamage";
         duration = 999f; // lasts for 10 seconds
         cost = 5f;
+        description = "Doubles your damage";
     }
 
     public override void Activate()
