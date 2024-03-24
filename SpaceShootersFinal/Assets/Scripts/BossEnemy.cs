@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class BossEnemy : MonoBehaviour
     public float shootingRate = 2f;
     public float accuracy = 0.8f;
     private float shotCooldown;
+    public float health = 200f;
+    public TextMeshProUGUI healthText;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class BossEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthText.text = "Boss: " + health.ToString();
         if(shotCooldown < 0f) {
             Debug.Log("shooting");
             ShootAtPlayer();
@@ -28,6 +32,18 @@ public class BossEnemy : MonoBehaviour
         }
         shotCooldown -= Time.deltaTime;
     }
+
+    public void Damage(float value)
+    {
+        health -= value;
+        Debug.Log("hit " + gameObject.name +  " for " + value + " health is now " + health);
+        healthText.text = "Boss: " + health.ToString();
+        if(health <= 0) {
+            Debug.Log("killed");
+            Destroy(gameObject);
+        }
+    }
+    
 
     void ShootAtPlayer() {
         if(playerPos != null) {

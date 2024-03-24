@@ -23,6 +23,7 @@ public class BossBullet : MonoBehaviour
                 GameController gc = enemy.gameObject.GetComponent<GameController>();
                 Destroy(gameObject);
                 if(enemy != null) {
+                        Debug.Log("damaging");
                         gc.Damage(damage);
                 }
                 

@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log("entered");
         if(other.gameObject.tag == "enemy") {
-                Enemy enemy = other.gameObject.GetComponent<Enemy>();
+                BossEnemy enemy = other.gameObject.GetComponent<BossEnemy>();
                 if(enemy != null) {
                         enemy.Damage(damage);
                 }
