@@ -2262,6 +2262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3530186691920165589, guid: dc01d4238c24a4784884079571d5901a, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6907212828706505053, guid: 1a9b80c579b084926954674b97af7e2c, type: 3}
     - target: {fileID: 8303253468470631275, guid: dc01d4238c24a4784884079571d5901a, type: 3}
       propertyPath: healthText
       value: 
