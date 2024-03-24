@@ -11,12 +11,13 @@ public class DoubleDamage : PowerUp
         duration = 999f; // lasts for 10 seconds
         cost = 5f;
         description = "Doubles your damage";
+        value = 2;
     }
 
     public override void Activate()
     {
         if(isActive == false) {
-            GameController.Instance.currDamageMult *= 2;
+            GameController.Instance.currDamageMult *= value;
             isActive = true;
         }
     }
@@ -25,7 +26,7 @@ public class DoubleDamage : PowerUp
     {
         if(isActive) {
             isActive = false;
-            GameController.Instance.currDamageMult /= 2;
+            GameController.Instance.currDamageMult /= value;
         }
     }
 }

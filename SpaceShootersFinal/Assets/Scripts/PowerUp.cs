@@ -8,6 +8,7 @@ public abstract class PowerUp: ScriptableObject
     public float duration;
     public float cost;
     public string description;
+    public float value;
 
     public abstract void Activate();
     public abstract void Deactivate();

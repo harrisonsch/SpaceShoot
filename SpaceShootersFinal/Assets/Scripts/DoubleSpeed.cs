@@ -11,11 +11,12 @@ public class DoubleSpeed: PowerUp
         duration = 999f; // lasts for 10 seconds
         cost = 5f;
         description = "Doubles your speed";
+        value = 2;
     }
     public override void Activate()
     {
         // if(isActive == false) {
-            GameController.Instance.currSpeedMult *= 2;
+            GameController.Instance.currSpeedMult *= value;
         //     isActive = true;
         // }
     }
@@ -24,7 +25,7 @@ public class DoubleSpeed: PowerUp
     {
         // if(isActive) {
         //     isActive = false;
-            GameController.Instance.currSpeedMult /= 2;
+            GameController.Instance.currSpeedMult /= value;
         // }
     }
 }
