@@ -9,6 +9,7 @@ public class DoubleSpeed: PowerUp
     {
         powerUpName = "DoubleSpeed";
         duration = 999f; // lasts for 10 seconds
+        cost = 5f;
     }
     public override void Activate()
     {
