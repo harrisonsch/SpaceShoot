@@ -33,34 +33,32 @@ public class PauseHandler : MonoBehaviour {
         }
 
         void Update (){
-                // if(GameisPaused) {
-                //         Cursor.visible = true;
-                //         Cursor.lockState = CursorLockMode.None;
-                // }
-                // if (Input.GetKeyDown(KeyCode.Escape)){
-                //         if (GameisPaused){
-                //                 Resume();
-                //         }
-                //         else{
-                //                 Pause();
-                //         }
-                // }
+                if (Input.GetKeyDown(KeyCode.Escape)){
+                        if (GameisPaused){
+                                Resume();
+                        }
+                        else{
+                                Pause();
+                        }
+                }
         }
 
         public void Pause(){
                 pauseMenuUI.SetActive(true);
-                // Time.timeScale = 0f;
+                Time.timeScale = 0f;
                 GameisPaused = true;
                 // timeText.SetActive(false);
         }
 
         public void Resume(){
+                
                 pauseMenuUI.SetActive(false);
                 GameisPaused = false;
+                Time.timeScale = 1f;
         }
 
         public void StartGame(){
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("MainScene");
         }
         public void Credits(){
             SceneManager.LoadScene("CreditScene");
