@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class BossEnemy : MonoBehaviour
         if(health <= 0) {
             Debug.Log("killed");
             Destroy(gameObject);
+            SceneManager.LoadScene("GameOverScene");
         }
     }
     

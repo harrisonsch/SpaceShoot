@@ -21,6 +21,7 @@ public class FlyingController : MonoBehaviour
         if(gameController != null)
         {
             enginePower = gameController.GetEnginePower();
+            powerMult = gameController.currSpeedMult;
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -39,7 +40,7 @@ public class FlyingController : MonoBehaviour
         }
         if (throttle)
         {
-            transform.position += transform.forward * (enginePower * powerMult) * Time.deltaTime;
+            transform.position += transform.forward * (enginePower) * Time.deltaTime;
 
             activePitch = Input.GetAxisRaw("Vertical") * (pitchPower * powerMult) * Time.deltaTime;
             activeRoll = Input.GetAxisRaw("Horizontal") * (rollPower * powerMult) * Time.deltaTime;
@@ -54,7 +55,7 @@ public class FlyingController : MonoBehaviour
                 transform.Rotate(Vector3.up * activeTurn);
         }
         else
-        {
+        { 
             activePitch = Input.GetAxisRaw("Vertical") * ((pitchPower  * powerMult)/2) * Time.deltaTime;
             activeRoll = Input.GetAxisRaw("Horizontal") * ((rollPower * powerMult)/2) * Time.deltaTime;
             activeYaw = Input.GetAxisRaw("Yaw") * ((yawPower * powerMult)/2) * Time.deltaTime;
@@ -62,6 +63,7 @@ public class FlyingController : MonoBehaviour
 
             transform.Rotate(activePitch, activeYaw, -activeRoll,
                 Space.Self);
+            transform.Rotate(Vector3.up * activeTurn);    
         }
     }
 

@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 1296769045}
   - component: {fileID: 1296769044}
   m_Layer: 0
-  m_Name: SpeedSphere (1)
+  m_Name: DamageSphere(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6606381d4aa4688946fe5dce513f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerup: {fileID: 11400000, guid: c7418bd741c72472a8af02c069af9086, type: 2}
+  powerup: {fileID: 11400000, guid: cce6462b775664d948d75af5a076f11f, type: 2}
 --- !u!54 &1296769045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1771,7 +1771,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 44f5e95b0bc874e3d90a7004eea7dd07, type: 2}
+  - {fileID: 2100000, guid: 26e39b29cb75543c8a4f93c1ffa9b98b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2106,9 +2106,9 @@ GameObject:
   - component: {fileID: 1767506561}
   - component: {fileID: 1767506560}
   - component: {fileID: 1767506559}
-  - component: {fileID: 1767506558}
   - component: {fileID: 1767506562}
   - component: {fileID: 1767506563}
+  - component: {fileID: 1767506564}
   m_Layer: 0
   m_Name: BOSSTEST
   m_TagString: enemy
@@ -2116,27 +2116,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1767506558
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767506557}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1767506559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2186,7 +2165,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767506557}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1767506561
 Transform:
   m_ObjectHideFlags: 0
@@ -2195,7 +2174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767506557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -808, y: 40.9, z: -221.6}
+  m_LocalPosition: {x: -667, y: 38, z: 8}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2243,13 +2222,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 36790729}
   bullet: {fileID: 2460905112816403247, guid: d3157a8360c004f2b92c80e9e742cbc0, type: 3}
-  bulletSpeed: 500
+  bulletSpeed: 1000
   bulletDamage: 20
   lifetime: 5
   shootingRate: 5
-  accuracy: 1
-  health: 200
+  accuracy: 0.9
+  health: 400
   healthText: {fileID: 5785258}
+--- !u!65 &1767506564
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767506557}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1857345406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136744175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: 40.9, z: 240}
+  m_LocalPosition: {x: -234, y: 40.9, z: -163}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
