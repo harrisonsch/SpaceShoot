@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public float currDamageMult = 1;
     public float currDamageAdds= 0;
     public float health = 100f;
+    public int balance = 30;
     float currDamage;
     float currSpeed;
     public GameObject player;

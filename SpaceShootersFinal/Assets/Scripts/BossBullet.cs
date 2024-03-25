@@ -19,10 +19,9 @@ public class BossBullet : MonoBehaviour
     {
         Debug.Log("entered");
         if(other.gameObject.tag == "Player") {
-                GameObject enemy = other.gameObject.transform.GetChild(5).gameObject;
-                GameController gc = enemy.gameObject.GetComponent<GameController>();
+                GameController gc = GameController.Instance;
                 Destroy(gameObject);
-                if(enemy != null) {
+                if(gc != null) {
                         Debug.Log("damaging");
                         gc.Damage(damage);
                 }

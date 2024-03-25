@@ -9,6 +9,7 @@ public abstract class PowerUp: ScriptableObject
     public float cost;
     public string description;
     public float value;
+    public Sprite icon;
 
     public abstract void Activate();
     public abstract void Deactivate();

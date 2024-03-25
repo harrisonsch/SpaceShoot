@@ -28,10 +28,7 @@ public class PowerUpManager : MonoBehaviour
 
     public void RegisterPowerUp(PowerUp powerUp)
     {
-        if (!powerUps.Contains(powerUp))
-        {
             powerUps.Add(powerUp);
-        }
     }
 
     public T GetPowerUp<T>() where T : PowerUp
