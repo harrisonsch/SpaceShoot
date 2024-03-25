@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd95e7bc5d39447b684a9e4a1e78eaad, type: 3}
+  m_Name: ReviveHealth
+  m_EditorClassIdentifier: 
+  powerUpName: ReviveHealth
+  duration: 0
+  cost: 10
+  description: Revives the health of the game controller to 100
+  value: 0
+  icon: {fileID: 0}

@@ -2956,6 +2956,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7418bd741c72472a8af02c069af9086, type: 2}
   - {fileID: 11400000, guid: 394d7a9b9841241239adaea7ca96b379, type: 2}
   - {fileID: 11400000, guid: 3a403dc94b9fc42e08131bf863a21306, type: 2}
+  - {fileID: 11400000, guid: 9e0cd1f85701d4bd0ab538b2f19bede3, type: 2}
+  - {fileID: 11400000, guid: 046435c391372496190b13c0275d7287, type: 2}
+  - {fileID: 11400000, guid: cce6462b775664d948d75af5a076f11f, type: 2}
 --- !u!64 &6298868156206794498
 MeshCollider:
   m_ObjectHideFlags: 0
