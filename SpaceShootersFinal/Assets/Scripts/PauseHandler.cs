@@ -81,7 +81,18 @@ public class PauseHandler : MonoBehaviour {
         }
         public void Return(){
                 Time.timeScale = 1f;
-            SceneManager.LoadScene("MainMenu");
+                StartCoroutine(LoadMainMenuAsync());
+        }
+
+        IEnumerator LoadMainMenuAsync()
+        {
+                AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainMenu");
+
+                while (!asyncLoad.isDone)
+                {
+                        yield return null; 
+                }
+
         }
         public void QuitGame(){
             #if UNITY_EDITOR
