@@ -19,6 +19,8 @@ public class BossEnemy : MonoBehaviour
     public TextMeshProUGUI healthText;
     public GameObject player;
     public HealthBar healthBar;
+    public GameObject damageText;
+    public Transform spawnPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,12 @@ public class BossEnemy : MonoBehaviour
                 healthBar.SetHealth(health, startHealth); 
         }
         Debug.Log("hit " + gameObject.name +  " for " + value + " health is now " + health);
+        // Vector3 temp = new Vector3(60f, 0, 0);
+        DamageIndicator indicator = Instantiate(damageText, spawnPos.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        indicator.SetDamageText(value);
+        indicator.transform.localScale = new Vector3(3,3,3); 
         healthText.text = "Boss: " + health.ToString();
+
         if(health <= 0) {
             Debug.Log("killed");
             Destroy(gameObject);
