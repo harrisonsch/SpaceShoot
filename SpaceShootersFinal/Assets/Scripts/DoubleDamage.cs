@@ -8,7 +8,7 @@ public class DoubleDamage : PowerUp
     public DoubleDamage()
     {
         powerUpName = "DoubleDamage";
-        duration = 999f; // lasts for 10 seconds
+        duration = 999f; 
         cost = 5f;
         description = "Doubles your damage";
         value = 2;

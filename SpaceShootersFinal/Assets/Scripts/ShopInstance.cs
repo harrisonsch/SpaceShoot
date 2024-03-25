@@ -42,19 +42,20 @@ public class ShopInstance : MonoBehaviour
             imageComponent.sprite = powerUp.icon; 
             itemUI.GetComponentInChildren<Text>().text = $"{powerUp.name}: {powerUp.cost}";
 
-            // Add event listeners for hover
+            
             CanvasGroup descriptionPanelCanvasGroup = itemUI.transform.Find("HoverPanel").GetComponent<CanvasGroup>();
     
-            // Access the Text component for the description
+            
             Text descriptionText = descriptionPanelCanvasGroup.transform.Find("Description").GetComponent<Text>();
             descriptionText.text = powerUp.description; // Set the initial description text
 
-            // Initially hide the description panel
+            
             descriptionPanelCanvasGroup.alpha = 0;
             descriptionPanelCanvasGroup.blocksRaycasts = false;
 
             powerUpToGameObjectMap[powerUp] = itemUI;
-            // Setup event listeners for showing/hiding the description on hover
+
+            //click and hover triggers
             EventTrigger trigger = itemUI.AddComponent<EventTrigger>();
             var pointerClick = new EventTrigger.Entry { eventID = EventTriggerType.PointerClick };
             pointerClick.callback.AddListener((data) => Purchase(powerUp));
@@ -95,7 +96,7 @@ void HideDescription()
         {
             int randIndex = Random.Range(0, availablePowerUps.Count);
             currentShop.Add(availablePowerUps[randIndex]);
-            availablePowerUps.RemoveAt(randIndex); // Prevents the same power-up from being added twice
+            availablePowerUps.RemoveAt(randIndex); 
         }
     }
 
@@ -134,11 +135,11 @@ void HideDescription()
             GameController.Instance.balance -= (int)powerUp.cost;
             
             if (powerUpToGameObjectMap.TryGetValue(powerUp, out GameObject itemUI)) {
-                Destroy(itemUI); // Remove the UI element from the scene
-                powerUpToGameObjectMap.Remove(powerUp); // Remove the mapping
+                Destroy(itemUI); 
+                powerUpToGameObjectMap.Remove(powerUp); 
             }
 
-            currentShop.Remove(powerUp); // Remove from current shop listing
+            currentShop.Remove(powerUp); 
             powerUpManager.powerUpRegister.Remove(powerUp);
     } else {
         Debug.Log("Not enough currency to purchase this power-up.");
@@ -148,7 +149,7 @@ void HideDescription()
     private bool PlayerHasEnoughCurrency(float cost)
     {
         if(GameController.Instance.balance >= cost) {
-            return true; // Placeholder
+            return true; 
         }
         return false;
     }

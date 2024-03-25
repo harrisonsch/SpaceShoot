@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Assign the default bullet prefab in the inspector
+    public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
-    public float fireRate = 5f; // Bullets per second
+    public float fireRate = 5f; 
 
     private float nextFireTime = 0f;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.X)) // Use X to shoot, change as needed
+        if (Input.GetKey(KeyCode.X)) 
         {
             if(Time.time >= nextFireTime) {
                 Shoot();
@@ -23,6 +23,5 @@ public class Shooter : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        // You can modify the instantiated bullet here based on active power-ups
     }
 }

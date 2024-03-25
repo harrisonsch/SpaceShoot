@@ -61,7 +61,6 @@ public class GameController : MonoBehaviour
         }
         currSpeed = (baseSpeed + currSpeedAdds) * currSpeedMult;
         currDamage = (baseDamage + currDamageAdds) * currDamageMult;
-        // Update player's stats if needed. This could be done within each powerUp's Activate/Deactivate methods.
     }
 
     public void ActivatePowerUp(PowerUp powerUp)
@@ -81,8 +80,6 @@ public class GameController : MonoBehaviour
     public void SetEnginePower(float value)
     {
         currSpeed = value;
-        // Here you can add any validation or additional logic
-        // For example, triggering events or notifications when the value changes
     }
     
     public void Damage(float value)
