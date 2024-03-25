@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     }
     void Update()
     {
+        damage = GameController.Instance.GetDamage();
         speed = GameController.Instance.GetEnginePower() * 4 + speedinit;
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }

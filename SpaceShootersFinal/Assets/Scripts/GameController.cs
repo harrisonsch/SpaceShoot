@@ -62,7 +62,6 @@ public class GameController : MonoBehaviour
         // Apply active power-ups
         foreach (var powerUp in activePowerUps)
         {
-        //     powerUp.Activate(player);
         }
         currSpeed = (baseSpeed + currSpeedAdds) * currSpeedMult;
         currDamage = (baseDamage + currDamageAdds) * currDamageMult;
@@ -80,6 +79,11 @@ public class GameController : MonoBehaviour
     public float GetEnginePower()
     {
         return currSpeed;
+    }
+
+    public float GetDamage()
+    {
+        return currDamage;
     }
 
     public void SetEnginePower(float value)

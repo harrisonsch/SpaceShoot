@@ -1767,24 +1767,6 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
---- !u!1 &1213086963 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2406444191374141664, guid: e900de596f6664ed9afc5f9d2603d384, type: 3}
-  m_PrefabInstance: {fileID: 3396304798026291900}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1213086964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213086963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8be83b9fa09bb4cf58488597f72e79f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 2122491282}
 --- !u!1 &1296769043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2706,7 @@ PrefabInstance:
     - target: {fileID: 3713397748829602185, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1213086964}
+      objectReference: {fileID: 0}
     - target: {fileID: 3713397748829602185, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Return
@@ -2816,7 +2798,7 @@ PrefabInstance:
     - target: {fileID: 8023977348469867085, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1213086964}
+      objectReference: {fileID: 0}
     - target: {fileID: 8023977348469867085, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
@@ -3139,6 +3121,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3335300153382062997, guid: e900de596f6664ed9afc5f9d2603d384, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 2122491282}
     - target: {fileID: 643623647921434355, guid: e900de596f6664ed9afc5f9d2603d384, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -3195,10 +3181,7 @@ PrefabInstance:
     - {fileID: 3135753455863166353, guid: e900de596f6664ed9afc5f9d2603d384, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2406444191374141664, guid: e900de596f6664ed9afc5f9d2603d384, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1213086964}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e900de596f6664ed9afc5f9d2603d384, type: 3}
 --- !u!114 &3530186692178520492
 MonoBehaviour:
