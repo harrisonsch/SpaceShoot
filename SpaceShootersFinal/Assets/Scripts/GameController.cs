@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public float currSpeedAdds = 0;
     public float currDamageMult = 1;
     public float currDamageAdds= 0;
+    public float baseHealth = 100f;
     public float health = 100f;
     public int balance = 30;
     float currDamage;
@@ -46,6 +47,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.FindGameObjectWithTag("Health") != null) {
+
+                healthText = GameObject.FindGameObjectWithTag("Health").GetComponent<TextMeshProUGUI>();
+        }
         healthText.text = "Health: " + health.ToString();
         CalculateCurrentStats();
         

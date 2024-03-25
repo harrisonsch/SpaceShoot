@@ -32,6 +32,12 @@ public class PauseHandler : MonoBehaviour {
                 GameisPaused = false;
         }
 
+        public void SetPauseMenu(GameObject menu)
+        {
+                pauseMenuUI = menu;
+                pauseMenuUI.SetActive(false); 
+        }
+
         void Update (){
                 if (Input.GetKeyDown(KeyCode.Escape)){
                         if (GameisPaused){
@@ -62,6 +68,9 @@ public class PauseHandler : MonoBehaviour {
         }
 
         public void StartGame(){
+                if(GameController.Instance != null) {
+                        GameController.Instance.health = GameController.Instance.baseHealth;
+                }
             SceneManager.LoadScene("MainScene");
         }
         public void Credits(){
@@ -71,6 +80,7 @@ public class PauseHandler : MonoBehaviour {
             SceneManager.LoadScene("ControlsScene");
         }
         public void Return(){
+                Time.timeScale = 1f;
             SceneManager.LoadScene("MainMenu");
         }
         public void QuitGame(){

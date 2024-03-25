@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1615609580263591044, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3713397748829602185, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1016,23 +1020,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'W/S - Tilt Up and Down
+  m_text: 'Space - Toggle Movement
 
-    A/D - Turn Left and Right
+    W/S - Tilt Up and Down
 
-    Q/E - Tilt
-    Left and Right
+    A/D - Turn Left
+    and Right
+
+    Q/E - Tilt Left and Right
 
     X - Shoot
 
     ESC - Pause
 
-    Red Cube - Boss
+    Red
+    Cube - Boss
 
-    Green
-    Orbs -  Double Speed
+    Green Orbs -  Heal
 
-    Blue Orbs - Double Damage
+    Blue Orbs - Double Speed
+
+    Red Orbs
+    - Double Damage
 
 '
   m_isRightToLeft: 0
