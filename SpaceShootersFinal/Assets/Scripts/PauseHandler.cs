@@ -84,6 +84,13 @@ public class PauseHandler : MonoBehaviour {
                 StartCoroutine(LoadMainMenuAsync());
         }
 
+        public void ShopReturn(){
+                ShopInstance shop = GameObject.FindGameObjectWithTag("ShopHandler").GetComponent<ShopInstance>();
+                shop.ExitShop();
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("MainScene");
+        }
+
         IEnumerator LoadMainMenuAsync()
         {
                 AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainMenu");

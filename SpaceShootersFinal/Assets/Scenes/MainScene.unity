@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 593, y: 307}
+  m_AnchoredPosition: {x: 1025, y: 307}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5785258
@@ -287,13 +287,17 @@ MonoBehaviour:
   lifetime: 5
   shootingRate: 2
   accuracy: 0.8
-  health: 300
+  health: 500
   startHealth: 0
   healthText: {fileID: 5785258}
   player: {fileID: 0}
   healthBar: {fileID: 877763948}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
   spawnPos: {fileID: 1968328861}
+  strafeRange: 150
+  strafeSpeed: 150
+  strafeDelay: 0.5
+  moveAwaySpeed: 50
 --- !u!54 &121718399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364,6 +368,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05819459, y: 0.04, z: 0.13329774}
   m_Center: {x: 0.000000009956141, y: -0.0000000060228, z: 0.056648865}
+--- !u!4 &121718402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5186038053434782061, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
+  m_PrefabInstance: {fileID: 8338589595446797449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &523362626
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,19 +886,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970076869}
-  m_LocalRotation: {x: -0.041346963, y: 0.7058969, z: -0.7058969, w: 0.041347142}
-  m_LocalPosition: {x: 0, y: 0, z: 1.07}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalRotation: {x: 0.00000013224779, y: 0.998289, z: 0.00000008940696, w: 0.058473557}
+  m_LocalPosition: {x: 0, y: 0, z: 0.11347843}
+  m_LocalScale: {x: 0.0005, y: 0.0005000001, z: 0.00049999997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1414797227}
   - {fileID: 877763946}
-  m_Father: {fileID: 8338589595446797450}
+  m_Father: {fileID: 121718402}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.85, y: 2.47}
+  m_AnchoredPosition: {x: -0.009057701, y: 0.034827232}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970076871
@@ -1862,6 +1871,10 @@ MonoBehaviour:
   healthBar: {fileID: 1509517114}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
   spawnPos: {fileID: 1968328861}
+  strafeRange: 10
+  strafeSpeed: 5
+  strafeDelay: 0.5
+  moveAwaySpeed: 75
 --- !u!65 &1767506564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1906,12 +1919,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968328860}
-  m_LocalRotation: {x: 0.4699078, y: 0.52838135, z: -0.5283812, w: -0.46990764}
-  m_LocalPosition: {x: -0.92606956, y: 3.0813158, z: 6.7200007}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalRotation: {x: 0.000000059604638, y: 0.747244, z: 0.0000001490116, w: -0.6645499}
+  m_LocalPosition: {x: -0.009819037, y: -0.021672353, z: 0.11959158}
+  m_LocalScale: {x: 0.15, y: 0.15000004, z: 0.14999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8338589595446797450}
+  m_Father: {fileID: 121718402}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2122491281
@@ -2760,10 +2773,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8325225741438315016, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5186038053434782061, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
       insertIndex: -1
       addedObject: {fileID: 970076870}
-    - targetCorrespondingSourceObject: {fileID: 8325225741438315016, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5186038053434782061, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1968328861}
     m_AddedComponents:
@@ -2780,8 +2793,3 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 121718401}
   m_SourcePrefab: {fileID: 100100000, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
---- !u!4 &8338589595446797450 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8325225741438315016, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
-  m_PrefabInstance: {fileID: 8338589595446797449}
-  m_PrefabAsset: {fileID: 0}

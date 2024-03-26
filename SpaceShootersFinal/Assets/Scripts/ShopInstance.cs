@@ -109,6 +109,15 @@ void HideDescription()
         currentShop.Clear();
     }
 
+    public void ExitShop() {
+        foreach (var powerUp in currentShop) {
+            if (!powerUpManager.powerUpRegister.Contains(powerUp)) {
+                powerUpManager.powerUpRegister.Add(powerUp);
+            }
+        }
+        currentShop.Clear();
+    }
+
     public void RefreshShop() {
     if (PlayerHasEnoughCurrency(reroll)) {
         GameController.Instance.balance -= reroll;

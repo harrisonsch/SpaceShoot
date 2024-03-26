@@ -8,6 +8,7 @@ TagManager:
   - HealthText
   - Health
   - PauseMenu
+  - ShopHandler
   layers:
   - Default
   - TransparentFX
