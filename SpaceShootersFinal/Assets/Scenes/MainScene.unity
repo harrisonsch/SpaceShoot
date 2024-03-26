@@ -282,10 +282,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 36790729}
   bullet: {fileID: 2460905112816403247, guid: d3157a8360c004f2b92c80e9e742cbc0, type: 3}
-  bulletSpeed: 1000
+  bulletSpeed: 900
   bulletDamage: 20
   lifetime: 5
-  shootingRate: 5
+  shootingRate: 2
   accuracy: 0.8
   health: 300
   startHealth: 0
@@ -2229,7 +2229,7 @@ MonoBehaviour:
   pitchPower: 90
   rollPower: 250
   yawPower: 150
-  enginePower: 150
+  enginePower: 175
   turnPower: 100
   powerMult: 1
 --- !u!1001 &3247220435834902192
