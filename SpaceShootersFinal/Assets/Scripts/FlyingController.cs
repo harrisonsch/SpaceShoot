@@ -46,7 +46,7 @@ public class FlyingController : MonoBehaviour
             activeRoll = Input.GetAxisRaw("Horizontal") * (rollPower * powerMult) * Time.deltaTime;
             activeYaw = Input.GetAxisRaw("Yaw") * (yawPower * powerMult) * Time.deltaTime;
             activeTurn = Input.GetAxisRaw("Turn") * (turnPower * powerMult) * Time.deltaTime;
-            if(activeTurn > 0) {
+            if(activeTurn > 0 || activePitch > 0 || activeRoll > 0 || activeYaw > 0) {
                 enginePower = enginePower / 5;
             }
             transform.position += transform.forward * (enginePower) * Time.deltaTime;
