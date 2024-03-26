@@ -366,7 +366,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.05819459, y: 0.04, z: 0.13329774}
+  m_Size: {x: 0.05819459, y: 0.05, z: 0.13329774}
   m_Center: {x: 0.000000009956141, y: -0.0000000060228, z: 0.056648865}
 --- !u!4 &121718402 stripped
 Transform:
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.06607044, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2073,7 +2073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2136744176
 MonoBehaviour:
   m_ObjectHideFlags: 0

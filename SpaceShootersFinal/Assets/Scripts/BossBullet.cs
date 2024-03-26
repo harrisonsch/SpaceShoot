@@ -15,7 +15,7 @@ public class BossBullet : MonoBehaviour
         transform.Translate(Vector3.forward * speedinit * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionExit(Collision other)
     {
         Debug.Log("entered");
         if(other.gameObject.tag == "Player") {
