@@ -12,7 +12,7 @@ public class BossEnemy : MonoBehaviour
     public float bulletDamage;
     public float lifetime;
     public float shootingRate = 2f;
-    public float accuracy = 0.8f;
+    // public float accuracy = 0.8f;
     private float shotCooldown = 2f;
     public float health = 200f;
     public float startHealth;
@@ -32,7 +32,7 @@ public class BossEnemy : MonoBehaviour
     public float moveAwaySpeed = 75f;
     private Vector3 strafeDirection;
     private float directionTimer = 0;
-    private float changeDirectionTime = 2.5f;
+    public float changeDirectionTime = 2.5f;
     // Start is called before the first frame update
     void Start()
     {
