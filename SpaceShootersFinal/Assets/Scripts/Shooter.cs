@@ -24,7 +24,7 @@ public class Shooter : MonoBehaviour
 
     void Shoot()
     {
-            Debug.Log(Input.mousePosition);
+            // Debug.Log(Input.mousePosition);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit)) {
                 GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);

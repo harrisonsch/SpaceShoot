@@ -298,6 +298,7 @@ MonoBehaviour:
   strafeDelay: 0.5
   moveAwaySpeed: 40
   changeDirectionTime: 2
+  moveAway: 0
 --- !u!54 &121718399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2405,6 +2406,7 @@ MonoBehaviour:
   strafeDelay: 0.5
   moveAwaySpeed: 75
   changeDirectionTime: 2.5
+  moveAway: 0
 --- !u!65 &1767506564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3402,7 +3404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8701785845825155250, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
       propertyPath: m_Name
-      value: GameSpaceShip
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 9191844926229397383, guid: d768ed185e0744dcb8ac8e8cd4775029, type: 3}
       propertyPath: m_TagString

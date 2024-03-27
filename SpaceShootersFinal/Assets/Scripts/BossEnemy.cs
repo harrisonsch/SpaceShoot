@@ -33,6 +33,7 @@ public class BossEnemy : MonoBehaviour
     private Vector3 strafeDirection;
     private float directionTimer = 0;
     public float changeDirectionTime = 2.5f;
+    public bool moveAway = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +50,12 @@ public class BossEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetComponent<FlyingController>().throttle == true) {
-            MoveBackwardsAndStrafe();
-        } else {
-            Strafe();
+        if(moveAway) {
+                if(player.GetComponent<FlyingController>().throttle == true) {
+                MoveBackwardsAndStrafe();
+                } else {
+                Strafe();
+                }
         }
         LookAtPlayer();
         healthText.text = "Boss: " + health.ToString();
@@ -206,7 +209,7 @@ public class BossEnemy : MonoBehaviour
 }
 
 Vector3 CalculateEstimatedVelocity() {
-    float enginePower = player.GetComponent<FlyingController>().enginePower;
+    float enginePower = player.GetComponent<FlyingController>().enginePower / 1.4f;
     Vector3 movementDirection = player.transform.forward;
     
     // Adjust this calculation if the player can move significantly in other directions.
