@@ -17,4 +17,4 @@ MonoBehaviour:
   cost: 5
   description: Double Damage doubles your current damage
   value: 2
-  icon: {fileID: 21300000, guid: e54cc7d1feed340ca87aa29f926bd9df, type: 3}
+  icon: {fileID: 21300000, guid: c832a8f61eb794fc1a47ea90de45015c, type: 3}
