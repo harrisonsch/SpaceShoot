@@ -5,7 +5,9 @@ public class Shooter : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public float fireRate = 5f; 
-
+    private Vector3 aim;
+    public Camera cam;
+    public Vector3 mousePos;
     private float nextFireTime = 0f;
 
     void Update()
@@ -22,6 +24,14 @@ public class Shooter : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            Debug.Log(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit)) {
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                bullet.transform.LookAt(hit.point);
+            }
+            // var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
+       
     }
 }
