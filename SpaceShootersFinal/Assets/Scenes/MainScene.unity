@@ -3308,6 +3308,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8cc22134f73684c5c9be19724ab1cd89, type: 2}
   - {fileID: 11400000, guid: 7fcb3fd139f6c466b8dd559a0cfb914f, type: 2}
   - {fileID: 11400000, guid: bc73c947805e5445ca81b96eee70f9a4, type: 2}
+  - {fileID: 11400000, guid: c47abf75545564766b0b50254c67ba03, type: 2}
 --- !u!64 &6298868156206794498
 MeshCollider:
   m_ObjectHideFlags: 0

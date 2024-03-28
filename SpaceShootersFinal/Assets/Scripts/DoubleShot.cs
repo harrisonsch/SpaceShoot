@@ -9,12 +9,14 @@ public class DoubleShot : PowerUp
         powerUpName = "DoubleShot";
         duration = 999f; 
         cost = 5f;
-        description = "Shoots two bullets at once";
         value = 1f;
+        description = "Shoots +" + (int) value + " bullets";
     }
+
 
     public override void Activate()
     {
+        
         GameController.Instance.shots += value;
     }
 

@@ -15,6 +15,6 @@ MonoBehaviour:
   powerUpName: Increase Speed
   duration: 999
   cost: 5
-  description: Adds 20 to your speed
-  value: 20
+  description: Adds 50 to your speed
+  value: 50
   icon: {fileID: 0}
