@@ -1481,6 +1481,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 7803793696391454339}
   offset: {x: 0, y: 1, z: 0}
+--- !u!1 &1285131759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285131760}
+  m_Layer: 0
+  m_Name: ShootPos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1285131760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285131759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96253777, y: 0, z: 5.329493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 36790729}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296769043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,6 +2459,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1853256316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853256317}
+  m_Layer: 0
+  m_Name: ShootPos (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853256317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853256316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0, z: 5.236136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 36790729}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963881643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,6 +3039,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6576192099459207440}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1285131760}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1853256317}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
       insertIndex: -1
@@ -3085,10 +3153,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6907212828706505053, guid: 1a9b80c579b084926954674b97af7e2c, type: 3}
-  bulletSpawnPoint: {fileID: 6576192099459207440}
+  bulletSpawnPoints:
+  - {fileID: 6576192099459207440}
+  - {fileID: 1285131760}
+  - {fileID: 1853256317}
   fireRate: 5
   cam: {fileID: 0}
   mousePos: {x: 0, y: 0, z: 0}
+  shots: 1
 --- !u!1 &3644969567825627665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3235,6 +3307,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 975578d9c74ad4adc912c73cd69881e8, type: 2}
   - {fileID: 11400000, guid: 8cc22134f73684c5c9be19724ab1cd89, type: 2}
   - {fileID: 11400000, guid: 7fcb3fd139f6c466b8dd559a0cfb914f, type: 2}
+  - {fileID: 11400000, guid: bc73c947805e5445ca81b96eee70f9a4, type: 2}
 --- !u!64 &6298868156206794498
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3265,7 +3338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5031284267302170401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0, z: 5.25}
+  m_LocalPosition: {x: 1.3650694, y: 0, z: 5.166118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3333,6 +3406,7 @@ MonoBehaviour:
   health: 100
   balance: 100
   fireRate: 5
+  shots: 1
   player: {fileID: 776013166}
   healthText: {fileID: 523362628}
 --- !u!1001 &8338589595446797449
