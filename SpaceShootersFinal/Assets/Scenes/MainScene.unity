@@ -3232,13 +3232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpRegister:
-  - {fileID: 11400000, guid: ee20300c2adfb4a168d0f51809a3a490, type: 2}
-  - {fileID: 11400000, guid: c7418bd741c72472a8af02c069af9086, type: 2}
-  - {fileID: 11400000, guid: 394d7a9b9841241239adaea7ca96b379, type: 2}
-  - {fileID: 11400000, guid: 3a403dc94b9fc42e08131bf863a21306, type: 2}
-  - {fileID: 11400000, guid: 9e0cd1f85701d4bd0ab538b2f19bede3, type: 2}
-  - {fileID: 11400000, guid: 046435c391372496190b13c0275d7287, type: 2}
-  - {fileID: 11400000, guid: cce6462b775664d948d75af5a076f11f, type: 2}
+  - {fileID: 11400000, guid: 975578d9c74ad4adc912c73cd69881e8, type: 2}
+  - {fileID: 11400000, guid: 8cc22134f73684c5c9be19724ab1cd89, type: 2}
+  - {fileID: 11400000, guid: 7fcb3fd139f6c466b8dd559a0cfb914f, type: 2}
 --- !u!64 &6298868156206794498
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3336,6 +3332,7 @@ MonoBehaviour:
   baseHealth: 100
   health: 100
   balance: 100
+  fireRate: 5
   player: {fileID: 776013166}
   healthText: {fileID: 523362628}
 --- !u!1001 &8338589595446797449

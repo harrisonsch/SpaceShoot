@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public float baseHealth = 100f;
     public float health = 100f;
     public int balance = 30;
+    public float fireRate = 5f;
     float currDamage;
     float currSpeed;
     public GameObject player;

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b299a4b80f6f4f51b4f2d044519cec3, type: 3}
-  m_Name: DoubleSpeed 1
+  m_Script: {fileID: 11500000, guid: 739bde263f63e4ec7be8c4cfc9f3619d, type: 3}
+  m_Name: 20percentfire
   m_EditorClassIdentifier: 
-  powerUpName: Double Speed
+  powerUpName: Shoot Faster
   duration: 999
-  cost: 3
-  description: Doubles your speed
-  value: 2
+  cost: 5
+  description: Increases Fire Rate by 20%
+  value: 1
   icon: {fileID: 0}
