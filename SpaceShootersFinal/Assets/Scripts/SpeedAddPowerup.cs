@@ -7,10 +7,10 @@ public class SpeedAddPowerup : PowerUp
     bool isActive = false;
     public SpeedAddPowerup()
     {
-        powerUpName = "INSERTNAME";
+        powerUpName = "SpeedAddPowerup";
         duration = 999f; 
         cost = 5f;
-        description = "ADD DESC HERE";
+        description = "increase the speed";
         value = 20f;
     }
 

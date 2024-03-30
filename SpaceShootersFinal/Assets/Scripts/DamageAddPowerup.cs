@@ -7,10 +7,10 @@ public class DamageAddPowerup : PowerUp
     bool isActive = false;
     public DamageAddPowerup()
     {
-        powerUpName = "INSERTNAME";
+        powerUpName = "DamageAddPowerup";
         duration = 999f; 
         cost = 5f;
-        description = "ADD DESC HERE";
+        description = "Increase the damage of the plane";
         value = 20f;
     }
 

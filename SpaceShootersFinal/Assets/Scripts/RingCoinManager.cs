@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RingCoinManager : MonoBehaviour
@@ -7,14 +5,14 @@ public class RingCoinManager : MonoBehaviour
     public GameObject ringCoinPrefab; 
     public Transform plane;
     public int coinGain = 15;
-    public float spawnHeight = 50f; // Height above plane to spawn the ring-coin
+    public float spawnHeight = 200f; // Height above plane to spawn the ring-coin
 
     private GameObject currentRingCoin;
 
     void Update()
     {
         // Check GameController's health
-        if (GameController.Instance.health < 90 && currentRingCoin == null)
+        if (GameController.Instance.health <= 90 && currentRingCoin == null)
         {
             // Spawn a ring-coin if health is low and no ring-coin is active
             if (plane != null)
@@ -34,16 +32,12 @@ public class RingCoinManager : MonoBehaviour
                 Debug.LogError("Plane object is not assigned!");
             }
         }
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        // Check if the current ring-coin exists and if it should be destroyed
+        if (currentRingCoin != null && GameController.Instance.health > 90)
         {
-            // Update balance and destroy ring-coin when collision occurs
-            GameController.Instance.balance += coinGain;
-            Debug.Log("Ring-coin collected. Balance: " + GameController.Instance.balance);
             Destroy(currentRingCoin);
+            currentRingCoin = null;
         }
     }
 }
