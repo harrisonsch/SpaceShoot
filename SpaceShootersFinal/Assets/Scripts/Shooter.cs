@@ -15,7 +15,6 @@ public class Shooter : MonoBehaviour
     {
         fireRate = GameController.Instance.fireRate;
         shots = (int)GameController.Instance.shots;
-        Debug.Log("fire rate is " + fireRate);
         if (Input.GetKey(KeyCode.X)) 
         {
             if(Time.time >= nextFireTime) {
