@@ -61,7 +61,7 @@ public class BossEnemy : MonoBehaviour
         healthText.text = "Boss: " + health.ToString();
         if(shotCooldown < 0f) {
             Debug.Log("shooting");
-            ShootAtPlayer();
+            ShootRadialBurst();
             shotCooldown = shootingRate;
         }
         
@@ -184,6 +184,34 @@ public class BossEnemy : MonoBehaviour
     //     }
     // }
 
+
+void ShootRadialBurst() {
+    int bulletCount = 36; // Number of bullets in the burst
+    float angleStep = 360f / bulletCount; // Divide the circle into equal parts
+    float angle = 0f; // Starting angle
+    float radius = 0f;
+
+    for (int i = 0; i < bulletCount; i++) {
+        // Calculate x and z positions of the bullet's direction
+        float bulletDirXPosition = Mathf.Sin((angle * Mathf.PI) / 180);
+        float bulletDirZPosition = Mathf.Cos((angle * Mathf.PI) / 180);
+        Vector3 bulletDirection = new Vector3(bulletDirXPosition, 0, bulletDirZPosition);
+
+        // Correct bullet spawn rotation to face outward
+        Quaternion bulletRotation = Quaternion.LookRotation(bulletDirection);
+        GameObject bulletObj = Instantiate(bullet, spawnPos.position, bulletRotation);
+        BossBullet bossBullet = bulletObj.GetComponent<BossBullet>();
+
+        if (bossBullet != null) {
+            bossBullet.speedinit = bulletSpeed;
+            bossBullet.damage = bulletDamage;
+            bossBullet.lifetime = lifetime;
+        }
+
+        angle += angleStep;
+    }
+}
+
     void ShootAtPlayer() {
     if(playerPos != null) {
         Vector3 estimatedPlayerVelocity = CalculateEstimatedVelocity();
@@ -208,12 +236,18 @@ public class BossEnemy : MonoBehaviour
     }
 }
 
-Vector3 CalculateEstimatedVelocity() {
-    float enginePower = player.GetComponent<FlyingController>().enginePower / 1.4f;
-    Vector3 movementDirection = player.transform.forward;
-    
-    // Adjust this calculation if the player can move significantly in other directions.
-    return movementDirection * enginePower;
+   Vector3 CalculateEstimatedVelocity() {
+    FlyingController playerController = player.GetComponent<FlyingController>();
+
+    // Consider all directions of movement and rotations
+    Vector3 forwardVelocity = player.transform.forward * playerController.moveSpeed;
+    Vector3 rightVelocity = player.transform.right * playerController.moveSpeed;
+    Vector3 upVelocity = player.transform.up * playerController.moveSpeed;
+
+    // Combine velocities, considering the player's movement speed multiplier
+    Vector3 combinedVelocity = (forwardVelocity + rightVelocity + upVelocity);
+
+    return combinedVelocity;
 }
 
     Vector3 AccuracyAdjuster(Vector3 originalDirection, float accuracy)
