@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
     public List<PowerUp> activePowerUps = new List<PowerUp>();
     public float baseDamage = 20f;
-    public float baseSpeed = 100f;
+    public float baseSpeed = 500f;
     public float currSpeedMult = 1;
     public float currSpeedAdds = 0;
     public float currDamageMult = 1;

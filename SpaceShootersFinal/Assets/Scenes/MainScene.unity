@@ -3581,7 +3581,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 97
   orthographic: 0
   orthographic size: 5
@@ -3688,8 +3688,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5702e8ba01fdc454baf9afaa91a1b14e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.374
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3855,7 +3855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activePowerUps: []
   baseDamage: 20
-  baseSpeed: 100
+  baseSpeed: 500
   currSpeedMult: 1
   currSpeedAdds: 0
   currDamageMult: 1

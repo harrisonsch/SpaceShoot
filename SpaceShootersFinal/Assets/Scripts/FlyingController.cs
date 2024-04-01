@@ -39,7 +39,7 @@ public class FlyingController : MonoBehaviour
     {
         if (gameController != null)
         {
-            // Adjust moveSpeed or turnSpeed based on your game's logic
+            moveSpeed = GameController.Instance.GetEnginePower();
         }
 
         // Cursor.lockState = CursorLockMode.Locked;

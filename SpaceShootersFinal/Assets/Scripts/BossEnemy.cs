@@ -186,18 +186,16 @@ public class BossEnemy : MonoBehaviour
 
 
 void ShootRadialBurst() {
-    int bulletCount = 36; // Number of bullets in the burst
-    float angleStep = 360f / bulletCount; // Divide the circle into equal parts
-    float angle = 0f; // Starting angle
+    int bulletCount = 36; 
+    float angleStep = 360f / bulletCount; 
+    float angle = 0f; 
     float radius = 0f;
 
     for (int i = 0; i < bulletCount; i++) {
-        // Calculate x and z positions of the bullet's direction
         float bulletDirXPosition = Mathf.Sin((angle * Mathf.PI) / 180);
         float bulletDirZPosition = Mathf.Cos((angle * Mathf.PI) / 180);
         Vector3 bulletDirection = new Vector3(bulletDirXPosition, 0, bulletDirZPosition);
 
-        // Correct bullet spawn rotation to face outward
         Quaternion bulletRotation = Quaternion.LookRotation(bulletDirection);
         GameObject bulletObj = Instantiate(bullet, spawnPos.position, bulletRotation);
         BossBullet bossBullet = bulletObj.GetComponent<BossBullet>();
@@ -239,12 +237,11 @@ void ShootRadialBurst() {
    Vector3 CalculateEstimatedVelocity() {
     FlyingController playerController = player.GetComponent<FlyingController>();
 
-    // Consider all directions of movement and rotations
+    
     Vector3 forwardVelocity = player.transform.forward * playerController.moveSpeed;
     Vector3 rightVelocity = player.transform.right * playerController.moveSpeed;
     Vector3 upVelocity = player.transform.up * playerController.moveSpeed;
 
-    // Combine velocities, considering the player's movement speed multiplier
     Vector3 combinedVelocity = (forwardVelocity + rightVelocity + upVelocity);
 
     return combinedVelocity;
