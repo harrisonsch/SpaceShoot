@@ -1,84 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+ 
 public class FlyingController : MonoBehaviour
 {
-    public bool pressingThrottle = false;
+    public GameController gameController;
+ 
+    public float moveSpeed = 10f; // Speed of the plane movement
+    public float turnSpeed = 60f; // Speed of turning the plane
+    public float rotationSpeed = 5.0f;
+ 
+      public bool pressingThrottle = false;
     public bool throttle => pressingThrottle;
-    private GameController gameController;
-
+ 
     public float pitchPower, rollPower, yawPower, enginePower, turnPower;
     public float powerMult = 1f;
-
+ 
     private float activeRoll, activePitch, activeYaw, activeTurn;
+ 
+    private Camera mainCamera;
+ 
     private void Start()
     {  
         gameController = FindObjectOfType<GameController>();
+        mainCamera = FindObjectOfType<Camera>(); 
     }
+ 
     private void Update()
     {
-        if(gameController != null)
+        if (gameController != null)
         {
-            enginePower = gameController.GetEnginePower();
-            powerMult = gameController.currSpeedMult;
+            // Adjust moveSpeed or turnSpeed based on your game's logic
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+ 
+        // Cursor.lockState = CursorLockMode.Locked;
+        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        if (groundPlane.Raycast(cameraRay, out float rayLength))
         {
-            if (pressingThrottle == false)
-            {
-
-                pressingThrottle = true;
-
-            }
-            else if (pressingThrottle == true)
-            {
-
-                pressingThrottle = false;
-
-            }
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+ 
+            // Debug line to visualize the ray in the Scene view
+        //     Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
+ 
+            // Determine the target rotation to look at the point of intersection
+            Quaternion targetRotation = Quaternion.LookRotation(pointToLook - transform.position);
+ 
+            // Adjust the target rotation to only rotate around the Y axis
+            targetRotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+ 
+            // Smoothly rotate the plane towards the target rotation
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
-        if (throttle)
-        {
-            
-
-<<<<<<< Updated upstream
-            activePitch = Input.GetAxisRaw("Vertical") * (pitchPower * powerMult) * Time.deltaTime;
-            activeRoll = Input.GetAxisRaw("Horizontal") * (rollPower * powerMult) * Time.deltaTime;
-            activeYaw = Input.GetAxisRaw("Yaw") * (yawPower * powerMult) * Time.deltaTime;
-            activeTurn = Input.GetAxisRaw("Turn") * (turnPower * powerMult) * Time.deltaTime;
-            if(activeTurn > 0 || activePitch > 0 || activeRoll > 0 || activeYaw > 0) {
-                enginePower = enginePower / 5;
-            }
-            transform.position += transform.forward * (enginePower) * Time.deltaTime;
-=======
+ 
         // forward and back
         float vertical = Input.GetAxis("Horizontal");
-
         transform.Translate(Vector3.up * vertical * moveSpeed * Time.deltaTime, Space.Self);
->>>>>>> Stashed changes
-
-            transform.Rotate(activePitch,
-                activeYaw,
-                -activeRoll,
-                Space.Self);
-
-                transform.Rotate(Vector3.up * activeTurn);
-        }
-        else
-        { 
-            activePitch = Input.GetAxisRaw("Vertical") * ((pitchPower  * powerMult)/2) * Time.deltaTime;
-            activeRoll = Input.GetAxisRaw("Horizontal") * ((rollPower * powerMult)/2) * Time.deltaTime;
-            activeYaw = Input.GetAxisRaw("Yaw") * ((yawPower * powerMult)/2) * Time.deltaTime;
-            activeTurn = Input.GetAxisRaw("Turn") * ((turnPower * powerMult)/2) * Time.deltaTime;
-
-            transform.Rotate(activePitch, activeYaw, -activeRoll,
-                Space.Self);
-            transform.Rotate(Vector3.up * activeTurn);    
-        }
+ 
+        // Movement up and down
+        float horizontal = Input.GetAxis("Vertical");
+        float leftright = Input.GetAxis("Turn");
+        transform.Translate(Vector3.right * leftright * moveSpeed * Time.deltaTime, Space.Self);
+        //left and right
+ 
+        transform.Translate(Vector3.forward * horizontal * moveSpeed * Time.deltaTime, Space.Self);
     }
-
-    void OnCollisionEnter(Collision other) {
-        Debug.Log("collided");
-    }
+ 
 }
