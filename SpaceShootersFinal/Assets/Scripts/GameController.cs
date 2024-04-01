@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     public GameObject player;
     private PowerUpManager powerUpManager;
     public TextMeshProUGUI healthText;
+    public bool hasMoved = false;
     
     private void Awake()
     {

@@ -24,6 +24,9 @@ public class Shooter : MonoBehaviour
         Debug.Log("fire rate is " + fireRate);
         if (Input.GetKey(KeyCode.Space)) 
         {
+                if(!GameController.Instance.hasMoved) {
+                        GameController.Instance.hasMoved = true;
+                }
             if(Time.time >= nextFireTime) {
                 Shoot();
                 audioSource.Play();

@@ -17,7 +17,6 @@ public class BossBullet : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        Debug.Log("entered");
         if(other.gameObject.tag == "Player") {
                 GameController gc = GameController.Instance;
                 Destroy(gameObject);

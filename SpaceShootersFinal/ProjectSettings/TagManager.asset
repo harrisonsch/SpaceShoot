@@ -9,6 +9,7 @@ TagManager:
   - Health
   - PauseMenu
   - ShopHandler
+  - moved
   layers:
   - Default
   - TransparentFX

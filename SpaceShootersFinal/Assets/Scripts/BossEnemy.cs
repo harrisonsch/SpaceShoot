@@ -128,6 +128,55 @@ public class BossEnemy : MonoBehaviour
     //     }
     // }
 
+
+IEnumerator ShootSpiralPattern3D() {
+    float horizontalAngle = 0f;
+    float verticalAngle = 0f;
+    float angleStep = 2f;
+    float verticalAngleStep = 5f;
+    float speed = 500f;
+    float acceleration = 20f;
+    int bulletsPerWave = 100;
+    float timeBetweenBullets = 0.05f;
+    bool increasing = true;
+
+    Quaternion initialRotation = Quaternion.LookRotation(transform.forward, Vector3.up);
+
+    for (int i = 0; i < bulletsPerWave; i++) {
+        float bulletDirXPosition = Mathf.Sin((horizontalAngle * Mathf.PI) / 180);
+        float bulletDirYPosition = Mathf.Sin((verticalAngle * Mathf.PI) / 180);
+        float bulletDirZPosition = Mathf.Cos((horizontalAngle * Mathf.PI) / 180);
+        Vector3 localBulletDirection = new Vector3(bulletDirXPosition, bulletDirYPosition, bulletDirZPosition);
+
+        // Apply the initial rotation to the bullet direction to ensure it's correctly oriented.
+        Vector3 worldBulletDirection = initialRotation * localBulletDirection.normalized;
+
+        Quaternion bulletRotation = Quaternion.LookRotation(worldBulletDirection, Vector3.up);
+        GameObject bulletObj = Instantiate(bullet, spawnPos.position + worldBulletDirection, bulletRotation);
+        BossBullet bossBullet = bulletObj.GetComponent<BossBullet>();
+
+        if (bossBullet != null) {
+            bossBullet.speedinit = speed;
+            speed += acceleration;
+        }
+
+        horizontalAngle += angleStep;
+
+        if (increasing) {
+            verticalAngle += verticalAngleStep;
+            if (verticalAngle > 25) {
+                increasing = false;
+            }
+        } else {
+            verticalAngle -= verticalAngleStep;
+            if (verticalAngle < -25) {
+                increasing = true;
+            }
+        }
+
+        yield return new WaitForSeconds(timeBetweenBullets);
+    }
+}
     void Strafe()
     {
         // Calculate target based on initial position and direction
@@ -186,26 +235,23 @@ public class BossEnemy : MonoBehaviour
 
 
 void ShootRadialBurst() {
-    int bulletCount = 36; 
-    float angleStep = 360f / bulletCount; 
-    float angle = 0f; 
-    float radius = 0f;
-
+    int bulletCount = 36;
+    float angleStep = 360f / bulletCount;
+    float angle = 0f;
+    System.Random rand = new System.Random();
     for (int i = 0; i < bulletCount; i++) {
+        float upwardBias = (i % 6 == 0) ? rand.Next(-1, 2) * 0.5f : 0.1f;
         float bulletDirXPosition = Mathf.Sin((angle * Mathf.PI) / 180);
         float bulletDirZPosition = Mathf.Cos((angle * Mathf.PI) / 180);
-        Vector3 bulletDirection = new Vector3(bulletDirXPosition, 0, bulletDirZPosition);
-
+        Vector3 bulletDirection = new Vector3(bulletDirXPosition, upwardBias, bulletDirZPosition).normalized;
         Quaternion bulletRotation = Quaternion.LookRotation(bulletDirection);
         GameObject bulletObj = Instantiate(bullet, spawnPos.position, bulletRotation);
         BossBullet bossBullet = bulletObj.GetComponent<BossBullet>();
-
         if (bossBullet != null) {
             bossBullet.speedinit = bulletSpeed;
             bossBullet.damage = bulletDamage;
             bossBullet.lifetime = lifetime;
         }
-
         angle += angleStep;
     }
 }
