@@ -3351,6 +3351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ringCoinPrefab: {fileID: 4642321837623858004, guid: fd7ebf23174814b18857bfcfe787376e, type: 3}
   plane: {fileID: 36790729}
+  coinGain: 15
   spawnHeight: 50
 --- !u!54 &6298868156206794500
 Rigidbody:
@@ -3374,7 +3375,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
