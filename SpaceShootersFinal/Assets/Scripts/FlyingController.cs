@@ -10,6 +10,11 @@ public class FlyingController : MonoBehaviour
     public float turnSpeed = 60f; // Speed of turning the plane
     public float rotationSpeed = 5.0f;
 
+    public float maxYAngle = 80f;
+    public float minYAngle = -80f;
+    public float deadzoneRadius = 50f;
+    public float sensitivity = 5f;
+
       public bool pressingThrottle = false;
     public bool throttle => pressingThrottle;
 
@@ -20,11 +25,15 @@ public class FlyingController : MonoBehaviour
 
     private Camera mainCamera;
 
+    private Vector2 currentRotation;
+
     private void Start()
     {  
         gameController = FindObjectOfType<GameController>();
         mainCamera = FindObjectOfType<Camera>(); 
+        currentRotation = new Vector2(transform.localEulerAngles.y, -transform.localEulerAngles.x);
     }
+   
 
     private void Update()
     {
@@ -34,24 +43,31 @@ public class FlyingController : MonoBehaviour
         }
 
         // Cursor.lockState = CursorLockMode.Locked;
-        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        if (groundPlane.Raycast(cameraRay, out float rayLength))
+       Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        float distanceFromCenter = Vector2.Distance(Input.mousePosition, screenCenter);
+
+        if (distanceFromCenter > deadzoneRadius)
         {
-            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+            // Calculate mouse displacement from the center
+            Vector2 mouseDisplacement = new Vector2(Input.mousePosition.x - screenCenter.x, Input.mousePosition.y - screenCenter.y);
 
-            // Debug line to visualize the ray in the Scene view
-        //     Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
+            // Adjust rotation based on mouse position and sensitivity
+            // To invert the horizontal movement, change the sign of mouseDisplacement.x in the equation
+            // To keep vertical movement non-inverted, ensure the sign for mouseDisplacement.y remains negative
+            currentRotation.x += mouseDisplacement.x * sensitivity * Time.deltaTime;
+            // If vertical movement feels inverted, adjust the sign here as well
+            currentRotation.y += mouseDisplacement.y * sensitivity * Time.deltaTime;
 
-            // Determine the target rotation to look at the point of intersection
-            Quaternion targetRotation = Quaternion.LookRotation(pointToLook - transform.position);
+            // Clamp the vertical rotation
+            currentRotation.y = Mathf.Clamp(currentRotation.y, minYAngle, maxYAngle);
 
-            // Adjust the target rotation to only rotate around the Y axis
-            targetRotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+            // Apply the rotation to the object
+            Quaternion xQuaternion = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
+            Quaternion yQuaternion = Quaternion.AngleAxis(currentRotation.y, Vector3.left);
 
-            // Smoothly rotate the plane towards the target rotation
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.localRotation = xQuaternion * yQuaternion;
         }
+
 
         // forward and back
         float vertical = Input.GetAxis("Horizontal");
