@@ -1156,30 +1156,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Space - Toggle Movement
-
-    W/S - Tilt Up and Down
-
-    A/D - Turn Left
-    and Right
-
-    Q/E - Tilt Left and Right
-
-    X - Shoot
-
-    ESC - Pause
-
-    K
-    - Shop (WIP)
-
-    Green Orbs -  Heal
-
-    Blue Orbs - Double Speed
-
-    Red Orbs
-    - Double Damage
-
-'
+  m_text: "Space - Shoot\nW/S - Move forward and back\nA/D - Move left and right\nQ/E
+    - Move up and down \nCursor to aim\nESC - Pause\nK - Shop (WIP)\nGreen Orbs - 
+    Heal\nBlue Orbs - Double Speed\nRed Orbs - Double Damage\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
