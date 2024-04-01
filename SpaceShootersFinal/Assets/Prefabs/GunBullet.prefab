@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9dcf913a6e81446ce9dd2a25c5912142, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

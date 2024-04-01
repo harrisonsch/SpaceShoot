@@ -17,4 +17,4 @@ MonoBehaviour:
   cost: 5
   description: Shoots three bullets at once
   value: 2
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5aaa5f313f585495791d2d349ce945a0, type: 3}
