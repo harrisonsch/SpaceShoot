@@ -52,6 +52,7 @@ public class FlyingController : MonoBehaviour
             // Smoothly rotate the plane towards the target rotation
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
+
  
         // forward and back
         float vertical = Input.GetAxis("Horizontal");
