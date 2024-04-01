@@ -42,6 +42,7 @@ public class FlyingController : MonoBehaviour
         {
             
 
+<<<<<<< Updated upstream
             activePitch = Input.GetAxisRaw("Vertical") * (pitchPower * powerMult) * Time.deltaTime;
             activeRoll = Input.GetAxisRaw("Horizontal") * (rollPower * powerMult) * Time.deltaTime;
             activeYaw = Input.GetAxisRaw("Yaw") * (yawPower * powerMult) * Time.deltaTime;
@@ -50,6 +51,12 @@ public class FlyingController : MonoBehaviour
                 enginePower = enginePower / 5;
             }
             transform.position += transform.forward * (enginePower) * Time.deltaTime;
+=======
+        // forward and back
+        float vertical = Input.GetAxis("Horizontal");
+
+        transform.Translate(Vector3.up * vertical * moveSpeed * Time.deltaTime, Space.Self);
+>>>>>>> Stashed changes
 
             transform.Rotate(activePitch,
                 activeYaw,

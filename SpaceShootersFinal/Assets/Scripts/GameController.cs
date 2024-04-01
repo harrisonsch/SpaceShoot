@@ -79,6 +79,16 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void DeactivatePowerUp(PowerUp powerUp)
+    {
+        powerUp.Deactivate();
+        if (!powerUpManager.powerUpRegister.Contains(powerUp))
+        {
+            powerUpManager.powerUpRegister.Add(powerUp);
+        }
+        activePowerUps.Remove(powerUp);
+    }
+
     public float GetEnginePower()
     {
         return currSpeed;
