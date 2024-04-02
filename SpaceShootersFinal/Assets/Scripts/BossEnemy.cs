@@ -34,6 +34,7 @@ public class BossEnemy : MonoBehaviour
     private float directionTimer = 0;
     public float changeDirectionTime = 2.5f;
     public bool moveAway = false;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -211,6 +212,7 @@ IEnumerator ShootSpiralPattern3D() {
 
         if(health <= 0) {
             Debug.Log("killed");
+                audioSource.Play();
             Destroy(gameObject);
             SceneManager.LoadScene("GameOverScene");
         }
