@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SpeedAddPowerup", menuName = "PowerUp/Speed/SpeedAddPowerup")]
 public class SpeedAddPowerup : PowerUp
 {
-    bool isActive = false;
     public SpeedAddPowerup()
     {
         powerUpName = "INSERTNAME";

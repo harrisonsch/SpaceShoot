@@ -6,10 +6,12 @@ using UnityEngine.Audio;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class PauseHandler : MonoBehaviour {
 
         public static bool GameisPaused = false;
         public GameObject pauseMenuUI;
+        private PowerUpManager powerUpManager;
         // public AudioMixer mixer;
         // public static float volumeLevel = 1.0f;
         // private Slider sliderVolumeCtrl;
@@ -71,6 +73,13 @@ public class PauseHandler : MonoBehaviour {
         public void StartGame(){
                 if(GameController.Instance != null) {
                         GameController.Instance.health = GameController.Instance.baseHealth;
+                        powerUpManager = FindObjectOfType<PowerUpManager>();
+                        foreach (PowerUp powerUp in GameController.Instance.activePowerUps) {
+                                if (!powerUpManager.powerUpRegister.Contains(powerUp)) {
+                                        powerUpManager.powerUpRegister.Add(powerUp);
+                                }
+                        }
+                        GameController.Instance.activePowerUps.Clear();
                 }
             SceneManager.LoadScene("MainScene");
         }

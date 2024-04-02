@@ -61,15 +61,15 @@ public class GameController : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("Health") != null) {
 
                 healthText = GameObject.FindGameObjectWithTag("Health").GetComponent<TextMeshProUGUI>();
+                healthText.text = "Health: " + health.ToString();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= nextBoostTime && boostActive)
         {
             StartCoroutine(ActivateBoost());
             nextBoostTime = Time.time + boostCooldown; 
         }
-        healthText.text = "Health: " + health.ToString();
+       
         CalculateCurrentStats();
-        
     }
 
     IEnumerator ActivateBoost()

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbc9ad223cb464f84bd43316ca59c517, type: 3}
-  m_Name: Add20Speed
+  m_Name: Add50Speed
   m_EditorClassIdentifier: 
   powerUpName: Increase Speed
   duration: 999

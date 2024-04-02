@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DamageAddPowerup", menuName = "PowerUp/Damage/DamageAddPowerup")]
 public class DamageAddPowerup : PowerUp
 {
-    bool isActive = false;
     public DamageAddPowerup()
     {
         powerUpName = "INSERTNAME";
