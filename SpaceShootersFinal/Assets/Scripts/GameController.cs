@@ -29,6 +29,8 @@ public class GameController : MonoBehaviour
      private float nextBoostTime = 0f; 
     public float boostCooldown = 1f; 
     public float boostDuration = 1f; 
+    private AudioSource audioSource;
+    
     
     private void Awake()
     {
@@ -48,6 +50,7 @@ public class GameController : MonoBehaviour
         currSpeed = baseSpeed;
         powerUpManager = FindObjectOfType<PowerUpManager>();
         healthText.text = "Health: " + health.ToString();
+        audioSource = GetComponent<AudioSource>();
         // DoubleSpeed doubleSpeed = new DoubleSpeed();
         // powerUpManager.RegisterPowerUp(doubleSpeed);
         // activePowerUps.Add(doubleSpeed);
@@ -71,6 +74,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator ActivateBoost()
     {
+        audioSource.Play();
         Debug.Log("boosting");
         float originalSpeed = baseSpeed;
         baseSpeed *= 10; 
@@ -130,7 +134,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Ship hit for " + value + " health is now " + health);
         if(health <= 0){
                 Debug.Log("Game Over");
-                SceneManager.LoadScene("GameOverScene");
+                SceneManager.LoadScene("LoseScene");
         }
     }
 }

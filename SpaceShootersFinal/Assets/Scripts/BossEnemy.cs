@@ -45,6 +45,7 @@ public class BossEnemy : MonoBehaviour
         strafeTargetPosition = transform.position + (initialRightDirection * strafeRange);
         strafeTimer = strafeDelay;
         strafeDirection = Random.value > 0.5f ? transform.right : -transform.right;
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -214,7 +215,7 @@ IEnumerator ShootSpiralPattern3D() {
             Debug.Log("killed");
                 audioSource.Play();
             Destroy(gameObject);
-            SceneManager.LoadScene("GameOverScene");
+            SceneManager.LoadScene("WinScene");
         }
     }
     
