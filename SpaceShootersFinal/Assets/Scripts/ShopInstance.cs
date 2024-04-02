@@ -10,7 +10,7 @@ public class ShopInstance : MonoBehaviour
     [SerializeField] private Text descriptionText;
     private PowerUpManager powerUpManager;
     private List<PowerUp> availablePowerUps;
-    public int shopItemsCount = 2;
+    public int shopItemsCount = 4;
     public List<PowerUp> currentShop = new List<PowerUp>(); 
     public GameObject powerUpPrefab; 
     public Transform shopPanelTransform;
