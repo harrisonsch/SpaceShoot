@@ -17,4 +17,4 @@ MonoBehaviour:
   cost: 3
   description: Adds 20 to your damage
   value: 20
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ecba674d8598f499c8d18fcb4c017fa4, type: 3}
