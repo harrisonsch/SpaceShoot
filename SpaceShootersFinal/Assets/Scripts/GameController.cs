@@ -25,6 +25,10 @@ public class GameController : MonoBehaviour
     private PowerUpManager powerUpManager;
     public TextMeshProUGUI healthText;
     public bool hasMoved = false;
+    public bool boostActive = false;
+     private float nextBoostTime = 0f; 
+    public float boostCooldown = 1f; 
+    public float boostDuration = 1f; 
     
     private void Awake()
     {
@@ -55,9 +59,23 @@ public class GameController : MonoBehaviour
 
                 healthText = GameObject.FindGameObjectWithTag("Health").GetComponent<TextMeshProUGUI>();
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= nextBoostTime && boostActive)
+        {
+            StartCoroutine(ActivateBoost());
+            nextBoostTime = Time.time + boostCooldown; // Reset cooldown
+        }
         healthText.text = "Health: " + health.ToString();
         CalculateCurrentStats();
         
+    }
+
+    IEnumerator ActivateBoost()
+    {
+        Debug.Log("boosting");
+        float originalSpeed = baseSpeed;
+        baseSpeed *= 10; // Apply boost effect
+        yield return new WaitForSeconds(boostDuration); // Wait for the boost duration
+        baseSpeed = originalSpeed; // Revert to original speed
     }
 
     void CalculateCurrentStats()

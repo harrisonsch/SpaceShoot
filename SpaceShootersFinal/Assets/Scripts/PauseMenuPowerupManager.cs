@@ -16,6 +16,7 @@ public class PauseMenuPowerUpManager : MonoBehaviour
     void Start()
     {
         powerUpManager = FindObjectOfType<PowerUpManager>();
+        ClearActivePowerUpsUI();
         PopulateActivePowerUpsUI();
     }
 

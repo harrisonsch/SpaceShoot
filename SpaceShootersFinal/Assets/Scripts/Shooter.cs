@@ -21,7 +21,6 @@ public class Shooter : MonoBehaviour
     {
         fireRate = GameController.Instance.fireRate;
         shots = (int)GameController.Instance.shots;
-        Debug.Log("fire rate is " + fireRate);
         if (Input.GetKey(KeyCode.Space)) 
         {
                 if(!GameController.Instance.hasMoved) {
