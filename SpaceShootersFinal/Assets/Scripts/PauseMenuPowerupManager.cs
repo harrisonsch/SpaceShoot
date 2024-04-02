@@ -9,8 +9,8 @@ public class PauseMenuPowerUpManager : MonoBehaviour
     [SerializeField] private CanvasGroup descriptionPanelCanvasGroup;
     [SerializeField] private Text descriptionText;
     private PowerUpManager powerUpManager;
-    public GameObject powerUpPrefab; // Prefab for displaying power-ups
-    public Transform activePowerUpsPanelTransform; // The parent transform where active power-ups are displayed
+    public GameObject powerUpPrefab; 
+    public Transform activePowerUpsPanelTransform; 
     private Dictionary<PowerUp, GameObject> powerUpToGameObjectMap = new Dictionary<PowerUp, GameObject>();
 
     void Start()
@@ -23,7 +23,7 @@ public class PauseMenuPowerUpManager : MonoBehaviour
     void OnEnable()
 {
     powerUpManager = FindObjectOfType<PowerUpManager>();
-    ClearActivePowerUpsUI(); // Ensure the UI is cleared before repopulating
+    ClearActivePowerUpsUI(); //clear UI (might not clear on menu close)
     PopulateActivePowerUpsUI();
 }
 
@@ -48,14 +48,12 @@ void ClearActivePowerUpsUI()
         // Assign the CanvasGroup for each instantiated prefab
         CanvasGroup itemDescriptionPanelCanvasGroup = itemUI.transform.Find("HoverPanel").GetComponent<CanvasGroup>();
         Text descriptionText = itemDescriptionPanelCanvasGroup.transform.Find("Description").GetComponent<Text>();
-        descriptionText.text = powerUp.description; // Set the initial description text
+        descriptionText.text = powerUp.description; 
 
-        // Make sure the description is initially hidden
         itemDescriptionPanelCanvasGroup.alpha = 0;
         itemDescriptionPanelCanvasGroup.blocksRaycasts = false;
 
         powerUpToGameObjectMap[powerUp] = itemUI;
-        // Set up the event triggers for this specific item
         SetupEventTriggers(itemUI, powerUp, itemDescriptionPanelCanvasGroup);
     }
 }
@@ -84,7 +82,6 @@ void SetupEventTriggers(GameObject itemUI, PowerUp powerUp, CanvasGroup descript
         if (pointerData.button == PointerEventData.InputButton.Right)
         {
             SellPowerUp(powerUp);
-            // You might also want to hide the description here
             descriptionPanelCanvasGroup.alpha = 0;
             descriptionPanelCanvasGroup.blocksRaycasts = false;
         }
@@ -110,8 +107,6 @@ void SetupEventTriggers(GameObject itemUI, PowerUp powerUp, CanvasGroup descript
 
     void SellPowerUp(PowerUp powerUp)
     {
-        // Implement the logic to sell the power-up, which might involve adding currency to the player's balance,
-        // removing the power-up from activePowerUps, and updating the UI.
         GameController.Instance.balance += (int)powerUp.cost; 
         Debug.Log("adding " + (int) powerUp.cost + " for " + powerUp.powerUpName);
         Debug.Log("balance is " + GameController.Instance.balance);

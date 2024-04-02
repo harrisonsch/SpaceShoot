@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= nextBoostTime && boostActive)
         {
             StartCoroutine(ActivateBoost());
-            nextBoostTime = Time.time + boostCooldown; // Reset cooldown
+            nextBoostTime = Time.time + boostCooldown; 
         }
         healthText.text = "Health: " + health.ToString();
         CalculateCurrentStats();
@@ -73,9 +73,9 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("boosting");
         float originalSpeed = baseSpeed;
-        baseSpeed *= 10; // Apply boost effect
-        yield return new WaitForSeconds(boostDuration); // Wait for the boost duration
-        baseSpeed = originalSpeed; // Revert to original speed
+        baseSpeed *= 10; 
+        yield return new WaitForSeconds(boostDuration); 
+        baseSpeed = originalSpeed; 
     }
 
     void CalculateCurrentStats()
