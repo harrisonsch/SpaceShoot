@@ -15,6 +15,7 @@ public class FlyingController : MonoBehaviour
     public float deadzoneRadius = 50f;
     public float sensitivity = 5f;
 
+
       public bool pressingThrottle = false;
     public bool throttle => pressingThrottle;
 
@@ -22,6 +23,12 @@ public class FlyingController : MonoBehaviour
     public float powerMult = 1f;
 
     private float activeRoll, activePitch, activeYaw, activeTurn;
+
+
+        private Vector3 lastCollisionDirection = Vector3.zero;
+    private bool isInReversal = false;
+    private float reversalDuration = 1.0f; // Duration to force reverse movement
+    private float reversalTimer = 0.0f;
 
     private Camera mainCamera;
 
@@ -42,6 +49,7 @@ public class FlyingController : MonoBehaviour
             moveSpeed = GameController.Instance.GetEnginePower();
         }
 
+
         // Cursor.lockState = CursorLockMode.Locked;
        Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
         float distanceFromCenter = Vector2.Distance(Input.mousePosition, screenCenter);
@@ -51,17 +59,12 @@ public class FlyingController : MonoBehaviour
             // Calculate mouse displacement from the center
             Vector2 mouseDisplacement = new Vector2(Input.mousePosition.x - screenCenter.x, Input.mousePosition.y - screenCenter.y);
 
-            // Adjust rotation based on mouse position and sensitivity
-            // To invert the horizontal movement, change the sign of mouseDisplacement.x in the equation
-            // To keep vertical movement non-inverted, ensure the sign for mouseDisplacement.y remains negative
+        
             currentRotation.x += mouseDisplacement.x * sensitivity * Time.deltaTime;
-            // If vertical movement feels inverted, adjust the sign here as well
             currentRotation.y += mouseDisplacement.y * sensitivity * Time.deltaTime;
 
-            // Clamp the vertical rotation
             currentRotation.y = Mathf.Clamp(currentRotation.y, minYAngle, maxYAngle);
 
-            // Apply the rotation to the object
             Quaternion xQuaternion = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
             Quaternion yQuaternion = Quaternion.AngleAxis(currentRotation.y, Vector3.left);
 
@@ -83,3 +86,4 @@ public class FlyingController : MonoBehaviour
     }
 
 }
+

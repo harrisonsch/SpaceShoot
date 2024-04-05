@@ -82,15 +82,6 @@ public class Bosstwo : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, movePosition, (strafeSpeed + moveAwaySpeed) * Time.deltaTime);
     }
 
-    void MoveBackwards() {
-        // Calculate the direction from the boss to the player
-        Vector3 directionToPlayer = player.transform.position - transform.position;
-
-        // Move the boss away from the player
-        // The speed of moving back could be influenced by the player's engine power, for example
-        Vector3 moveBackPosition = transform.position - directionToPlayer.normalized * (moveAwaySpeed + player.GetComponent<FlyingController>().enginePower * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, moveBackPosition, moveAwaySpeed * Time.deltaTime);
-    }
 
     void LookAtPlayer()
     {
