@@ -150,6 +150,8 @@ public class FlyingController : MonoBehaviour
             Quaternion yQuaternion = Quaternion.AngleAxis(currentRotation.y, Vector3.left);
 
             rb.MoveRotation(xQuaternion * yQuaternion); 
+        } else {
+                rb.angularVelocity = Vector3.zero;
         }
 
         Vector3 movement = new Vector3(Input.GetAxis("Turn") * moveSpeed, Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
