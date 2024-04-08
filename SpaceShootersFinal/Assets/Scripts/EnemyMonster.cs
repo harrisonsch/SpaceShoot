@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class EnemyMonster : MonoBehaviour
 {
@@ -10,14 +11,19 @@ public class EnemyMonster : MonoBehaviour
     public HealthBar healthBar; // Reference to a health bar component
     public GameObject damageText; // Prefab for a damage text indicator
     public Transform spawnPos; // Position where damage text indicator will spawn
-
+        private bool isDying = false;
     private AudioSource audioSource; // Audio source component for playing sound effects
 
+        void Start()
+        {
+                audioSource = gameObject.GetComponent<AudioSource>();
+        }
     // Method called to inflict damage on the enemy
-    public void Damage(float value)
+    public IEnumerator Damage(float value)
     {
+        if(isDying) yield break;
         health -= value; // Decrease enemy's health by the specified value
-
+        Debug.Log(health);
         // Update health bar if available
         if (healthBar != null)
         {
@@ -29,15 +35,20 @@ public class EnemyMonster : MonoBehaviour
         indicator.SetDamageText(value);
         indicator.transform.localScale = new Vector3(3, 3, 3); 
 
-        // Update health text to display current health
-        healthText.text = "Boss: " + health.ToString();
 
         // Check if enemy is killed
-        if (health <= 0)
+        if (health <= 0 && !isDying)
         {
-            audioSource.Play(); // Play audio cue for enemy death
-            Destroy(gameObject); // Destroy enemy GameObject
-            SceneManager.LoadScene("WinScene"); // Load win scene
+                isDying = true; // Prevent further execution if dying
+                Debug.Log("booming");
+                audioSource.Play();
+                Debug.Log("waiting");
+                Time.timeScale = 1;
+                yield return new WaitForSeconds(2f);
+                Debug.Log("waited");
+                Destroy(gameObject);
+                Debug.Log("loading");
+                SceneManager.LoadScene("WinScene");
         }
     }
 }

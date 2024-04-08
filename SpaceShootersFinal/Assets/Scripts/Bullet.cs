@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class Bullet : MonoBehaviour
                 BossEnemy enemy = other.gameObject.GetComponent<BossEnemy>();
                 if(enemy != null) {
                         enemy.Damage(damage);
+                } else {
+                        EnemyMonster monster = other.gameObject.GetComponent<EnemyMonster>();
+                        if(monster != null) {
+                                StartCoroutine(monster.Damage(damage));
+                        }
                 }
                 Destroy(gameObject);
         }
