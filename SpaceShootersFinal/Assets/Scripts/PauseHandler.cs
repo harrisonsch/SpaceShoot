@@ -89,6 +89,9 @@ public class PauseHandler : MonoBehaviour {
         public void Controls(){
             SceneManager.LoadScene("ControlsScene");
         }
+        public void Tutorial(){
+            SceneManager.LoadScene("0Scene");
+        }
         public void Return(){
                 Time.timeScale = 1f;
                 StartCoroutine(LoadMainMenuAsync());

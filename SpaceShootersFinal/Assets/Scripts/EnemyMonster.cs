@@ -43,12 +43,9 @@ public class EnemyMonster : MonoBehaviour
                 Debug.Log("booming");
                 audioSource.Play();
                 Debug.Log("waiting");
-                Time.timeScale = 1;
-                yield return new WaitForSeconds(2f);
-                Debug.Log("waited");
                 Destroy(gameObject);
-                Debug.Log("loading");
                 SceneManager.LoadScene("WinScene");
         }
+        yield return null;
     }
 }
