@@ -56,7 +56,9 @@ public class BossEnemy : MonoBehaviour
         healthText.text = "Boss: " + health.ToString();
         if(shotCooldown < 0f) {
             Debug.Log("shooting");
-            ShootRadialBurst();
+        //     ShootRadialBurst();
+        //     StartCoroutine(ShootSpiralPattern3D()); 
+                ShootAtPlayer();
             shotCooldown = shootingRate;
         }
         
@@ -245,20 +247,25 @@ void ShootRadialBurst() {
 
     void ShootAtPlayer() {
     if(playerPos != null) {
+        // Step 1: Estimate player's current velocity.
+        // Assuming you have a method to get the player's current velocity. If not, you'll need to implement one.
         Vector3 estimatedPlayerVelocity = CalculateEstimatedVelocity();
         
+        // Step 2: Calculate the time it takes for a bullet to reach the player's current position.
         Vector3 directionToPlayer = playerPos.position - transform.position;
+        float distanceToPlayer = directionToPlayer.magnitude;
+        float bulletTravelTime = distanceToPlayer / bulletSpeed; // Assuming constant bullet speed.
         
-        float bulletTravelTime = directionToPlayer.magnitude / bulletSpeed;
-
+        // Step 3: Predict the player's future position based on their velocity and the bullet travel time.
         Vector3 predictedPlayerPosition = playerPos.position + estimatedPlayerVelocity * bulletTravelTime;
-
+        
+        // Aim the bullet at the predicted position.
         directionToPlayer = predictedPlayerPosition - transform.position;
         Quaternion bulletRotation = Quaternion.LookRotation(directionToPlayer);
-
+        
         GameObject bulletObj = Instantiate(bullet, transform.position, bulletRotation);
         BossBullet bossbullet = bulletObj.GetComponent<BossBullet>();
-
+        
         if(bossbullet != null) {
             bossbullet.speedinit = bulletSpeed;
             bossbullet.damage = bulletDamage;
@@ -267,17 +274,15 @@ void ShootRadialBurst() {
     }
 }
 
-   Vector3 CalculateEstimatedVelocity() {
-    FlyingController playerController = player.GetComponent<FlyingController>();
-
-    
-    Vector3 forwardVelocity = player.transform.forward * playerController.moveSpeed;
-    Vector3 rightVelocity = player.transform.right * playerController.moveSpeed;
-    Vector3 upVelocity = player.transform.up * playerController.moveSpeed;
-
-    Vector3 combinedVelocity = (forwardVelocity + rightVelocity + upVelocity);
-
-    return combinedVelocity;
+Vector3 CalculateEstimatedVelocity() {
+    // This method should calculate the player's velocity based on their movement.
+    // Since the game doesn't involve acceleration, you could calculate this by
+    // measuring the change in position over time. This is a placeholder function.
+    Vector3 previousPosition = Vector3.zero; // You need to update this every frame.
+    Vector3 currentPosition = playerPos.position; // Current position of the player.
+    Vector3 velocity = (currentPosition - previousPosition) / Time.deltaTime; // Calculate velocity.
+    previousPosition = currentPosition; // Update previous position for the next frame.
+    return velocity;
 }
 
     Vector3 AccuracyAdjuster(Vector3 originalDirection, float accuracy)
