@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedinit: 200
   damage: 10
-  lifetime: 2.5
+  lifetime: 2
   speed: 0
 --- !u!135 &1078837333933496208
 SphereCollider:
