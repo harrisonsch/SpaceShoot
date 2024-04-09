@@ -7,6 +7,6 @@ public class OpeningSceneScript : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
