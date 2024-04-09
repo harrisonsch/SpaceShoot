@@ -56,9 +56,9 @@ public class BossEnemy : MonoBehaviour
         healthText.text = "Boss: " + health.ToString();
         if(shotCooldown < 0f) {
             Debug.Log("shooting");
-        //     ShootRadialBurst();
+            ShootRadialBurst();
         //     StartCoroutine(ShootSpiralPattern3D()); 
-                ShootAtPlayer();
+                // ShootAtPlayer();
             shotCooldown = shootingRate;
         }
         
