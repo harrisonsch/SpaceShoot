@@ -11601,7 +11601,7 @@ MonoBehaviour:
   maxYAngle: 20
   minYAngle: -20
   deadzoneRadius: 75
-  sensitivity: 0.5
+  sensitivity: 0.4
   pressingThrottle: 0
   pitchPower: 90
   rollPower: 250
