@@ -3,6 +3,7 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public GameObject ship;
     public Transform[] bulletSpawnPoints;
     public float fireRate = 5f; 
     private Vector3 aim;
@@ -43,6 +44,7 @@ public class Shooter : MonoBehaviour
                 for (int i = 0; i < shots; i++) {
                         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoints[i].position, bulletSpawnPoints[i].rotation);
                         bullet.transform.LookAt(hit.point);
+                        Physics.IgnoreCollision(bullet.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true);
                 }
             }
             // var ray = Camera.main.ScreenPointToRay(Input.mousePosition);

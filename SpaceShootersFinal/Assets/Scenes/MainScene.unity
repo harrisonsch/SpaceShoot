@@ -17060,7 +17060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285131760}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootPos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26853,7 +26853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853256317}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootPos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29737,6 +29737,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8700617353114198275, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8700617353114198275, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -29796,13 +29800,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7677471772335586173, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1599826595754709761, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -466329591000292508, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Name
       value: player_ship
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291190919447392298, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649304590781711473, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013638940889411661, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
       propertyPath: m_IsActive
@@ -29949,6 +30005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6907212828706505053, guid: 1a9b80c579b084926954674b97af7e2c, type: 3}
+  ship: {fileID: 0}
   bulletSpawnPoints:
   - {fileID: 6576192099459207440}
   - {fileID: 1285131760}
@@ -30105,7 +30162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6576192099459207440}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30125,7 +30182,7 @@ GameObject:
   - component: {fileID: 6774290427853849916}
   - component: {fileID: 3948569007525022318}
   - component: {fileID: 7803793696391454340}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
