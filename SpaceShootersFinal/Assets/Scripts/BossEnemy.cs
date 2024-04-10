@@ -35,6 +35,7 @@ public class BossEnemy : MonoBehaviour
     public float changeDirectionTime = 2.5f;
     public bool moveAway = false;
     private AudioSource audioSource;
+    public float accuracy = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,9 +57,9 @@ public class BossEnemy : MonoBehaviour
         healthText.text = "Boss: " + health.ToString();
         if(shotCooldown < 0f) {
             Debug.Log("shooting");
-            ShootRadialBurst();
+        //     ShootRadialBurst();
         //     StartCoroutine(ShootSpiralPattern3D()); 
-                // ShootAtPlayer();
+                ShootAtPlayer();
             shotCooldown = shootingRate;
         }
         
@@ -247,20 +248,11 @@ void ShootRadialBurst() {
 
     void ShootAtPlayer() {
     if(playerPos != null) {
-        // Step 1: Estimate player's current velocity.
-        // Assuming you have a method to get the player's current velocity. If not, you'll need to implement one.
-        Vector3 estimatedPlayerVelocity = CalculateEstimatedVelocity();
         
-        // Step 2: Calculate the time it takes for a bullet to reach the player's current position.
         Vector3 directionToPlayer = playerPos.position - transform.position;
-        float distanceToPlayer = directionToPlayer.magnitude;
-        float bulletTravelTime = distanceToPlayer / bulletSpeed; // Assuming constant bullet speed.
+     
+        directionToPlayer = AccuracyAdjuster(directionToPlayer, accuracy);
         
-        // Step 3: Predict the player's future position based on their velocity and the bullet travel time.
-        Vector3 predictedPlayerPosition = playerPos.position + estimatedPlayerVelocity * bulletTravelTime;
-        
-        // Aim the bullet at the predicted position.
-        directionToPlayer = predictedPlayerPosition - transform.position;
         Quaternion bulletRotation = Quaternion.LookRotation(directionToPlayer);
         
         GameObject bulletObj = Instantiate(bullet, transform.position, bulletRotation);
@@ -272,17 +264,6 @@ void ShootRadialBurst() {
             bossbullet.lifetime = lifetime;
         }
     }
-}
-
-Vector3 CalculateEstimatedVelocity() {
-    // This method should calculate the player's velocity based on their movement.
-    // Since the game doesn't involve acceleration, you could calculate this by
-    // measuring the change in position over time. This is a placeholder function.
-    Vector3 previousPosition = Vector3.zero; // You need to update this every frame.
-    Vector3 currentPosition = playerPos.position; // Current position of the player.
-    Vector3 velocity = (currentPosition - previousPosition) / Time.deltaTime; // Calculate velocity.
-    previousPosition = currentPosition; // Update previous position for the next frame.
-    return velocity;
 }
 
     Vector3 AccuracyAdjuster(Vector3 originalDirection, float accuracy)
