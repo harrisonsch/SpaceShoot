@@ -465,7 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 36790729}
   bullet: {fileID: 2460905112816403247, guid: d3157a8360c004f2b92c80e9e742cbc0, type: 3}
-  bulletSpeed: 1200
+  bulletSpeed: 4000
   bulletDamage: 10
   lifetime: 5
   shootingRate: 0.05
@@ -31154,14 +31154,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -8700617353114198275, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -31285,6 +31277,14 @@ PrefabInstance:
     - target: {fileID: 9013638940889411661, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -32006,7 +32006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activePowerUps: []
   baseDamage: 20
-  baseSpeed: 300
+  baseSpeed: 500
   currSpeedMult: 1
   currSpeedAdds: 0
   currDamageMult: 1
