@@ -11,6 +11,7 @@ TagManager:
   - ShopHandler
   - moved
   - Wall
+  - critPoint
   layers:
   - Default
   - TransparentFX

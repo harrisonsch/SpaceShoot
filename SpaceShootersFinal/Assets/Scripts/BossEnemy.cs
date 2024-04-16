@@ -36,6 +36,10 @@ public class BossEnemy : MonoBehaviour
     public bool moveAway = false;
     private AudioSource audioSource;
     public float accuracy = 0.5f;
+    public bool playerLook = false;
+    public int burstCount = 1;
+    public float burstCD = 0.5f;
+    public Vector3 indicatorSize = new Vector3(3,3,3);
     // Start is called before the first frame update
     void Start()
     {
@@ -53,13 +57,19 @@ public class BossEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(playerLook) {
+
         LookAtPlayer();
+        }
+        if(healthText != null) {
+
         healthText.text = "Boss: " + health.ToString();
+        }
         if(shotCooldown < 0f) {
             Debug.Log("shooting");
         //     ShootRadialBurst();
         //     StartCoroutine(ShootSpiralPattern3D()); 
-                ShootAtPlayer();
+        StartCoroutine(ShootBurst(burstCount, burstCD));
             shotCooldown = shootingRate;
         }
         
@@ -84,6 +94,24 @@ public class BossEnemy : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, movePosition, (strafeSpeed + moveAwaySpeed) * Time.deltaTime);
     }
+
+    IEnumerator ShootBurst(int burstCount, float delayBetweenShots) {
+    if (playerPos != null) {
+        for (int i = 0; i < burstCount; i++) {
+            Vector3 directionToPlayer = playerPos.position - transform.position;
+            directionToPlayer = AccuracyAdjuster(directionToPlayer, accuracy);
+            Quaternion bulletRotation = Quaternion.LookRotation(directionToPlayer);
+            GameObject bulletObj = Instantiate(bullet, transform.position, bulletRotation);
+            BossBullet bossbullet = bulletObj.GetComponent<BossBullet>();
+            if (bossbullet != null) {
+                bossbullet.speedinit = bulletSpeed;
+                bossbullet.damage = bulletDamage;
+                bossbullet.lifetime = lifetime;
+            }
+            yield return new WaitForSeconds(delayBetweenShots);
+        }
+    }
+}
 
 
     void LookAtPlayer()
@@ -195,8 +223,12 @@ IEnumerator ShootSpiralPattern3D() {
         // Vector3 temp = new Vector3(60f, 0, 0);
         DamageIndicator indicator = Instantiate(damageText, spawnPos.position, Quaternion.identity).GetComponent<DamageIndicator>();
         indicator.SetDamageText(value);
-        indicator.transform.localScale = new Vector3(3,3,3); 
+        indicator.transform.localScale = indicatorSize;
+        if(healthText != null) 
+        {
+
         healthText.text = "Boss: " + health.ToString();
+        }
 
         if(health <= 0) {
             Debug.Log("killed");

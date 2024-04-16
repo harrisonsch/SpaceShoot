@@ -9,6 +9,9 @@ public class DamageIndicator : MonoBehaviour
     public float lifetime = 0.6f;
     public float minDist = 2f;
     public float maxDist = 3f;
+    public float textX = 50f;
+    public float textY = 50f;
+    public float textZ = 30f;
 
     private Vector3 iniPos;
     private Vector3 targetPos;
@@ -38,7 +41,7 @@ public class DamageIndicator : MonoBehaviour
         else if (timer > fraction) text.color = Color.Lerp(text.color, Color.clear, (timer - fraction) / (lifetime - fraction));
 
         transform.position = Vector3.Lerp(iniPos, targetPos, Mathf.Sin(timer / lifetime));
-        transform.localScale = Vector3.Lerp(Vector3.zero, new Vector3(5f,5f,3f), Mathf.Sin(timer / lifetime));
+        transform.localScale = Vector3.Lerp(Vector3.zero, new Vector3(textX,textY,textZ), Mathf.Sin(timer / lifetime));
     }
 
     public void SetDamageText(float damage)

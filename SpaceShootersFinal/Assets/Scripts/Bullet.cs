@@ -32,6 +32,10 @@ public class Bullet : MonoBehaviour
                         }
                 }
                 Destroy(gameObject);
+        } else if (other.gameObject.tag == "critPoint") {
+                CritPoint critPoint = other.gameObject.GetComponent<CritPoint>();
+                critPoint.takeDamage(damage);
+                Destroy(gameObject);
         }
         
     }
