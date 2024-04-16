@@ -11,11 +11,11 @@ public class Shooter : MonoBehaviour
     public Vector3 mousePos;
     private float nextFireTime = 0f;
     public int shots = 1;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
