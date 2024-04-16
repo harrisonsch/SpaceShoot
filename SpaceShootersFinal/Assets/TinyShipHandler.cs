@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TinyShipHandler : MonoBehaviour
 {
@@ -15,20 +16,24 @@ public class TinyShipHandler : MonoBehaviour
     public GameObject damageText;
     public Transform spawnPos;
     private bool isDying = false;
+    public float minOrbitDistance = 10f;
+    public float maxOrbitDistance = 20f;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        // Initialize position
         RandomizePosition();
+        orbitDistance = Random.Range(minOrbitDistance, maxOrbitDistance);
         shootCooldown = shootRate;
     }
 
-    void Update()
-    {
-        OrbitPlayer();
-        ShootAtPlayer();
-    }
+    
+
+        void Update()
+        {       
+                OrbitPlayer();
+                ShootAtPlayer();
+        }
 
     void RandomizePosition()
     {
@@ -37,22 +42,16 @@ public class TinyShipHandler : MonoBehaviour
         transform.position = player.position + offset;
     }
 
-//     void OrbitPlayer()
-//     {
-//         transform.RotateAround(player.position, Vector3.up, orbitSpeed * Time.deltaTime);
-//         Vector3 toPlayer = transform.position - player.position;
-//         transform.position = player.position + toPlayer.normalized * orbitDistance;  // Maintain distance
-//     }
         void OrbitPlayer()
-{
-    // Erratic movement modification
-    float randomOffset = Random.Range(-0.5f, 0.5f); // Random offset for more unpredictable movement
+        {
+    
+    float randomOffset = Random.Range(-0.5f, 0.5f); 
 
     transform.RotateAround(player.position, Vector3.up, (orbitSpeed + randomOffset) * Time.deltaTime);
 
     Vector3 toPlayer = transform.position - player.position;
     transform.position = player.position + toPlayer.normalized * orbitDistance;
-}
+        }
 
     void ShootAtPlayer()
     {
@@ -61,7 +60,7 @@ public class TinyShipHandler : MonoBehaviour
         {
             Vector3 shootDirection = (player.position - transform.position).normalized;
             Quaternion shootRotation = Quaternion.LookRotation(shootDirection);
-            Instantiate(bulletPrefab, transform.position, shootRotation);  // Shoot directly at player
+            Instantiate(bulletPrefab, transform.position, shootRotation);  
             shootCooldown = shootRate;
         }
     }
@@ -77,11 +76,13 @@ public class TinyShipHandler : MonoBehaviour
         isDying = true;
             Debug.Log("killed");
                 boom.Play();
-                GameObject plane = transform.Find("plane").gameObject; // Adjust "Plane" to the actual name of your child GameObject
+                GameObject.FindGameObjectWithTag("TinyShipSpawner").GetComponent<EnemySpawner>().shipDied();
+                GameObject plane = transform.Find("plane").gameObject; 
                 if (plane != null) {
                         plane.SetActive(false);
                 }
                 Destroy(gameObject, boom.clip.length);
         }
     }
+    
 }

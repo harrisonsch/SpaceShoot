@@ -1,17 +1,21 @@
 using UnityEngine;
-
+using TMPro;
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;    
-    public Transform playerTransform; 
-    public float spawnRadius = 30f;   
-    public float spawnRate = 5f;      
+         public TextMeshProUGUI shipsText;
+        public int shipsKilled = 0;
+    public GameObject enemyPrefab;
+    public Transform playerCamera;  
+    public float minSpawnDistance = 50f;  
+    public float maxSpawnDistance = 100f;
+    public float spawnRate = 5f;
     private float spawnTimer;
+    public float spawnAngle = 45f;  
+    public float maxVerticalAngle = 20f;  
 
     void Update()
     {
         spawnTimer -= Time.deltaTime;
-
         if (spawnTimer <= 0)
         {
             SpawnEnemy();
@@ -20,18 +24,18 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy()
-{
-    // Calculate a random angle in radians
-    float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
+    {
+        float horizontalAngle = Random.Range(-spawnAngle, spawnAngle);
+        float verticalAngle = Random.Range(-maxVerticalAngle / 2, maxVerticalAngle / 2);
+        Quaternion spawnRotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0) * Quaternion.LookRotation(playerCamera.forward);
+        float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
+        Vector3 spawnPosition = playerCamera.position + spawnRotation * Vector3.forward * distance;
 
-    // Choose a random distance within a range
-    float distance = Random.Range(spawnRadius * 0.8f, spawnRadius); // 80% to 100% of spawnRadius
-
-    // Calculate the spawn position
-    Vector3 spawnPosition = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle)) * distance;
-    spawnPosition += playerTransform.position;
-
-    // Instantiate the enemy at the spawn position
-    Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-}
+        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+    }
+    public void shipDied() 
+    {
+        shipsKilled++;
+        shipsText.text = "Ships Killed: " + shipsKilled.ToString();
+    }
 }

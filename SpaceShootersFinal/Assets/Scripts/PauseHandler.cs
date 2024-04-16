@@ -81,7 +81,7 @@ public class PauseHandler : MonoBehaviour {
                         }
                         GameController.Instance.activePowerUps.Clear();
                 }
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("NewScene1");
         }
         public void Credits(){
             SceneManager.LoadScene("CreditScene");
@@ -101,7 +101,7 @@ public class PauseHandler : MonoBehaviour {
                 ShopInstance shop = GameObject.FindGameObjectWithTag("ShopHandler").GetComponent<ShopInstance>();
                 shop.ExitShop();
                 Time.timeScale = 1f;
-                SceneManager.LoadScene("MainScene");
+                SceneManager.LoadScene("NewScene1");
         }
 
         IEnumerator LoadMainMenuAsync()
@@ -123,8 +123,10 @@ public class PauseHandler : MonoBehaviour {
         }
 
         public void SetLevel (float sliderValue){
-                mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
-                volumeLevel = sliderValue;
+                if(mixer != null && sliderValue != null) {
+                        mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
+                        volumeLevel = sliderValue;
+                }
         }
         
 

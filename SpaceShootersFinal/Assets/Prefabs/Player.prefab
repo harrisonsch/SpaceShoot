@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6945451277194590438}
   - component: {fileID: 3994997830633862997}
   - component: {fileID: 7440091154626868912}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ParticleSystem_ShipExhaust1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4852,7 +4852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499068596757579024}
   m_LocalRotation: {x: -0, y: -0.731443, z: -0, w: 0.6819027}
-  m_LocalPosition: {x: -30.500002, y: 0, z: -4}
+  m_LocalPosition: {x: 0.6, y: 0, z: 7}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4883,7 +4883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3101609337576254252}
   m_LocalRotation: {x: -0, y: -0.731443, z: -0, w: 0.6819027}
-  m_LocalPosition: {x: -30.500004, y: 0, z: -0.50133514}
+  m_LocalPosition: {x: -1, y: 0, z: 7.6000004}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4900,7 +4900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8266515909021794443}
   - component: {fileID: 2796115169067598779}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shoot_SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5032,7 +5032,7 @@ GameObject:
   - component: {fileID: 4802759040715553820}
   - component: {fileID: 837956005602339604}
   - component: {fileID: 3043033997200160991}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5055,7 +5055,7 @@ Transform:
   - {fileID: 1536646850346799088}
   - {fileID: 6945451277194590438}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3961677376143160943
 BoxCollider:
@@ -5205,7 +5205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5657669104111640557}
   m_LocalRotation: {x: -0, y: -0.731443, z: -0, w: 0.6819027}
-  m_LocalPosition: {x: -29.499998, y: 0, z: 3}
+  m_LocalPosition: {x: -0.39999998, y: -0.8, z: 3}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5221,7 +5221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1536646850346799088}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AUDIO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5252,6 +5252,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8123777142620342780}
     m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5308,9 +5312,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7677471772335586173, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1599826595754709761, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -466329591000292508, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Name
       value: player_ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291190919447392298, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649304590781711473, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013638940889411661, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

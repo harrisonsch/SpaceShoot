@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 41a7e4d5e5e2b4c258d600aefdf4ff03, type: 2}
   m_audioClip: {fileID: 8300000, guid: f33d966826d8c4542bb59f73c33fbc61, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.216
+  m_Volume: 0.107
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -180,12 +180,14 @@ MonoBehaviour:
   player: {fileID: 0}
   bulletPrefab: {fileID: 2460905112816403247, guid: 4ccad804e1f514b9fb53c92ab33c3b45, type: 3}
   orbitDistance: 1000
-  orbitSpeed: 10
+  orbitSpeed: 8
   shootRate: 2
   health: 20
   boom: {fileID: 7615435462199677208}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
   spawnPos: {fileID: 1653322442125656466}
+  minOrbitDistance: 800
+  maxOrbitDistance: 2000
 --- !u!65 &8969908134398612375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -205,7 +207,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 250, y: 70, z: 200}
+  m_Size: {x: 300, y: 100, z: 250}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7960444205662829241
 Rigidbody:
@@ -311,15 +313,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
       propertyPath: m_LocalPosition.x

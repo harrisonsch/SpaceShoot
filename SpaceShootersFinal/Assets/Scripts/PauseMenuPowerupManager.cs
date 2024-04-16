@@ -22,9 +22,11 @@ public class PauseMenuPowerUpManager : MonoBehaviour
 
     void OnEnable()
 {
-    powerUpManager = FindObjectOfType<PowerUpManager>();
-    ClearActivePowerUpsUI(); //clear UI (might not clear on menu close)
-    PopulateActivePowerUpsUI();
+        powerUpManager = FindObjectOfType<PowerUpManager>();
+        if(powerUpManager != null) {
+                ClearActivePowerUpsUI(); //clear UI (might not clear on menu close)
+        PopulateActivePowerUpsUI();
+        }
 }
 
 void ClearActivePowerUpsUI()
@@ -38,24 +40,27 @@ void ClearActivePowerUpsUI()
 
     void PopulateActivePowerUpsUI()
 {
-    foreach (PowerUp powerUp in GameController.Instance.activePowerUps)
-    {
-        GameObject itemUI = Instantiate(powerUpPrefab, activePowerUpsPanelTransform);
-        Image imageComponent = itemUI.transform.Find("icon").GetComponent<Image>();
-        imageComponent.sprite = powerUp.icon;
-        itemUI.GetComponentInChildren<Text>().text = powerUp.powerUpName;
+        if(GameController.Instance.activePowerUps != null ) {
+        foreach (PowerUp powerUp in GameController.Instance.activePowerUps)
+        {
+                GameObject itemUI = Instantiate(powerUpPrefab, activePowerUpsPanelTransform);
+                Image imageComponent = itemUI.transform.Find("icon").GetComponent<Image>();
+                imageComponent.sprite = powerUp.icon;
+                itemUI.GetComponentInChildren<Text>().text = powerUp.powerUpName;
 
-        // Assign the CanvasGroup for each instantiated prefab
-        CanvasGroup itemDescriptionPanelCanvasGroup = itemUI.transform.Find("HoverPanel").GetComponent<CanvasGroup>();
-        Text descriptionText = itemDescriptionPanelCanvasGroup.transform.Find("Description").GetComponent<Text>();
-        descriptionText.text = powerUp.description; 
+                // Assign the CanvasGroup for each instantiated prefab
+                CanvasGroup itemDescriptionPanelCanvasGroup = itemUI.transform.Find("HoverPanel").GetComponent<CanvasGroup>();
+                Text descriptionText = itemDescriptionPanelCanvasGroup.transform.Find("Description").GetComponent<Text>();
+                descriptionText.text = powerUp.description; 
 
-        itemDescriptionPanelCanvasGroup.alpha = 0;
-        itemDescriptionPanelCanvasGroup.blocksRaycasts = false;
+                itemDescriptionPanelCanvasGroup.alpha = 0;
+                itemDescriptionPanelCanvasGroup.blocksRaycasts = false;
 
-        powerUpToGameObjectMap[powerUp] = itemUI;
-        SetupEventTriggers(itemUI, powerUp, itemDescriptionPanelCanvasGroup);
-    }
+                powerUpToGameObjectMap[powerUp] = itemUI;
+                SetupEventTriggers(itemUI, powerUp, itemDescriptionPanelCanvasGroup);
+        }
+        }
+    
 }
 
 void SetupEventTriggers(GameObject itemUI, PowerUp powerUp, CanvasGroup descriptionPanelCanvasGroup)

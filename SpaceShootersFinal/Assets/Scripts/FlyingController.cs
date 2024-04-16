@@ -96,7 +96,7 @@ using UnityEngine;
 public class FlyingController : MonoBehaviour
 {
     public GameController gameController;
-
+public Transform shipVisual; // Assign this in the inspector
     public float moveSpeed = 10f; 
     public float turnSpeed = 60f; 
     public float rotationSpeed = 5.0f;
@@ -105,6 +105,8 @@ public class FlyingController : MonoBehaviour
     public float minYAngle = -80f;
     public float deadzoneRadius = 50f;
     public float sensitivity = 5f;
+
+    public float maxRollAngle = 30f;
 
     public bool pressingThrottle = false;
     public bool throttle => pressingThrottle;
@@ -117,6 +119,8 @@ public class FlyingController : MonoBehaviour
     private Camera mainCamera;
 
     private Vector2 currentRotation;
+
+    private float currentRoll = 0f;
 
     private void Start()
     {  
@@ -134,30 +138,44 @@ public class FlyingController : MonoBehaviour
             moveSpeed = GameController.Instance.GetEnginePower();
         }
 
+        HandleMouseLook();
+        HandleMovement();
+    }
+
+    private void HandleMouseLook()
+    {
         Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
         float distanceFromCenter = Vector2.Distance(Input.mousePosition, screenCenter);
 
         if (distanceFromCenter > deadzoneRadius)
         {
             Vector2 mouseDisplacement = new Vector2(Input.mousePosition.x - screenCenter.x, Input.mousePosition.y - screenCenter.y);
-        
+
             currentRotation.x += mouseDisplacement.x * sensitivity * Time.fixedDeltaTime;
             currentRotation.y += mouseDisplacement.y * sensitivity * Time.fixedDeltaTime;
-
             currentRotation.y = Mathf.Clamp(currentRotation.y, minYAngle, maxYAngle);
 
             Quaternion xQuaternion = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
             Quaternion yQuaternion = Quaternion.AngleAxis(currentRotation.y, Vector3.left);
-
             rb.MoveRotation(xQuaternion * yQuaternion); 
-        } else {
+        } 
+        else {
                 rb.angularVelocity = Vector3.zero;
         }
-
-        Vector3 movement = new Vector3(Input.GetAxis("Turn") * moveSpeed, Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
-
-        rb.velocity = transform.TransformDirection(movement); 
     }
+      
+
+private void HandleMovement()
+{
+    Vector3 movement = new Vector3(Input.GetAxis("Turn") * moveSpeed, Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
+    rb.velocity = transform.TransformDirection(movement);
+
+    float targetRoll = Input.GetAxis("Turn") * maxRollAngle;
+    currentRoll = Mathf.Lerp(currentRoll, targetRoll, Time.fixedDeltaTime * 5f);
+
+    shipVisual.localRotation = Quaternion.Euler(0, 0, -currentRoll);
+}
+
 
     void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "Wall") {
