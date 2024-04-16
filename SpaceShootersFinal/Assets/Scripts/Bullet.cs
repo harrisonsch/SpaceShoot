@@ -36,6 +36,10 @@ public class Bullet : MonoBehaviour
                 CritPoint critPoint = other.gameObject.GetComponent<CritPoint>();
                 critPoint.takeDamage(damage);
                 Destroy(gameObject);
+        } else if (other.gameObject.tag == "TinyShip") {
+                TinyShipHandler tinyShip = other.gameObject.GetComponent<TinyShipHandler>();
+                tinyShip.Damage(damage);
+                Destroy(gameObject);
         }
         
     }

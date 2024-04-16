@@ -12,6 +12,7 @@ TagManager:
   - moved
   - Wall
   - critPoint
+  - PauseMenuSlider
   layers:
   - Default
   - TransparentFX

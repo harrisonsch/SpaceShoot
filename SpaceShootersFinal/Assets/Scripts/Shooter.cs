@@ -28,6 +28,7 @@ public class Shooter : MonoBehaviour
                         GameController.Instance.hasMoved = true;
                 }
             if(Time.time >= nextFireTime) {
+                Debug.Log("shooting");
                 Shoot();
                 audioSource.Play();
                 nextFireTime = Time.time + 1f / fireRate;
