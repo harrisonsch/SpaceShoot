@@ -34,7 +34,7 @@ public class BossEnemy : MonoBehaviour
     private float directionTimer = 0;
     public float changeDirectionTime = 2.5f;
     public bool moveAway = false;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     public float accuracy = 0.5f;
     public bool playerLook = false;
     public int burstCount = 1;
@@ -232,7 +232,9 @@ IEnumerator ShootSpiralPattern3D() {
 
         if(health <= 0) {
             Debug.Log("killed");
+            if(audioSource != null) {
                 audioSource.Play();
+            }
             Destroy(gameObject);
             SceneManager.LoadScene("WinScene");
         }

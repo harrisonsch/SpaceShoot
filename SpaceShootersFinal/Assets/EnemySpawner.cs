@@ -13,6 +13,10 @@ public class EnemySpawner : MonoBehaviour
     public float spawnAngle = 45f;  
     public float maxVerticalAngle = 20f;  
 
+        void Start() 
+        {
+                shipsKilled = 0;
+        }
     void Update()
     {
         spawnTimer -= Time.deltaTime;
