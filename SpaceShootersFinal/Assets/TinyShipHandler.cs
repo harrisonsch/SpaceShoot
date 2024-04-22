@@ -18,7 +18,9 @@ public class TinyShipHandler : MonoBehaviour
     private bool isDying = false;
     public float minOrbitDistance = 10f;
     public float maxOrbitDistance = 20f;
-
+    public bool shooting = true;
+    public bool orbit = true;
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -31,8 +33,14 @@ public class TinyShipHandler : MonoBehaviour
 
         void Update()
         {       
+                if(orbit) {
+
                 OrbitPlayer();
+                }
+                if(shooting) {
+
                 ShootAtPlayer();
+                }
         }
 
     void RandomizePosition()

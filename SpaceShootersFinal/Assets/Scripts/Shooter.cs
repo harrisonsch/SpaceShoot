@@ -12,6 +12,9 @@ public class Shooter : MonoBehaviour
     private float nextFireTime = 0f;
     public int shots = 1;
     public AudioSource audioSource;
+        public AudioSource shoot2;
+        public AudioSource shoot3;
+        private int shotNum = 0;
 
     void Start()
     {
@@ -30,7 +33,17 @@ public class Shooter : MonoBehaviour
             if(Time.time >= nextFireTime) {
                 Debug.Log("shooting");
                 Shoot();
-                audioSource.Play();
+                if(shotNum == 0) {
+
+                        audioSource.Play();
+                        shotNum++;
+                } else if (shotNum == 1) {
+                        shoot2.Play();
+                        shotNum++;
+                } else if (shotNum == 2) {
+                        shoot3.Play();
+                        shotNum = 0;
+                }
                 nextFireTime = Time.time + 1f / fireRate;
             }
             

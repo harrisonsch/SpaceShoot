@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8969908134398612375}
   - component: {fileID: 7960444205662829241}
   m_Layer: 0
-  m_Name: TinyShip
+  m_Name: TinyShip 1
   m_TagString: TinyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,15 +179,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   bulletPrefab: {fileID: 2460905112816403247, guid: 4ccad804e1f514b9fb53c92ab33c3b45, type: 3}
-  orbitDistance: 1000
+  orbitDistance: 3000
   orbitSpeed: 8
   shootRate: 2
   health: 20
   boom: {fileID: 7615435462199677208}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
   spawnPos: {fileID: 1653322442125656466}
-  minOrbitDistance: 800
-  maxOrbitDistance: 2000
+  minOrbitDistance: 2000
+  maxOrbitDistance: 3000
+  shooting: 1
+  orbit: 1
 --- !u!65 &8969908134398612375
 BoxCollider:
   m_ObjectHideFlags: 0
