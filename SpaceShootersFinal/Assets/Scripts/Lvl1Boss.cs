@@ -51,7 +51,7 @@ public class Lvl1Boss : MonoBehaviour
                 audioSource.Play();
             }
             Destroy(gameObject);
-            SceneManager.LoadScene("WinScene");
+            SceneManager.LoadScene("ShopScene");
         }
     }
 }
