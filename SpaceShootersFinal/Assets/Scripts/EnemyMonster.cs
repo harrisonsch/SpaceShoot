@@ -12,17 +12,15 @@ public class EnemyMonster : MonoBehaviour
     public GameObject damageText; // Prefab for a damage text indicator
     public Transform spawnPos; // Position where damage text indicator will spawn
         private bool isDying = false;
-    private AudioSource audioSource; // Audio source component for playing sound effects
+    public AudioSource boom; // Audio source component for playing sound effects
+    private bool died = false;
 
         void Start()
         {
-                audioSource = gameObject.GetComponent<AudioSource>();
         }
-    // Method called to inflict damage on the enemy
-    public IEnumerator Damage(float value)
+    public void Damage(float value)
     {
-        if(isDying) yield break;
-        health -= value; // Decrease enemy's health by the specified value
+        health -= value;
         Debug.Log(health);
         // Update health bar if available
         if (healthBar != null)
@@ -35,17 +33,29 @@ public class EnemyMonster : MonoBehaviour
         indicator.SetDamageText(value);
         indicator.transform.localScale = new Vector3(3, 3, 3); 
 
-
-        // Check if enemy is killed
-        if (health <= 0 && !isDying)
-        {
-                isDying = true; // Prevent further execution if dying
-                Debug.Log("booming");
-                audioSource.Play();
-                Debug.Log("waiting");
-                Destroy(gameObject);
-                SceneManager.LoadScene("WinScene");
+        if(health <= 0 && !isDying) {
+        isDying = true;
+            Debug.Log("killed");
+                boom.Play();
+                GameObject plane = transform.gameObject; 
+                if (plane != null) {
+                        plane.SetActive(false);
+                }
+                Destroy(gameObject, boom.clip.length);
+                died = true;
         }
-        yield return null;
+        if(died) {
+                SceneManager.LoadScene("NewScene1");  
+        }
+        // Check if enemy is killed
+        // if (health <= 0 && !isDying)
+        // {
+        //         isDying = true; // Prevent further execution if dying
+        //         Debug.Log("booming");
+        //         booming.Play();
+        //         Debug.Log("waiting");
+        //         Destroy(gameObject);
+        //         SceneManager.LoadScene("NewScene1");
+        // }
     }
 }

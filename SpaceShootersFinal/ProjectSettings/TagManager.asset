@@ -15,6 +15,7 @@ TagManager:
   - PauseMenuSlider
   - TinyShip
   - TinyShipSpawner
+  - MusicManager
   layers:
   - Default
   - TransparentFX

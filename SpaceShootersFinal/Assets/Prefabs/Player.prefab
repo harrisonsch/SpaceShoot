@@ -5025,9 +5025,9 @@ MonoBehaviour:
   cam: {fileID: 0}
   mousePos: {x: 0, y: 0, z: 0}
   shots: 1
-  audioSource: {fileID: 0}
-  shoot2: {fileID: 0}
-  shoot3: {fileID: 0}
+  audioSource: {fileID: 7548346527666897240}
+  shoot2: {fileID: 5493879940654531652}
+  shoot3: {fileID: 3717659246727474941}
 --- !u!114 &3043033997200160991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5041,7 +5041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  shipVisual: {fileID: 0}
+  shipVisual: {fileID: 8303992761191580}
   moveSpeed: 200
   turnSpeed: 2
   rotationSpeed: 5

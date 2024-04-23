@@ -11,6 +11,7 @@ public class TurretManager : MonoBehaviour{
     public float firingRange = 5f, projectileSpeed = 10f, attackRate = 1f, rotationSpeed = 2f, rotationGunSpeed = 0.5f;
     private float nextAttackTime = 0f, distToPlayer = 0f; 
     private bool canAttack = true;
+    public bool turretShoot = true;
 
     void Start(){
         if (GameObject.FindWithTag("Player") != null){
@@ -20,8 +21,8 @@ public class TurretManager : MonoBehaviour{
 
     void Update(){
         distToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (distToPlayer <= firingRange){
+        if(turretShoot) {
+            if (distToPlayer <= firingRange){
             LookAtPlayer();
 
             if (canAttack){
@@ -29,6 +30,7 @@ public class TurretManager : MonoBehaviour{
                 StartCoroutine(FireBullets());
                 canAttack = false;
             }
+                }    
         }
     }
 

@@ -1852,6 +1852,10 @@ PrefabInstance:
       value: 0.692
       objectReference: {fileID: 0}
     - target: {fileID: 2114351988740222835, guid: 39c31f19dfd4242a0a5bd3011abc71d5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2aa54fa1b8b4d453db51968c5f7a414b, type: 3}
+    - target: {fileID: 2114351988740222835, guid: 39c31f19dfd4242a0a5bd3011abc71d5, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: 41a7e4d5e5e2b4c258d600aefdf4ff03, type: 2}
@@ -1903,7 +1907,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7109074490886280114, guid: 39c31f19dfd4242a0a5bd3011abc71d5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

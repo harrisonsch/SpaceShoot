@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
                 } else {
                         EnemyMonster monster = other.gameObject.GetComponent<EnemyMonster>();
                         if(monster != null) {
-                                StartCoroutine(monster.Damage(damage));
+                                monster.Damage(damage);
                         }
                 }
                 Destroy(gameObject);
