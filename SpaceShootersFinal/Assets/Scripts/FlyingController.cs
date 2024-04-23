@@ -95,7 +95,7 @@ using UnityEngine;
 
 public class FlyingController : MonoBehaviour
 {
-    public GameController gameController;
+    private GameController gameController;
 public Transform shipVisual; // Assign this in the inspector
     public float moveSpeed = 10f; 
     public float turnSpeed = 60f; 
@@ -173,7 +173,7 @@ private void HandleMovement()
     float targetRoll = Input.GetAxis("Turn") * maxRollAngle;
     currentRoll = Mathf.Lerp(currentRoll, targetRoll, Time.fixedDeltaTime * 5f);
 
-    shipVisual.localRotation = Quaternion.Euler(0, 0, -currentRoll);
+    shipVisual.localRotation = Quaternion.Euler(0, 0, 90 - currentRoll);
 }
 
 

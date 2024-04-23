@@ -21,15 +21,17 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("entered");
+        Debug.Log("tag is " + other.gameObject.tag);
         if(other.gameObject.tag == "enemy") {
                 BossEnemy enemy = other.gameObject.GetComponent<BossEnemy>();
+                EnemyMonster monster = other.gameObject.GetComponent<EnemyMonster>();
+                Lvl1Boss boss = other.gameObject.GetComponent<Lvl1Boss>();
                 if(enemy != null) {
                         enemy.Damage(damage);
-                } else {
-                        EnemyMonster monster = other.gameObject.GetComponent<EnemyMonster>();
-                        if(monster != null) {
+                } else if (monster != null){
                                 monster.Damage(damage);
-                        }
+                } else {
+                       boss.Damage(damage);
                 }
                 Destroy(gameObject);
         } else if (other.gameObject.tag == "critPoint") {

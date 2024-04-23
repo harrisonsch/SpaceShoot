@@ -1491,7 +1491,7 @@ GameObject:
   - component: {fileID: 116545789}
   - component: {fileID: 116545788}
   - component: {fileID: 116545787}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: top wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1624,7 +1624,7 @@ GameObject:
   - component: {fileID: 126769012}
   - component: {fileID: 126769016}
   - component: {fileID: 126769017}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: right side wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1788,7 +1788,7 @@ GameObject:
   - component: {fileID: 175411246}
   - component: {fileID: 175411245}
   - component: {fileID: 175411244}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: right side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2298,6 +2298,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &247011156 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+  m_PrefabInstance: {fileID: 1141033892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &267156426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,7 +2312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 267156427}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: room1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2415,7 +2420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383221702}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: room5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3920,7 +3925,7 @@ GameObject:
   - component: {fileID: 455335836}
   - component: {fileID: 455335835}
   - component: {fileID: 455335834}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: left side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4315,7 +4320,7 @@ GameObject:
   - component: {fileID: 476326903}
   - component: {fileID: 476326902}
   - component: {fileID: 476326901}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: blue wall 4
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5684,7 +5689,7 @@ GameObject:
   - component: {fileID: 527888266}
   - component: {fileID: 527888265}
   - component: {fileID: 527888264}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: red wall 3
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -6142,7 +6147,7 @@ GameObject:
   - component: {fileID: 591299554}
   - component: {fileID: 591299553}
   - component: {fileID: 591299552}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: right side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -8355,7 +8360,7 @@ GameObject:
   - component: {fileID: 639976224}
   - component: {fileID: 639976223}
   - component: {fileID: 639976222}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: bottom wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -8489,7 +8494,7 @@ GameObject:
   - component: {fileID: 651237349}
   - component: {fileID: 651237350}
   - component: {fileID: 651237351}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: red wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -8645,7 +8650,7 @@ GameObject:
   - component: {fileID: 692984418}
   - component: {fileID: 692984417}
   - component: {fileID: 692984416}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: left side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -8778,7 +8783,7 @@ GameObject:
   - component: {fileID: 702772391}
   - component: {fileID: 702772390}
   - component: {fileID: 702772389}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: top wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -12183,7 +12188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804584981}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: room2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14379,7 +14384,7 @@ GameObject:
   - component: {fileID: 963567805}
   - component: {fileID: 963567804}
   - component: {fileID: 963567803}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: red wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -14551,7 +14556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 982957049}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: room4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16738,7 +16743,7 @@ GameObject:
   - component: {fileID: 1045334645}
   - component: {fileID: 1045334644}
   - component: {fileID: 1045334643}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: blue wall 5
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -16868,7 +16873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1058101860}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: room3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17009,7 +17014,7 @@ GameObject:
   - component: {fileID: 1104131823}
   - component: {fileID: 1104131822}
   - component: {fileID: 1104131821}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: left side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -17289,17 +17294,29 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1805039862}
+    - target: {fileID: 837956005602339604, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: bulletSpawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 247011156}
+    - target: {fileID: 837956005602339604, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: bulletSpawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1306791223}
     - target: {fileID: 872390589650360595, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 950983396679120470, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03366065
+      value: 0.000754734
+      objectReference: {fileID: 0}
+    - target: {fileID: 950983396679120470, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.004587703
       objectReference: {fileID: 0}
     - target: {fileID: 950983396679120470, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.8459697
+      value: 0.014497165
       objectReference: {fileID: 0}
     - target: {fileID: 1324182585539885845, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_Layer
@@ -17347,11 +17364,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16633841
+      value: 0.000754734
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0012543688
       objectReference: {fileID: 0}
     - target: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.045969
+      value: 0.017830499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6819027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.731443
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625412799082312804, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7952089469133490056, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_Layer
@@ -17621,7 +17658,7 @@ GameObject:
   - component: {fileID: 1186129712}
   - component: {fileID: 1186129711}
   - component: {fileID: 1186129710}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: top wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -17903,7 +17940,7 @@ GameObject:
   - component: {fileID: 1206330704}
   - component: {fileID: 1206330703}
   - component: {fileID: 1206330702}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: red wall 4
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -19214,6 +19251,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1058101859}
   newPosition: {fileID: 219498302}
+--- !u!4 &1306791223 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 950983396679120470, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+  m_PrefabInstance: {fileID: 1141033892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1328875604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1615609580263591044, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
@@ -19467,7 +19509,7 @@ GameObject:
   - component: {fileID: 1366693266}
   - component: {fileID: 1366693270}
   - component: {fileID: 1366693271}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: blue wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -21609,7 +21651,7 @@ GameObject:
   - component: {fileID: 1422536318}
   - component: {fileID: 1422536317}
   - component: {fileID: 1422536316}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: bottom wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -21886,7 +21928,7 @@ GameObject:
   - component: {fileID: 1489598079}
   - component: {fileID: 1489598083}
   - component: {fileID: 1489598084}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: left side wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -22019,7 +22061,7 @@ GameObject:
   - component: {fileID: 1492722800}
   - component: {fileID: 1492722804}
   - component: {fileID: 1492722805}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: bottom wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -25716,7 +25758,7 @@ GameObject:
   - component: {fileID: 1723467411}
   - component: {fileID: 1723467410}
   - component: {fileID: 1723467409}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: right side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -26262,7 +26304,7 @@ GameObject:
   - component: {fileID: 1786542425}
   - component: {fileID: 1786542424}
   - component: {fileID: 1786542423}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: bottom wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -26400,7 +26442,7 @@ GameObject:
   - component: {fileID: 1816909300}
   - component: {fileID: 1816909299}
   - component: {fileID: 1816909298}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: bottom wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -26710,7 +26752,7 @@ GameObject:
   - component: {fileID: 1830542389}
   - component: {fileID: 1830542388}
   - component: {fileID: 1830542387}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: top wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -27121,7 +27163,7 @@ GameObject:
   - component: {fileID: 1863617340}
   - component: {fileID: 1863617339}
   - component: {fileID: 1863617338}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: red wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -27266,7 +27308,7 @@ GameObject:
   - component: {fileID: 1867938245}
   - component: {fileID: 1867938244}
   - component: {fileID: 1867938243}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: right side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -28788,7 +28830,7 @@ GameObject:
   - component: {fileID: 1959915701}
   - component: {fileID: 1959915700}
   - component: {fileID: 1959915699}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: blue wall 3
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -29058,7 +29100,7 @@ GameObject:
   - component: {fileID: 1966709780}
   - component: {fileID: 1966709783}
   - component: {fileID: 1966709784}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: top wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -29191,7 +29233,7 @@ GameObject:
   - component: {fileID: 1980567706}
   - component: {fileID: 1980567705}
   - component: {fileID: 1980567704}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: left side wall 2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -29468,7 +29510,7 @@ GameObject:
   - component: {fileID: 2106303278}
   - component: {fileID: 2106303277}
   - component: {fileID: 2106303276}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: blue wall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -29703,7 +29745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6907212828706505053, guid: 1a9b80c579b084926954674b97af7e2c, type: 3}
-  ship: {fileID: 0}
   bulletSpawnPoints:
   - {fileID: 1583407631}
   - {fileID: 147227621}
@@ -29727,7 +29768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921a9e34e041f4fe59f2b39bf4ae29ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
   shipVisual: {fileID: 0}
   moveSpeed: 500
   turnSpeed: 2

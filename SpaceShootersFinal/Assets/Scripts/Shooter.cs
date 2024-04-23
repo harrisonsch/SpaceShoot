@@ -3,7 +3,6 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public GameObject ship;
     public Transform[] bulletSpawnPoints;
     public float fireRate = 5f; 
     private Vector3 aim;
