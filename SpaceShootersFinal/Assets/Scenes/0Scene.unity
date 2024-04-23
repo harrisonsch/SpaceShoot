@@ -6097,7 +6097,7 @@ MonoBehaviour:
   shots: 1
   player: {fileID: 2139789412}
   healthText: {fileID: 1765661270}
-  hasMoved: 0
+  hasMoved: 1
   boostActive: 0
   boostCooldown: 10
   boostDuration: 0.1
@@ -6119,6 +6119,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7fcb3fd139f6c466b8dd559a0cfb914f, type: 2}
   - {fileID: 11400000, guid: bc73c947805e5445ca81b96eee70f9a4, type: 2}
   - {fileID: 11400000, guid: 079ea322dcff74635908869a2deec0f8, type: 2}
+  - {fileID: 11400000, guid: ee20300c2adfb4a168d0f51809a3a490, type: 2}
+  - {fileID: 11400000, guid: c7418bd741c72472a8af02c069af9086, type: 2}
+  - {fileID: 11400000, guid: 0218b2021b59e4d12975b634a5246294, type: 2}
+  - {fileID: 11400000, guid: dec4d890b7d914525aa9cb2651bd8711, type: 2}
 --- !u!4 &559225390
 Transform:
   m_ObjectHideFlags: 0
@@ -29068,7 +29072,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 2000
+  far clip plane: 4000
   field of view: 97
   orthographic: 0
   orthographic size: 5
