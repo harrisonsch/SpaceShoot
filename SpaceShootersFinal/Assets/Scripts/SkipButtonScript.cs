@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SkipButtonScript : MonoBehaviour
 {
-    void ButtonClicked() {
+    public void ButtonClicked() {
         SceneManager.LoadScene("MainMenu");
     }
 }
