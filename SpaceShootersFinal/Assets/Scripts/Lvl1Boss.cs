@@ -13,6 +13,8 @@ public class Lvl1Boss : MonoBehaviour
     public Vector3 indicatorSize = new Vector3(3,3,3);
     public TextMeshProUGUI healthText;
     public AudioSource audioSource;
+    public int bounty = 15;
+    public bool winning = false;
     // Start is called before the first frame update
 
     void Start() {
@@ -51,7 +53,13 @@ public class Lvl1Boss : MonoBehaviour
                 audioSource.Play();
             }
             Destroy(gameObject);
+            GameController.Instance.balance += bounty;
+            if(winning) {
+                SceneManager.LoadScene("WinScene");
+            } else {
+
             SceneManager.LoadScene("ShopScene");
+            }
         }
     }
 }

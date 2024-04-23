@@ -101,7 +101,7 @@ public class PauseHandler : MonoBehaviour {
                 ShopInstance shop = GameObject.FindGameObjectWithTag("ShopHandler").GetComponent<ShopInstance>();
                 shop.ExitShop();
                 Time.timeScale = 1f;
-                SceneManager.LoadScene("NewScene1");
+                SceneManager.LoadScene("Lvl2");
         }
 
         IEnumerator LoadMainMenuAsync()

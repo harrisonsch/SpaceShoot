@@ -6092,7 +6092,7 @@ MonoBehaviour:
   currDamageAdds: 0
   baseHealth: 100
   health: 100
-  balance: 100
+  balance: 0
   fireRate: 5
   shots: 1
   player: {fileID: 2139789412}
