@@ -870,6 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 501806822}
+  mixer: {fileID: 0}
 --- !u!114 &1620355347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,8 +1022,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Space - Shoot\nW/S - Move forward and back\nA/D - Move left and right\nQ/E
-    - Move up and down \nCursor to aim\nESC - Pause\nK - Shop (WIP)\nGreen Orbs - 
-    Heal\nBlue Orbs - Double Speed\nRed Orbs - Double Damage\n"
+    - Move up and down \nCursor to aim\nESC - Pause\nK - Shop (WIP)\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
