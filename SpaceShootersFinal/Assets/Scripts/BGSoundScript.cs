@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class BGSoundScript : MonoBehaviour {
 
@@ -18,5 +19,14 @@ public class BGSoundScript : MonoBehaviour {
                         instance = this;
                 }
                 DontDestroyOnLoad(this.gameObject);
+        }
+
+        void Update() {
+                Scene currentScene = SceneManager.GetActiveScene();
+                string sceneName = currentScene.name;
+                if(sceneName == "MainMenu") {
+                        Debug.Log("in main");
+                        Destroy(gameObject);
+                }
         }
 }

@@ -81,7 +81,7 @@ public class PauseHandler : MonoBehaviour {
                         }
                         GameController.Instance.activePowerUps.Clear();
                 }
-            SceneManager.LoadScene("NewScene1");
+            SceneManager.LoadScene("0Scene");
         }
         public void Credits(){
             SceneManager.LoadScene("CreditScene");
