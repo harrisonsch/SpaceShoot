@@ -15,6 +15,7 @@ public class ShopInstance : MonoBehaviour
     public GameObject powerUpPrefab; 
     public Transform shopPanelTransform;
     public TextMeshProUGUI balanceText;
+    public TextMeshProUGUI rerollText;
     public int reroll = 3;
     public int rerollInc = 1;
     private Dictionary<PowerUp, GameObject> powerUpToGameObjectMap = new Dictionary<PowerUp, GameObject>();
@@ -22,6 +23,7 @@ public class ShopInstance : MonoBehaviour
     void Update()
     {
         balanceText.text = $"Balance: ${GameController.Instance.balance}";
+        rerollText.text = $"Cost: ${reroll}";
     }
     void Start()
     {

@@ -55,6 +55,7 @@ public class Lvl1Boss : MonoBehaviour
             Destroy(gameObject);
             GameController.Instance.balance += bounty;
             if(winning) {
+                Destroy(GameController.Instance.gameObject);
                 SceneManager.LoadScene("WinScene");
             } else {
 

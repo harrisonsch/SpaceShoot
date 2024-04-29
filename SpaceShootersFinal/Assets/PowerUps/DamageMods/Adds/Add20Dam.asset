@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae8164875b5249eda5f175ee08c0ea8, type: 3}
   m_Name: Add20Dam
   m_EditorClassIdentifier: 
-  powerUpName: IncDam
+  powerUpName: More Damage
   duration: 999
   cost: 3
   description: Adds 20 to your damage

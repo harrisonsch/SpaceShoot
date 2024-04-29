@@ -17,4 +17,4 @@ MonoBehaviour:
   cost: 5
   description: Increases Fire Rate by 20%
   value: 1
-  icon: {fileID: 21300000, guid: 3d14b7a57eff34b3fbfc4376b92863bb, type: 3}
+  icon: {fileID: 21300000, guid: e0f48ed3a2a6f46c4aba907a18f29739, type: 3}

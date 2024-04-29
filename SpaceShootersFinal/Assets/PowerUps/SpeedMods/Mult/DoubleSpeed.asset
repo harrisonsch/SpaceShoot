@@ -17,4 +17,4 @@ MonoBehaviour:
   cost: 5
   description: Double Speed doubles your current speed
   value: 2
-  icon: {fileID: 21300000, guid: 10718748a7d814901aaef5ad3af8aea2, type: 3}
+  icon: {fileID: 21300000, guid: 961d3aede325a401ea7508ddbc2f113c, type: 3}
