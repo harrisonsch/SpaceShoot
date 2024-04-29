@@ -40,7 +40,7 @@ public class ShopInstance : MonoBehaviour
             GameObject itemUI = Instantiate(powerUpPrefab, shopPanelTransform);
             Image imageComponent = itemUI.transform.Find("icon").GetComponent<Image>();
             imageComponent.sprite = powerUp.icon; 
-            itemUI.GetComponentInChildren<Text>().text = $"{powerUp.powerUpName}: {powerUp.cost}";
+            itemUI.GetComponentInChildren<Text>().text = $"{powerUp.powerUpName}: ${powerUp.cost}";
 
             
             CanvasGroup descriptionPanelCanvasGroup = itemUI.transform.Find("HoverPanel").GetComponent<CanvasGroup>();
