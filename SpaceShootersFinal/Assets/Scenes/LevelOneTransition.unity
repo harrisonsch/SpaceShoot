@@ -413,7 +413,7 @@ PlayableDirector:
   m_GameObject: {fileID: 497933534}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a82c228e224874f478bb7595bf562e91, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 49fadf428bdec4f479c8be941fb2ab5b, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -423,6 +423,10 @@ PlayableDirector:
     value: {fileID: 1094162928}
   - key: {fileID: -969471318374261392, guid: a82c228e224874f478bb7595bf562e91, type: 2}
     value: {fileID: 497933540}
+  - key: {fileID: -969471318374261392, guid: 49fadf428bdec4f479c8be941fb2ab5b, type: 2}
+    value: {fileID: 497933540}
+  - key: {fileID: -3621649882902585902, guid: 49fadf428bdec4f479c8be941fb2ab5b, type: 2}
+    value: {fileID: 1094162928}
   m_ExposedReferences:
     m_References:
     - 3a436ec6da8c943ec920aec2d26a4362: {fileID: 0}
@@ -656,6 +660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646fe1e396cee4fe28c29fe2e5f50722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro: 0
+  levelone: 1
 --- !u!4 &1094162930
 Transform:
   m_ObjectHideFlags: 0
@@ -827,6 +833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be171ce6765f4ca597f175fa572f4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro: 0
+  levelone: 1
 --- !u!114 &1905147703
 MonoBehaviour:
   m_ObjectHideFlags: 0

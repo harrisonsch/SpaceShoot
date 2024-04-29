@@ -45,7 +45,7 @@ public class EnemyMonster : MonoBehaviour
                 died = true;
         }
         if(died) {
-                SceneManager.LoadScene("NewScene1");  
+                SceneManager.LoadScene("LevelOneTransition");  
         }
         // Check if enemy is killed
         // if (health <= 0 && !isDying)
