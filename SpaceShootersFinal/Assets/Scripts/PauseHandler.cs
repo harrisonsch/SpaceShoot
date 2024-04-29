@@ -30,6 +30,7 @@ public class PauseHandler : MonoBehaviour {
         }
 
         void Start (){
+                SetLevel (volumeLevel);
                 pauseMenuUI.SetActive(false);
                 GameisPaused = false;
         }

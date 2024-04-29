@@ -107,6 +107,7 @@ public Transform shipVisual; // Assign this in the inspector
     public float sensitivity = 5f;
 
     public float maxRollAngle = 30f;
+    public float maxTiltAngle = 15f;
 
     public bool pressingThrottle = false;
     public bool throttle => pressingThrottle;
@@ -121,6 +122,7 @@ public Transform shipVisual; // Assign this in the inspector
     private Vector2 currentRotation;
 
     private float currentRoll = 0f;
+    private float currentTilt = 0f;
 
     private void Start()
     {  
@@ -169,11 +171,13 @@ private void HandleMovement()
 {
     Vector3 movement = new Vector3(Input.GetAxis("Turn") * moveSpeed, Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
     rb.velocity = transform.TransformDirection(movement);
-
+        float targetUp = Input.GetAxis("Horizontal") * maxTiltAngle;
     float targetRoll = Input.GetAxis("Turn") * maxRollAngle;
     currentRoll = Mathf.Lerp(currentRoll, targetRoll, Time.fixedDeltaTime * 5f);
-
-    shipVisual.localRotation = Quaternion.Euler(0, 0, 90 - currentRoll);
+    currentTilt = Mathf.Lerp(currentTilt, targetUp, Time.fixedDeltaTime * 5f);
+    Debug.Log("tilt");
+//     shipVisual.localRotation = Quaternion.Euler(currentTilt, 0, 0);
+    shipVisual.localRotation = Quaternion.Euler(-currentTilt, 0, 90 - currentRoll);
 }
 
 
