@@ -6567,7 +6567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       propertyPath: firingRange
-      value: 2000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       propertyPath: turretShoot
