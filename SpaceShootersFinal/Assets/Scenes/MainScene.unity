@@ -487,6 +487,7 @@ MonoBehaviour:
   moveAwaySpeed: 40
   changeDirectionTime: 2
   moveAway: 0
+  audioSource: {fileID: 0}
   accuracy: 0.8
   playerLook: 1
   burstCount: 1
@@ -27612,6 +27613,7 @@ MonoBehaviour:
   moveAwaySpeed: 75
   changeDirectionTime: 2.5
   moveAway: 0
+  audioSource: {fileID: 0}
   accuracy: 0.5
   playerLook: 0
   burstCount: 1
@@ -28818,6 +28820,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aaf85d613379b4358a8524fa8a817b67, type: 3}
   m_PrefabInstance: {fileID: 1934466536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1905087485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.064835
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.037994087
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.9371659
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.12529957
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1114665
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7365639
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6552473
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -69.608
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -108.385
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -70.476
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
+      propertyPath: m_Name
+      value: JoeyLandry_SPACESHIP
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
 --- !u!1001 &1915235789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31877,6 +31940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
+  shipVisual: {fileID: 0}
   moveSpeed: 200
   turnSpeed: 2
   rotationSpeed: 5
@@ -31884,6 +31948,7 @@ MonoBehaviour:
   minYAngle: -20
   deadzoneRadius: 75
   sensitivity: 0.4
+  maxRollAngle: 30
   pressingThrottle: 0
   pitchPower: 90
   rollPower: 250
@@ -31994,6 +32059,10 @@ PrefabInstance:
     - target: {fileID: 4581470800869574625, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581470800869574625, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5121328310644764422, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_Layer
