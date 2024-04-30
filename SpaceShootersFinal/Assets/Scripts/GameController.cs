@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     public float boostCooldown = 1f; 
     public float boostDuration = 1f; 
     private AudioSource audioSource;
+    public AudioSource dmgSFX;
     
     
     private void Awake()
@@ -50,7 +51,7 @@ public class GameController : MonoBehaviour
         currSpeed = baseSpeed;
         powerUpManager = FindObjectOfType<PowerUpManager>();
         healthText.text = "Health: " + health.ToString();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>(); 
         // DoubleSpeed doubleSpeed = new DoubleSpeed();
         // powerUpManager.RegisterPowerUp(doubleSpeed);
         // activePowerUps.Add(doubleSpeed);
@@ -132,6 +133,7 @@ public class GameController : MonoBehaviour
         
         health -= value;
         Debug.Log("Ship hit for " + value + " health is now " + health);
+        dmgSFX.Play();
         if(health <= 0){
                 Debug.Log("Game Over");
                 SceneManager.LoadScene("LoseScene");

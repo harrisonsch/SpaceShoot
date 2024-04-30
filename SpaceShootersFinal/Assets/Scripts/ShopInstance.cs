@@ -19,6 +19,7 @@ public class ShopInstance : MonoBehaviour
     public int reroll = 3;
     public int rerollInc = 1;
     private Dictionary<PowerUp, GameObject> powerUpToGameObjectMap = new Dictionary<PowerUp, GameObject>();
+    public AudioSource buySFX;
 
     void Update()
     {
@@ -142,6 +143,7 @@ void HideDescription()
 }
     public void Purchase(PowerUp powerUp) {
         if (PlayerHasEnoughCurrency(powerUp.cost)) {
+                buySFX.Play();
             ApplyPowerUp(powerUp);
             GameController.Instance.balance -= (int)powerUp.cost;
             

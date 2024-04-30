@@ -12,6 +12,7 @@ public class TurretManager : MonoBehaviour{
     private float nextAttackTime = 0f, distToPlayer = 0f; 
     private bool canAttack = true;
     public bool turretShoot = true;
+    public AudioSource shootSFX;
 
     void Start(){
         if (GameObject.FindWithTag("Player") != null){
@@ -83,14 +84,17 @@ public class TurretManager : MonoBehaviour{
         //instantiate muzzleflashes and bullets, then add force
         GameObject flashLeft = Instantiate(turretFireVFX, firePointLeft.position, Quaternion.identity);
         GameObject bulletLeft = Instantiate(turretAmmo, firePointLeft.position, turretGunsPivot.rotation);
+        shootSFX.Play();
         bulletLeft.GetComponent<Rigidbody>().AddForce(fwdL * projectileSpeed, ForceMode.Impulse); 
         StartCoroutine(DestroyBullet(bulletLeft, 4f));
         StartCoroutine(DestroyBullet(flashLeft, 2f));
+
 
         yield return new WaitForSeconds(0.05f);
 
         GameObject flashRight = Instantiate(turretFireVFX, firePointRight.position, Quaternion.identity);
         GameObject bulletRight = Instantiate(turretAmmo, firePointRight.position, turretGunsPivot.rotation);
+        shootSFX.Play();
         bulletRight.GetComponent<Rigidbody>().AddForce(fwdR * projectileSpeed, ForceMode.Impulse); 
         StartCoroutine(DestroyBullet(bulletRight, 4f));
         StartCoroutine(DestroyBullet(flashRight, 2f));        
