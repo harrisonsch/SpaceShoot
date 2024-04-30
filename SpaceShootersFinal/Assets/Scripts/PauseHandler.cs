@@ -96,12 +96,14 @@ public class PauseHandler : MonoBehaviour {
         public void Return(){
                 Time.timeScale = 1f;
                 StartCoroutine(LoadMainMenuAsync());
+                Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
         }
 
         public void ShopReturn(){
                 ShopInstance shop = GameObject.FindGameObjectWithTag("ShopHandler").GetComponent<ShopInstance>();
                 shop.ExitShop();
                 Time.timeScale = 1f;
+                Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
                 SceneManager.LoadScene("Lvl2");
         }
 
