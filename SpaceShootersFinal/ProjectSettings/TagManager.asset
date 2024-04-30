@@ -16,6 +16,9 @@ TagManager:
   - TinyShip
   - TinyShipSpawner
   - MusicManager
+  - finalRoomText
+  - finalRoom
+  - finalWall
   layers:
   - Default
   - TransparentFX
