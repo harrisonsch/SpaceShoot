@@ -85,7 +85,7 @@ public class TinyShipHandler : MonoBehaviour
             Debug.Log("killed");
                 boom.Play();
                 GameObject.FindGameObjectWithTag("TinyShipSpawner").GetComponent<EnemySpawner>().shipDied();
-                GameObject plane = transform.Find("plane").gameObject; 
+                GameObject plane = transform.Find("tiny_ship").gameObject; 
                 if (plane != null) {
                         plane.SetActive(false);
                 }
