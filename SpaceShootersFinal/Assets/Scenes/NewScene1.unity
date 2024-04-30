@@ -176,6 +176,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &35005293 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8512651836357921596, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+  m_PrefabInstance: {fileID: 7716504927761909632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &77944366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,9 +2670,9 @@ MonoBehaviour:
   indicatorSize: {x: 3, y: 3, z: 3}
   healthText: {fileID: 233165410}
   audioSource: {fileID: 77944368}
-  bounty: 15
+  bounty: 10
   winning: 0
-  hitSFX: {fileID: 0}
+  hitSFX: {fileID: 35005293}
   dmgSound: 0
 --- !u!54 &531609220
 Rigidbody:
@@ -3337,7 +3342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d3ffc51bb2dc4617bc71e90252e9644, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d3ffc51bb2dc4617bc71e90252e9644, type: 3}
       propertyPath: m_LocalScale.z
