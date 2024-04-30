@@ -2795,6 +2795,7 @@ MonoBehaviour:
   audioSource: {fileID: 77944368}
   bounty: 20
   winning: 1
+  hitSFX: {fileID: 7716504927761909633}
 --- !u!54 &531609220
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6833,3 +6834,8 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 531609220}
   m_SourcePrefab: {fileID: 100100000, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+--- !u!82 &7716504927761909633 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8512651836357921596, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+  m_PrefabInstance: {fileID: 7716504927761909632}
+  m_PrefabAsset: {fileID: 0}

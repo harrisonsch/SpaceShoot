@@ -15,6 +15,8 @@ public class Lvl1Boss : MonoBehaviour
     public AudioSource audioSource;
     public int bounty = 15;
     public bool winning = false;
+    public AudioSource hitSFX;
+    public bool dmgSound = false;
     // Start is called before the first frame update
 
     void Start() {
@@ -39,6 +41,10 @@ public class Lvl1Boss : MonoBehaviour
         Debug.Log("hit " + gameObject.name +  " for " + value + " health is now " + health);
         // Vector3 temp = new Vector3(60f, 0, 0);
         DamageIndicator indicator = Instantiate(damageText, spawnPos.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        if (!hitSFX.isPlaying && dmgSound) {
+
+        hitSFX.Play();
+        }
         indicator.SetDamageText(value);
         indicator.transform.localScale = indicatorSize;
         if(healthText != null) 
