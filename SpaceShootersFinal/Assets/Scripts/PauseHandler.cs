@@ -12,37 +12,46 @@ public class PauseHandler : MonoBehaviour {
         public static bool GameisPaused = false;
         public GameObject pauseMenuUI;
         private PowerUpManager powerUpManager;
-        public static float volumeLevel = 1.0f;
+        public static float volumeLevel;
+        public static float startLevel = 1.0f;
         private Slider sliderVolumeCtrl;
         public AudioMixer mixer;
+        public GameObject sliderTemp;
         // public GameObject timeText;
         // public GameObject slider1;
         // public GameObject slider2;
         // public GameObject slider3;
 
         void Awake (){
-                SetLevel (volumeLevel);
-                GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+                SetLevel(volumeLevel);
+                // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
                 if (sliderTemp != null){
+                        Debug.Log("volume level is" + volumeLevel);
                         sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
                         sliderVolumeCtrl.value = volumeLevel;
                 }
         }
 
         void Start (){
-                SetLevel (volumeLevel);
+                SetLevel(startLevel);
+                // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+                if (sliderTemp != null){
+                        Debug.Log("start level is" + startLevel);
+                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                        sliderVolumeCtrl.value = startLevel;
+                }
                 pauseMenuUI.SetActive(false);
                 GameisPaused = false;
         }
 
-        public void SetPauseMenu(GameObject menu)
-        {
-                pauseMenuUI = menu;
-                pauseMenuUI.SetActive(false); 
-        }
-
         void Update (){
-
+                Debug.Log("volume level is" + volumeLevel);
+                SetLevel(volumeLevel);
+                // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+                if (sliderTemp != null){
+                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                        volumeLevel = sliderVolumeCtrl.value;
+                }
                 if (Input.GetKeyDown(KeyCode.Escape)){
                         if (GameisPaused){
                                 Resume();
@@ -95,10 +104,9 @@ public class PauseHandler : MonoBehaviour {
         }
         public void Return(){
                 Time.timeScale = 1f;
-                StartCoroutine(LoadMainMenuAsync());
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
+                SceneManager.LoadSceneAsync("MainMenu");
         }
-
         public void ShopReturn(){
                 ShopInstance shop = GameObject.FindGameObjectWithTag("ShopHandler").GetComponent<ShopInstance>();
                 shop.ExitShop();
@@ -107,16 +115,6 @@ public class PauseHandler : MonoBehaviour {
                 SceneManager.LoadScene("Lvl2");
         }
 
-        IEnumerator LoadMainMenuAsync()
-        {
-                AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainMenu");
-
-                while (!asyncLoad.isDone)
-                {
-                        yield return null; 
-                }
-
-        }
         public void QuitGame(){
             #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

@@ -7,6 +7,6 @@ public class SceneSetup : MonoBehaviour
 
     void Start()
     {
-        GameController.Instance.gameObject.GetComponent<PauseHandler>().SetPauseMenu(pauseMenu);
+        // GameController.Instance.gameObject.GetComponent<PauseHandler>().SetPauseMenu(pauseMenu);
     }
 }
