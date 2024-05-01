@@ -3233,8 +3233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 250
-  minSpeed: 75
-  acceleration: 25
+  minSpeed: 150
+  acceleration: 500
 --- !u!54 &633230962
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3277,8 +3277,8 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
@@ -3295,7 +3295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1264e20473db442ff982ef13edeba254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1090979628}
+  targetObject: {fileID: 1223751602}
   newPosition: {fileID: 1909514859}
 --- !u!1 &673011484
 GameObject:
@@ -9938,12 +9938,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: yawPower
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: rollPower
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: turnPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: shipVisual
       value: 
       objectReference: {fileID: 1821111528}
     - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: enginePower
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: maxTiltAngle
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043033997200160991, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      propertyPath: pressingThrottle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3043186118282828637, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
       propertyPath: m_Layer

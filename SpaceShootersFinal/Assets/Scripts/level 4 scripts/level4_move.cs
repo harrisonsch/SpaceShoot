@@ -27,6 +27,6 @@ public class Level4_move : MonoBehaviour
     private void MoveEnemyShip()
     {
         // Move the enemy ship forward
-        transform.Translate(Vector3.up * currentSpeed * Time.deltaTime);
+        transform.Translate(Vector3.up * currentSpeed * Time.deltaTime*2);
     }
 }
