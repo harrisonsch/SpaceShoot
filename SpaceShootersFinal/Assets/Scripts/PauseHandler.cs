@@ -118,7 +118,6 @@ public class PauseHandler : MonoBehaviour {
                 shop.ExitShop();
                 Time.timeScale = 1f;
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
-                SceneManager.LoadScene("Lvl2");
                 levelNum++;
                 switch(levelNum) {
                         case 1:
@@ -131,7 +130,7 @@ public class PauseHandler : MonoBehaviour {
                         SceneManager.LoadScene("MainScene");
                         break;
                 default:
-                        SceneManager.LoadScene("Lvl2"); 
+                        SceneManager.LoadScene("FrankScene"); 
                         break;
                 }
         }
