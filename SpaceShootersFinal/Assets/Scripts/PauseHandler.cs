@@ -13,7 +13,7 @@ public class PauseHandler : MonoBehaviour {
         public GameObject pauseMenuUI;
         private PowerUpManager powerUpManager;
         public static float volumeLevel;
-        public static float startLevel = 1.0f;
+        public static float startLevel = 0.5f;
         private Slider sliderVolumeCtrl;
         public AudioMixer mixer;
         public GameObject sliderTemp;
