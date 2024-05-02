@@ -17,12 +17,18 @@ public class PauseHandler : MonoBehaviour {
         private Slider sliderVolumeCtrl;
         public AudioMixer mixer;
         public GameObject sliderTemp;
+        private static int levelNum = 0;
         // public GameObject timeText;
         // public GameObject slider1;
         // public GameObject slider2;
         // public GameObject slider3;
 
         void Awake (){
+                Scene currentScene = SceneManager.GetActiveScene();
+                string sceneName = currentScene.name;
+                if(sceneName == "MainMenu") {
+                        levelNum = 0;
+                }
                 SetLevel(volumeLevel);
                 // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
                 if (sliderTemp != null){
@@ -113,7 +119,23 @@ public class PauseHandler : MonoBehaviour {
                 Time.timeScale = 1f;
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
                 SceneManager.LoadScene("Lvl2");
+                levelNum++;
+                switch(levelNum) {
+                        case 1:
+                                SceneManager.LoadScene("Lvl2");
+                        break;
+                case 2:
+                        SceneManager.LoadScene("level 3");
+                        break;
+                case 3:
+                        SceneManager.LoadScene("MainScene");
+                        break;
+                default:
+                        SceneManager.LoadScene("Lvl2"); 
+                        break;
+                }
         }
+
 
         public void QuitGame(){
             #if UNITY_EDITOR

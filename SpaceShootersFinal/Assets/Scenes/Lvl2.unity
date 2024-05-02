@@ -2794,7 +2794,7 @@ MonoBehaviour:
   healthText: {fileID: 233165410}
   audioSource: {fileID: 77944368}
   bounty: 20
-  winning: 1
+  winning: 0
   hitSFX: {fileID: 7716504927761909633}
   dmgSound: 1
 --- !u!54 &531609220
