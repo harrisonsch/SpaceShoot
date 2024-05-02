@@ -118,7 +118,6 @@ public class PauseHandler : MonoBehaviour {
                 shop.ExitShop();
                 Time.timeScale = 1f;
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
-                SceneManager.LoadScene("Lvl2");
                 levelNum++;
                 switch(levelNum) {
                         case 1:
