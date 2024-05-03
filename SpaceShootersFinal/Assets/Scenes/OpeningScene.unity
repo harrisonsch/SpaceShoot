@@ -592,14 +592,16 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
-    m_Alignment: 7
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: As humanity's last hope, you must navigate and destroy the AI before time
-    runs out.
+  m_Text: Tasked with a critical mission, the Guardians must embark on a daring journey
+    to transport essential government documents to the newly established homes of
+    the townspeople. These documents contain vital information on how to thrive and
+    adapt to the challenges of their unfamiliar surroundings.
 --- !u!222 &887350291
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -625,8 +627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0043373, y: -39}
-  m_SizeDelta: {x: 649.41, y: 104.3433}
+  m_AnchoredPosition: {x: -0.0019608, y: -117.94}
+  m_SizeDelta: {x: 944.2, y: 235.8844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1094162928
 GameObject:
@@ -657,6 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646fe1e396cee4fe28c29fe2e5f50722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro: 1
+  levelone: 0
 --- !u!4 &1094162930
 Transform:
   m_ObjectHideFlags: 0
@@ -739,14 +743,17 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
-    m_Alignment: 7
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: In the corner of the galaxy, a renegade AI has seized control of a network
-    of advanced warships
+  m_Text: 'In this exciting new game, you find yourself in a world where the people
+    of a small town have been transported to a new livable habitat. As chaos ensues
+    and uncertainty looms, three heroes step forward to ensure the survival and prosperity
+    of their fellow townsfolk. Meet the Guardians: a resourceful raccoon, a wise
+    ape, and a jovial capybara.'
 --- !u!222 &1878543944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -772,8 +779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.1128, y: 95}
-  m_SizeDelta: {x: 661.6269, y: 136.9146}
+  m_AnchoredPosition: {x: 0.0000071526, y: 113.26}
+  m_SizeDelta: {x: 944.2039, y: 226.5123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1905147700
 GameObject:
@@ -828,6 +835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be171ce6765f4ca597f175fa572f4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro: 1
+  levelone: 0
 --- !u!114 &1905147703
 MonoBehaviour:
   m_ObjectHideFlags: 0
