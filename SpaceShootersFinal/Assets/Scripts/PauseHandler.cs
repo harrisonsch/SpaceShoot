@@ -102,7 +102,10 @@ public class PauseHandler : MonoBehaviour {
                         }
                         GameController.Instance.activePowerUps.Clear();
                 }
+                if(GameObject.FindGameObjectWithTag("MusicManager") != null) {
+                        
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
+                }
             SceneManager.LoadScene("0Scene");
         }
 
@@ -117,7 +120,7 @@ public class PauseHandler : MonoBehaviour {
         }
         public void Return(){
                 Time.timeScale = 1f;
-                if(GameObject.FindGameObjectWithTag("MusicManager").gameObject != null) {
+                if(GameObject.FindGameObjectWithTag("MusicManager") != null) {
 
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
                 }
@@ -127,7 +130,7 @@ public class PauseHandler : MonoBehaviour {
                 ShopInstance shop = GameObject.FindGameObjectWithTag("ShopHandler").GetComponent<ShopInstance>();
                 shop.ExitShop();
                 Time.timeScale = 1f;
-                if(GameObject.FindGameObjectWithTag("MusicManager").gameObject != null) {
+                if(GameObject.FindGameObjectWithTag("MusicManager") != null) {
                         
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
                 }
