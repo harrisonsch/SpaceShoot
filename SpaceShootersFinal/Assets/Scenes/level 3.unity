@@ -3971,6 +3971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3aaeb4840c7417b8ebdf1884e43168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
   camTransform: {fileID: 2141076134}
 --- !u!114 &787489373
 MonoBehaviour:
@@ -4390,6 +4391,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2e2918b9a5ed2414eb4ecb5c47ac10c6, type: 3}
       propertyPath: m_Name
       value: Space_Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e2918b9a5ed2414eb4ecb5c47ac10c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6655,6 +6660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3aaeb4840c7417b8ebdf1884e43168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
   camTransform: {fileID: 2141076134}
 --- !u!114 &1164326635
 MonoBehaviour:
