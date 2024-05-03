@@ -9523,7 +9523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3aaeb4840c7417b8ebdf1884e43168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
   camTransform: {fileID: 7803793696391454339}
+  looking: 1
 --- !u!114 &877763949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23399,7 +23401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3aaeb4840c7417b8ebdf1884e43168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
   camTransform: {fileID: 7803793696391454339}
+  looking: 1
 --- !u!114 &1509517115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31427,6 +31431,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 940374594731568145, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940374594731568145, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940374594731568145, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1615609580263591044, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -31442,6 +31458,14 @@ PrefabInstance:
     - target: {fileID: 3713397748829602185, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691877815998312729, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691877815998312729, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5695962479903205893, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -32689,6 +32713,7 @@ GameObject:
   - component: {fileID: 6774290427853849916}
   - component: {fileID: 3948569007525022318}
   - component: {fileID: 7803793696391454340}
+  - component: {fileID: 7803793696391454341}
   m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -33058,10 +33083,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4f021da54e34d35a72632f729f1003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7803793696391454341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134673360247187607}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc198c9237e14410f9aa4fc81640159d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   followTarget: {fileID: 550031366}
-  offset: {x: 0, y: 120, z: -220}
-  followSpeed: 100
-  rotationSpeed: 20
+  offset: {x: 0, y: 110, z: -290}
+  followSpeed: 5
+  rotationSpeed: 5
 --- !u!114 &8303253466597427218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33082,6 +33119,7 @@ MonoBehaviour:
   currDamageMult: 1
   currDamageAdds: 0
   baseHealth: 100
+  maxHealth: 100
   health: 100
   balance: 100
   fireRate: 5
@@ -33093,6 +33131,7 @@ MonoBehaviour:
   boostCooldown: 10
   boostDuration: 0.1
   dmgSFX: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!82 &8303253466597427219
 AudioSource:
   m_ObjectHideFlags: 0
