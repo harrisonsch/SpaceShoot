@@ -15911,7 +15911,7 @@ MonoBehaviour:
   playerLook: 1
   burstCount: 1
   burstCD: 0.5
-  indicatorSize: {x: 3, y: 3, z: 3}
+  indicatorSize: {x: 1, y: 1, z: 1}
 --- !u!54 &1231502258
 Rigidbody:
   m_ObjectHideFlags: 0

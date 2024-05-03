@@ -95,6 +95,11 @@ public class BossEnemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, movePosition, (strafeSpeed + moveAwaySpeed) * Time.deltaTime);
     }
 
+    void FrankShoot()
+    {
+        
+    }
+
     IEnumerator ShootBurst(int burstCount, float delayBetweenShots) {
     if (playerPos != null) {
         for (int i = 0; i < burstCount; i++) {
