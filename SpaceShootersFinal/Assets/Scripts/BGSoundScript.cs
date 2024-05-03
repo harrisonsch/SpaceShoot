@@ -24,9 +24,9 @@ public class BGSoundScript : MonoBehaviour {
         void Update() {
                 Scene currentScene = SceneManager.GetActiveScene();
                 string sceneName = currentScene.name;
-                if(sceneName == "MainMenu") {
-                        Debug.Log("in main");
-                        Destroy(gameObject);
-                }
+                // if(sceneName == "MainMenu") {
+                //         Debug.Log("in main");
+                //         Destroy(gameObject);
+                // }
         }
 }

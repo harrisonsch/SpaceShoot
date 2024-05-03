@@ -20,7 +20,7 @@ public class EnemyMonster : MonoBehaviour
     {
         startHealth = health;
         rb = GetComponent<Rigidbody>();
-        healthBar.SetHealth(health, startHealth);
+        // healthBar.SetHealth(health, startHealth);
     }
 
     public void Damage(float value)

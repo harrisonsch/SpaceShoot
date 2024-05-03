@@ -12,11 +12,11 @@ public class PauseHandler : MonoBehaviour {
         public static bool GameisPaused = false;
         public GameObject pauseMenuUI;
         private PowerUpManager powerUpManager;
-        public static float volumeLevel;
-        public static float startLevel = 0.5f;
+        public static float volumeLevel = 0.5f;
+        //public float startLevel = 0.5f;
         private Slider sliderVolumeCtrl;
         public AudioMixer mixer;
-        public GameObject sliderTemp;
+        //public GameObject sliderTemp;
         private static int levelNum = 0;
         // public GameObject timeText;
         // public GameObject slider1;
@@ -29,35 +29,40 @@ public class PauseHandler : MonoBehaviour {
                 if(sceneName == "MainMenu") {
                         levelNum = 0;
                 }
+                //volume:
+                pauseMenuUI.SetActive(true);
                 SetLevel(volumeLevel);
+                pauseMenuUI.SetActive(false);
+                
+                // SetLevel(volumeLevel);
                 // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
-                if (sliderTemp != null){
-                        Debug.Log("volume level is" + volumeLevel);
-                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
-                        sliderVolumeCtrl.value = volumeLevel;
-                }
+                // if (sliderTemp != null){
+                //         Debug.Log("volume level is" + volumeLevel);
+                //         sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                //         sliderVolumeCtrl.value = volumeLevel;
+                // }
         }
 
         void Start (){
-                SetLevel(startLevel);
+                
                 // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
-                if (sliderTemp != null){
-                        Debug.Log("start level is" + startLevel);
-                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
-                        sliderVolumeCtrl.value = startLevel;
-                }
-                pauseMenuUI.SetActive(false);
+                // if (sliderTemp != null){
+                //         Debug.Log("start level is" + volumeLevel);
+                //         sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                //         sliderVolumeCtrl.value = volumeLevel;
+                // }
+                
                 GameisPaused = false;
         }
 
         void Update (){
-                Debug.Log("volume level is" + volumeLevel);
-                SetLevel(volumeLevel);
+                // Debug.Log("volume level is" + volumeLevel);
+                // SetLevel(volumeLevel);
                 // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
-                if (sliderTemp != null){
-                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
-                        volumeLevel = sliderVolumeCtrl.value;
-                }
+                // if (sliderTemp != null){
+                //         sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                //         volumeLevel = sliderVolumeCtrl.value;
+                // }
                 if (Input.GetKeyDown(KeyCode.Escape)){
                         if (GameisPaused){
                                 Resume();
@@ -97,8 +102,10 @@ public class PauseHandler : MonoBehaviour {
                         }
                         GameController.Instance.activePowerUps.Clear();
                 }
+                Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
             SceneManager.LoadScene("0Scene");
         }
+
         public void Credits(){
             SceneManager.LoadScene("CreditScene");
         }
@@ -145,9 +152,18 @@ public class PauseHandler : MonoBehaviour {
         }
 
         public void SetLevel (float sliderValue){
-                if(mixer != null && sliderValue != null) {
-                        mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
-                        volumeLevel = sliderValue;
+                //set volume:
+                //if(mixer != null && sliderValue != null) {
+                mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
+                volumeLevel = sliderValue;
+                //}
+
+                //set slider display:
+                GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+                if (sliderTemp != null){
+                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                        sliderVolumeCtrl.value = volumeLevel;
+                        Debug.Log("volume level is: " + volumeLevel + ", slider value is" + sliderVolumeCtrl.value);
                 }
         }
         
