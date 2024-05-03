@@ -80,21 +80,20 @@ public class TurretManager : MonoBehaviour{
         //create the gun vectors
         Vector3 fwdL = (firePointLeft.position - fireBaseLeft.position).normalized;
         Vector3 fwdR = (firePointRight.position - fireBaseRight.position).normalized;
-        
+        shootSFX.Play();
         //instantiate muzzleflashes and bullets, then add force
         GameObject flashLeft = Instantiate(turretFireVFX, firePointLeft.position, Quaternion.identity);
         GameObject bulletLeft = Instantiate(turretAmmo, firePointLeft.position, turretGunsPivot.rotation);
-        shootSFX.Play();
         bulletLeft.GetComponent<Rigidbody>().AddForce(fwdL * projectileSpeed, ForceMode.Impulse); 
         StartCoroutine(DestroyBullet(bulletLeft, 4f));
         StartCoroutine(DestroyBullet(flashLeft, 2f));
 
 
         yield return new WaitForSeconds(0.05f);
-
+        shootSFX.Play();
         GameObject flashRight = Instantiate(turretFireVFX, firePointRight.position, Quaternion.identity);
         GameObject bulletRight = Instantiate(turretAmmo, firePointRight.position, turretGunsPivot.rotation);
-        shootSFX.Play();
+        
         bulletRight.GetComponent<Rigidbody>().AddForce(fwdR * projectileSpeed, ForceMode.Impulse); 
         StartCoroutine(DestroyBullet(bulletRight, 4f));
         StartCoroutine(DestroyBullet(flashRight, 2f));        
