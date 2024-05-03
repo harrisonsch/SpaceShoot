@@ -97,7 +97,7 @@ public class BossEnemy : MonoBehaviour
 
     void FrankShoot()
     {
-        
+
     }
 
     IEnumerator ShootBurst(int burstCount, float delayBetweenShots) {
@@ -240,8 +240,8 @@ IEnumerator ShootSpiralPattern3D() {
             if(audioSource != null) {
                 audioSource.Play();
             }
+            SceneManager.LoadScene("ShopScene");
             Destroy(gameObject);
-            SceneManager.LoadScene("WinScene");
         }
     }
     
