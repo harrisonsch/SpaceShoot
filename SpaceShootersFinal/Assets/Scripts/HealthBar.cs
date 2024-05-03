@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private Image healthBarImage;
+    [SerializeField] private Image healthBarImage;
     public Transform camTransform;
 
    
