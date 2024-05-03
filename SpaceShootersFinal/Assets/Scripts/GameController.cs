@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public float currDamageMult = 1;
     public float currDamageAdds= 0;
     public float baseHealth = 100f;
+    public float maxHealth = 100f;
     public float health = 100f;
     public int balance = 30;
     public float fireRate = 5f;
@@ -31,6 +32,7 @@ public class GameController : MonoBehaviour
     public float boostDuration = 1f; 
     private AudioSource audioSource;
     public AudioSource dmgSFX;
+    public HealthBar healthBar;
     
     
     private void Awake()
@@ -134,6 +136,10 @@ public class GameController : MonoBehaviour
         health -= value;
         Debug.Log("Ship hit for " + value + " health is now " + health);
         dmgSFX.Play();
+        if (healthBar != null)
+        {
+                healthBar.SetHealth(health, maxHealth); 
+        }
         if(health <= 0){
                 Debug.Log("Game Over");
                 SceneManager.LoadScene("LoseScene");
