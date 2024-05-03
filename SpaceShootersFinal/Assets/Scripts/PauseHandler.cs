@@ -134,10 +134,10 @@ public class PauseHandler : MonoBehaviour {
                         SceneManager.LoadScene("level 3");
                         break;
                 case 3:
-                        SceneManager.LoadScene("MainScene");
+                        SceneManager.LoadScene("FrankScene");
                         break;
                 default:
-                        SceneManager.LoadScene("FrankScene"); 
+                        SceneManager.LoadScene("FinalLevel"); 
                         break;
                 }
         }
