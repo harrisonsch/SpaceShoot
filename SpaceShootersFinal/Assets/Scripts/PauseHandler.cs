@@ -117,14 +117,20 @@ public class PauseHandler : MonoBehaviour {
         }
         public void Return(){
                 Time.timeScale = 1f;
+                if(GameObject.FindGameObjectWithTag("MusicManager").gameObject != null) {
+
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
+                }
                 SceneManager.LoadSceneAsync("MainMenu");
         }
         public void ShopReturn(){
                 ShopInstance shop = GameObject.FindGameObjectWithTag("ShopHandler").GetComponent<ShopInstance>();
                 shop.ExitShop();
                 Time.timeScale = 1f;
+                if(GameObject.FindGameObjectWithTag("MusicManager").gameObject != null) {
+                        
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
+                }
                 levelNum++;
                 switch(levelNum) {
                         case 1:
