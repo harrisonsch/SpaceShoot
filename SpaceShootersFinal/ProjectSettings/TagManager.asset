@@ -29,6 +29,7 @@ TagManager:
   - 16room
   - 13room
   - 17room
+  - asteroid
   layers:
   - Default
   - TransparentFX

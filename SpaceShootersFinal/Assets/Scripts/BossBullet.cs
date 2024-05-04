@@ -25,6 +25,9 @@ public class BossBullet : MonoBehaviour
                 }
                 Destroy(gameObject);
         }
-        
+        if(other.gameObject.tag == "asteroid") {
+                Destroy(gameObject);
+        }
+        a
     }
 }
