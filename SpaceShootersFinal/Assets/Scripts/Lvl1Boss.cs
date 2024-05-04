@@ -17,6 +17,7 @@ public class Lvl1Boss : MonoBehaviour
     public bool winning = false;
     public AudioSource hitSFX;
     public bool dmgSound = false;
+    public bool boss = true;
     // Start is called before the first frame update
 
     void Start() {
@@ -47,10 +48,11 @@ public class Lvl1Boss : MonoBehaviour
         }
         indicator.SetDamageText(value);
         indicator.transform.localScale = indicatorSize;
-        if(healthText != null) 
-        {
-
-        healthText.text = "Boss: " + health.ToString();
+        if(boss) {
+            if(healthText != null) 
+                {
+                        healthText.text = "Boss: " + health.ToString();
+                }    
         }
 
         if(health <= 0) {
@@ -59,11 +61,13 @@ public class Lvl1Boss : MonoBehaviour
                 audioSource.Play();
             }
             Destroy(gameObject);
-            GameController.Instance.balance += bounty;
+            if(boss) {
+                 GameController.Instance.balance += bounty;
+            }
             if(winning) {
                 Destroy(GameController.Instance.gameObject);
                 SceneManager.LoadScene("WinScene");
-            } else {
+            } if(boss) {
 
             SceneManager.LoadScene("ShopScene");
             }

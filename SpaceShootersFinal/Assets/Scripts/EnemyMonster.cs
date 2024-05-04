@@ -13,6 +13,7 @@ public class EnemyMonster : MonoBehaviour
     public AudioSource boom; // Audio source component for playing sound effects
     private bool died = false;
     private Rigidbody rb;
+    public bool boss = true;
     
     public HealthBar healthBar;
 
@@ -44,7 +45,7 @@ public class EnemyMonster : MonoBehaviour
             Destroy(gameObject, boom.clip.length);
             died = true;
         }
-        if (died)
+        if (died && boss)
         {
             SceneManager.LoadScene("LevelOneTransition");
         }
