@@ -68,13 +68,18 @@ public class BossEnemy : MonoBehaviour
     }
 
 
-    void FrankShoot(int burstCount, float delayBetweenShots, int delayRounds)
-    {
-        // if (playerPos != null) {
-            // ShootBurst()
-            // yield return new WaitForSeconds(3);
-        // }
-    }
+    // IEnumerator FrankShoot(int burstCount, float delayBetweenShots)
+    // {
+    //     int i = 0;
+    //     while (i < burstCount)
+    //     {
+    //         GameObject bullet = Instantiate(first_bullet, transform);
+    //         Destroy(bulletm, 2f);
+    //         i++;
+    //     }
+
+    //     yield return new WaitForSeconds(delayBetweenShots);
+    // }
 
     IEnumerator ShootBurst(int burstCount, float delayBetweenShots) {
     if (playerPos != null) {
@@ -91,7 +96,7 @@ public class BossEnemy : MonoBehaviour
             }
             yield return new WaitForSeconds(delayBetweenShots);
         }
-        // yield return new WaitForSeconds(5);
+        
     }
 }
 
