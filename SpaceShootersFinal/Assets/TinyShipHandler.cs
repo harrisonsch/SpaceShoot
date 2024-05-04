@@ -25,8 +25,14 @@ public class TinyShipHandler : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        RandomizePosition();
+        if(spawner) {
+
+                RandomizePosition();
+        }
+        if(orbit) {
+
         orbitDistance = Random.Range(minOrbitDistance, maxOrbitDistance);
+        }
         shootCooldown = shootRate;
     }
 

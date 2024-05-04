@@ -96,7 +96,7 @@ public class BossEnemy : MonoBehaviour
         if (playerPos != null)
         {
                 Vector3 directionToPlayer = playerPos.position - transform.position;
-                directionToPlayer.y = 0;
+                // directionToPlayer.y = 0;
         
                 Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
                 
