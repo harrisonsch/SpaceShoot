@@ -68,9 +68,12 @@ public class BossEnemy : MonoBehaviour
     }
 
 
-    void FrankShoot()
+    void FrankShoot(int burstCount, float delayBetweenShots, int delayRounds)
     {
-
+        // if (playerPos != null) {
+            // ShootBurst()
+            // yield return new WaitForSeconds(3);
+        // }
     }
 
     IEnumerator ShootBurst(int burstCount, float delayBetweenShots) {
@@ -88,6 +91,7 @@ public class BossEnemy : MonoBehaviour
             }
             yield return new WaitForSeconds(delayBetweenShots);
         }
+        // yield return new WaitForSeconds(5);
     }
 }
 
