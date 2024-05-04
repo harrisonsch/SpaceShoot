@@ -17,9 +17,9 @@ public class lvl3speedboss : MonoBehaviour
     {
         float newSpeed = gameController.GetEnginePower() * speed; // Calculate new speed
         
-        Vector3 movement = Vector3.up * newSpeed * Time.deltaTime; // Calculate movement
+        Vector3 movement = Vector3.up * newSpeed; // Calculate movement
         
-        transform.Translate(movement); // Apply movement to the object's position
+        transform.Translate(movement * Time.deltaTime); // Apply movement to the object's position
     }
 
 }
