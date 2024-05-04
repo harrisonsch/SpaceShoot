@@ -15,6 +15,6 @@ MonoBehaviour:
   powerUpName: Glass Cannon
   duration: 999
   cost: 5
-  description: Doubles your damage, halves your max and current HP
+  description: Doubles your damage, halves your max and current health
   value: 20
   icon: {fileID: 21300000, guid: 52c53107455bf413a97ad014a6a9e521, type: 3}
