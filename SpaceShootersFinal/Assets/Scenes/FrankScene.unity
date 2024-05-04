@@ -12058,8 +12058,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473834348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 409.61, y: 1.3921, z: 323.36}
+  m_LocalScale: {x: 1.9294, y: 1.3974, z: 1.3245}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 474544337}
@@ -30562,7 +30562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePowerUps: []
-  baseDamage: 20
+  baseDamage: 10
   baseSpeed: 600
   currSpeedMult: 1
   currSpeedAdds: 0
@@ -30572,7 +30572,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   balance: 100
-  fireRate: 3
+  fireRate: 5
   shots: 1
   player: {fileID: 0}
   healthText: {fileID: 2081351775}
