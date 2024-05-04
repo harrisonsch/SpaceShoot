@@ -304,6 +304,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+      propertyPath: shootSFX
+      value: 
+      objectReference: {fileID: 874115162}
+    - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+      propertyPath: finalBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       propertyPath: attackRate
       value: 0.25
       objectReference: {fileID: 0}
@@ -2866,7 +2874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1549377
+      value: 250.51077
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4141,6 +4149,14 @@ PrefabInstance:
     - target: {fileID: 486605702754787245, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       propertyPath: m_Volume
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+      propertyPath: shootSFX
+      value: 
+      objectReference: {fileID: 122258804}
+    - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+      propertyPath: finalBoss
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       propertyPath: attackRate
@@ -5664,6 +5680,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1844382647}
     - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+      propertyPath: finalBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       propertyPath: attackRate
       value: 0.5
       objectReference: {fileID: 0}
@@ -6925,7 +6945,7 @@ MonoBehaviour:
   strafeDelay: 0.5
   moveAwaySpeed: 40
   changeDirectionTime: 2
-  moveAway: 1
+  moveAway: 0
   audioSource: {fileID: 0}
   accuracy: 0.8
   playerLook: 1
@@ -8759,6 +8779,10 @@ PrefabInstance:
       propertyPath: shootSFX
       value: 
       objectReference: {fileID: 2109884258}
+    - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
+      propertyPath: finalBoss
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1866057878018522659, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       propertyPath: attackRate
       value: 0.5

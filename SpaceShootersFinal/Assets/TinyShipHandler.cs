@@ -20,6 +20,7 @@ public class TinyShipHandler : MonoBehaviour
     public float maxOrbitDistance = 20f;
     public bool shooting = true;
     public bool orbit = true;
+    public bool spawner = true;
     
     void Start()
     {
@@ -84,7 +85,10 @@ public class TinyShipHandler : MonoBehaviour
         isDying = true;
             Debug.Log("killed");
                 boom.Play();
+                if(spawner) {
+
                 GameObject.FindGameObjectWithTag("TinyShipSpawner").GetComponent<EnemySpawner>().shipDied();
+                }
                 GameObject plane = transform.Find("tiny_ship").gameObject; 
                 if (plane != null) {
                         plane.SetActive(false);

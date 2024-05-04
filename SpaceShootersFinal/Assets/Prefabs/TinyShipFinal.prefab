@@ -143,7 +143,7 @@ GameObject:
   m_Layer: 0
   m_Name: TinyShipFinal
   m_TagString: TinyShip
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -156,7 +156,7 @@ Transform:
   m_GameObject: {fileID: 783343531366088889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3254424961981341849}
@@ -190,7 +190,8 @@ MonoBehaviour:
   minOrbitDistance: 800
   maxOrbitDistance: 2000
   shooting: 1
-  orbit: 1
+  orbit: 0
+  spawner: 0
 --- !u!65 &8969908134398612375
 BoxCollider:
   m_ObjectHideFlags: 0

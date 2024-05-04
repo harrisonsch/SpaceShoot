@@ -13,6 +13,7 @@ public class TurretManager : MonoBehaviour{
     private bool canAttack = true;
     public bool turretShoot = true;
     public AudioSource shootSFX;
+    public bool finalBoss = false;
 
     void Start(){
         if (GameObject.FindWithTag("Player") != null){
@@ -22,10 +23,12 @@ public class TurretManager : MonoBehaviour{
 
     void Update(){
         distToPlayer = Vector3.Distance(transform.position, player.position);
+        if(finalBoss){
+                LookAtPlayer();
+        }
         if(turretShoot) {
             if (distToPlayer <= firingRange){
-            LookAtPlayer();
-
+                LookAtPlayer();
             if (canAttack){
                 shootTurret();
                 canAttack = false;
