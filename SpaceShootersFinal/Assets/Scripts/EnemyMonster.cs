@@ -14,6 +14,7 @@ public class EnemyMonster : MonoBehaviour
     private bool died = false;
     private Rigidbody rb;
     public bool boss = true;
+    public string sceneToLoad = "LevelOneTransition";
     
     public HealthBar healthBar;
 
@@ -47,7 +48,7 @@ public class EnemyMonster : MonoBehaviour
         }
         if (died && boss)
         {
-            SceneManager.LoadScene("LevelOneTransition");
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }
