@@ -34,6 +34,7 @@ public class BossEnemy : MonoBehaviour
     public int burstCount = 1;
     public float burstCD = 0.5f;
     public Vector3 indicatorSize = new Vector3(3,3,3);
+    public int bounty = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -196,6 +197,7 @@ IEnumerator ShootSpiralPattern3D() {
             if(audioSource != null) {
                 audioSource.Play();
             }
+            GameController.Instance.balance += bounty;
             SceneManager.LoadScene("ShopScene");
             Destroy(gameObject);
         }

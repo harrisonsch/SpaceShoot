@@ -15,6 +15,7 @@ public class EnemyMonster : MonoBehaviour
     private Rigidbody rb;
     public bool boss = true;
     public string sceneToLoad = "LevelOneTransition";
+    public int bounty = 10;
     
     public HealthBar healthBar;
 
@@ -48,6 +49,7 @@ public class EnemyMonster : MonoBehaviour
         }
         if (died && boss)
         {
+                GameController.Instance.balance += bounty;
             SceneManager.LoadScene(sceneToLoad);
         }
     }
