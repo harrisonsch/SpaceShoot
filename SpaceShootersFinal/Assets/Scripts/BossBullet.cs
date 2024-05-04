@@ -19,12 +19,11 @@ public class BossBullet : MonoBehaviour
     {
         if(other.gameObject.tag == "Player") {
                 GameController gc = GameController.Instance;
-                Destroy(gameObject);
                 if(gc != null) {
                         Debug.Log("damaging");
                         gc.Damage(damage);
                 }
-                
+                Destroy(gameObject);
         }
         
     }
