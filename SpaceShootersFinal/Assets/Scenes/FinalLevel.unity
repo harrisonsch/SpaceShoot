@@ -3832,7 +3832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipsText: {fileID: 1636831981}
   shipsKilled: 0
-  enemyPrefab: {fileID: 783343531366088889, guid: 6807fbc2453f84387b8b19c776d03a46, type: 3}
+  enemyPrefab: {fileID: 783343531366088889, guid: 6c00984bdc2e5458ea1d1481445e1925, type: 3}
   playerCamera: {fileID: 795593094}
   minSpawnDistance: 15000
   maxSpawnDistance: 20000
@@ -5405,6 +5405,7 @@ MonoBehaviour:
   currDamageMult: 1
   currDamageAdds: 0
   baseHealth: 100
+  maxHealth: 100
   health: 100
   balance: 100
   fireRate: 5
@@ -5416,6 +5417,7 @@ MonoBehaviour:
   boostCooldown: 10
   boostDuration: 0.1
   dmgSFX: {fileID: 1307454106}
+  healthBar: {fileID: 0}
 --- !u!114 &934557063
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipsText: {fileID: 1490498436}
   shipsKilled: 0
-  enemyPrefab: {fileID: 783343531366088889, guid: b46f7728a8afd4c4fa7e6f2b3d4419ca, type: 3}
+  enemyPrefab: {fileID: 783343531366088889, guid: 6c00984bdc2e5458ea1d1481445e1925, type: 3}
   playerCamera: {fileID: 393185804}
   minSpawnDistance: 15000
   maxSpawnDistance: 20000

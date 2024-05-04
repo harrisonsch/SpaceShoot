@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FrankScene.unity
     guid: e48f2826807c04ed39b66f0c57b243a6
+  - enabled: 1
+    path: Assets/Scenes/FinalLevel.unity
+    guid: 0d7c2117e85734e05a8d2a33dabba976
   m_configObjects: {}
