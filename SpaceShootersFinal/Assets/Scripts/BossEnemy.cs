@@ -21,16 +21,10 @@ public class BossEnemy : MonoBehaviour
     public HealthBar healthBar;
     public GameObject damageText;
     public Transform spawnPos;
-    public float strafeRange = 10f;
-    public float strafeSpeed = 5f;
-    private Vector3 strafeTargetPosition;
-    private Vector3 initialRightDirection;
-    private Vector3 initialPosition;
     private bool movingRight = true;
     public float strafeDelay = 0.5f; 
     private float strafeTimer;
     public float moveAwaySpeed = 75f;
-    private Vector3 strafeDirection;
     private float directionTimer = 0;
     public float changeDirectionTime = 2.5f;
     public bool moveAway = false;
@@ -45,11 +39,6 @@ public class BossEnemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         startHealth = health;
-        initialPosition = transform.position;
-        initialRightDirection = transform.right;
-        strafeTargetPosition = transform.position + (initialRightDirection * strafeRange);
-        strafeTimer = strafeDelay;
-        strafeDirection = Random.value > 0.5f ? transform.right : -transform.right;
         audioSource = GetComponent<AudioSource>();
         
     }
@@ -59,7 +48,7 @@ public class BossEnemy : MonoBehaviour
     {
         if(playerLook) {
 
-        LookAtPlayer();
+                LookAtPlayer();
         }
         if(healthText != null) {
 
@@ -75,25 +64,8 @@ public class BossEnemy : MonoBehaviour
         
         shotCooldown -= Time.deltaTime;
 
-        if (directionTimer <= 0)
-        {
-            strafeDirection = -strafeDirection;
-            directionTimer = changeDirectionTime;
-        }
-        else
-        {
-            directionTimer -= Time.deltaTime;
-        }
     }
 
-    void MoveBackwardsAndStrafe()
-    {
-        Vector3 retreatDirection = (transform.position - player.transform.position).normalized;
-        Vector3 movePosition = transform.position + retreatDirection * moveAwaySpeed * Time.deltaTime;
-        movePosition += strafeDirection * strafeSpeed * Time.deltaTime;
-
-        transform.position = Vector3.MoveTowards(transform.position, movePosition, (strafeSpeed + moveAwaySpeed) * Time.deltaTime);
-    }
 
     void FrankShoot()
     {
@@ -199,22 +171,6 @@ IEnumerator ShootSpiralPattern3D() {
         yield return new WaitForSeconds(timeBetweenBullets);
     }
 }
-    void Strafe()
-    {
-        // Calculate target based on initial position and direction
-        Vector3 targetPosition = initialPosition + (movingRight ? transform.right : -transform.right) * strafeRange;
-
-        // Move towards the target position
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, strafeSpeed * Time.deltaTime);
-
-        // Check if close to the target position to switch direction
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-        {
-            movingRight = !movingRight; // Switch direction
-            // Update the initial position to current position to make movement continuous
-            initialPosition = transform.position;
-        }
-    }
 
     public void Damage(float value)
     {
@@ -246,21 +202,6 @@ IEnumerator ShootSpiralPattern3D() {
     }
     
 
-    // void ShootAtPlayer() {
-    //     if(playerPos != null) {
-    //         Vector3 directionToPlayer = playerPos.position - transform.position;
-    //         directionToPlayer = AccuracyAdjuster(directionToPlayer, accuracy);
-    //         Quaternion bulletRotation = Quaternion.LookRotation(directionToPlayer);
-    //         GameObject bulletObj = Instantiate(bullet, transform.position, bulletRotation); 
-    //         BossBullet bossbullet = bulletObj.GetComponent<BossBullet>();
-
-    //         if(bossbullet != null) {
-    //             bossbullet.speedinit = bulletSpeed;
-    //             bossbullet.damage = bulletDamage;
-    //             bossbullet.lifetime = lifetime;
-    //         }
-    //     }
-    // }
 
 
 void ShootRadialBurst() {

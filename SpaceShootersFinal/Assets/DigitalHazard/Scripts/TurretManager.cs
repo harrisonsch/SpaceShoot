@@ -27,12 +27,17 @@ public class TurretManager : MonoBehaviour{
             LookAtPlayer();
 
             if (canAttack){
-                StartCoroutine(GunShake());
-                StartCoroutine(FireBullets());
+                shootTurret();
                 canAttack = false;
             }
                 }    
         }
+    }
+
+    public void shootTurret () {
+        LookAtPlayer();
+        StartCoroutine(GunShake());
+        StartCoroutine(FireBullets());
     }
 
     void FixedUpdate(){
