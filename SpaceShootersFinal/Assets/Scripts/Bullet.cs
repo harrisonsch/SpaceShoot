@@ -26,12 +26,15 @@ public class Bullet : MonoBehaviour
                 BossEnemy enemy = other.gameObject.GetComponent<BossEnemy>();
                 EnemyMonster monster = other.gameObject.GetComponent<EnemyMonster>();
                 Lvl1Boss boss = other.gameObject.GetComponent<Lvl1Boss>();
+                DestroyableWall wallBoss = other.gameObject.GetComponent<DestroyableWall>();
                 if(enemy != null) {
                         enemy.Damage(damage);
                 } else if (monster != null){
                                 monster.Damage(damage);
-                } else {
+                } else if (boss != null) {
                        boss.Damage(damage);
+                } else {
+                        wallBoss.Damage(damage);
                 }
                 Destroy(gameObject);
         } else if (other.gameObject.tag == "critPoint") {
