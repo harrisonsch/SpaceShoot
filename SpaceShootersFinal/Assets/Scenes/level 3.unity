@@ -9867,8 +9867,8 @@ MonoBehaviour:
   baseSpeed: 0.95
   speed: 1
   player: {fileID: 1909514859}
-  closeThreshold: 700
-  farThreshold: 2000
+  closeThreshold: 1000
+  farThreshold: 3000
   farSpeedMult: 0.5
   closeSpeedMult: 1.25
 --- !u!4 &633230968 stripped
