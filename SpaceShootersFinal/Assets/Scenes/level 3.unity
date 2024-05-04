@@ -2006,6 +2006,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8700617353114198275, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -2133,14 +2141,6 @@ PrefabInstance:
     - target: {fileID: 9013638940889411661, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -9955,6 +9955,7 @@ MonoBehaviour:
   boom: {fileID: 1953106774}
   boss: 1
   sceneToLoad: ShopScene
+  bounty: 10
   healthBar: {fileID: 1164326634}
 --- !u!114 &633230967
 MonoBehaviour:
@@ -10130,6 +10131,19 @@ MonoBehaviour:
   finalText: {fileID: 0}
   enemyBlocks: {fileID: 336506362}
   delayBetweenEnemyBlocks: 2
+--- !u!114 &633230979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633230959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11120014ba16d44aa9eb554008b64ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: LoseScene
 --- !u!1 &636204771
 GameObject:
   m_ObjectHideFlags: 0
@@ -27298,6 +27312,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3702a2bce507c475ca5283ce17269093, type: 3}
       insertIndex: -1
       addedObject: {fileID: 633230972}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3702a2bce507c475ca5283ce17269093, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633230979}
   m_SourcePrefab: {fileID: 100100000, guid: 3702a2bce507c475ca5283ce17269093, type: 3}
 --- !u!1 &1700038861
 GameObject:
@@ -32558,6 +32575,7 @@ MonoBehaviour:
   burstCount: 1
   burstCD: 0.5
   indicatorSize: {x: 3, y: 3, z: 3}
+  bounty: 10
 --- !u!54 &2060011405
 Rigidbody:
   m_ObjectHideFlags: 0
