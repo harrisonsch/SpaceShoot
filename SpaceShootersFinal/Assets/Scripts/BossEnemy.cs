@@ -39,7 +39,7 @@ public class BossEnemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         startHealth = health;
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
         
     }
 
