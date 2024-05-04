@@ -23,6 +23,12 @@ TagManager:
   - thirdroom
   - 4room
   - 7room
+  - 8room
+  - 9room
+  - 14room
+  - 16room
+  - 13room
+  - 17room
   layers:
   - Default
   - TransparentFX
