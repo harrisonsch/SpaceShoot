@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
         powerUpManager = FindObjectOfType<PowerUpManager>();
         healthText.text = "Health: " + health.ToString();
         audioSource = GetComponent<AudioSource>(); 
-        healthBar = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        
         // DoubleSpeed doubleSpeed = new DoubleSpeed();
         // powerUpManager.RegisterPowerUp(doubleSpeed);
         // activePowerUps.Add(doubleSpeed);
