@@ -60,4 +60,4 @@ public class sevenroom : MonoBehaviour
         }
         obj.SetActive(isActive);
     }
-} 
+}

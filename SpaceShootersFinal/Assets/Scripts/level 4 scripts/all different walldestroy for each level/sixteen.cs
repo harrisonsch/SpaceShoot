@@ -22,7 +22,7 @@ public class sixteen : MonoBehaviour
     // OnCollisionStay is called once per frame for every collider/rigidbody that is touching another rigidbody/collider
     private void OnCollisionEnter(Collision collision)
     {
-         if (collision.gameObject.CompareTag("16room"))
+        if (collision.gameObject.CompareTag("16room"))
         {
             Debug.Log("Enemy collision");
             if (enemyBlocks != null) // Check if the reference is not null
@@ -40,10 +40,23 @@ public class sixteen : MonoBehaviour
         {
             enemyBlocks.SetActive(true); // Activate the enemyBlocks GameObject
 
+            // Get all children of enemyBlocks
+            List<Transform> children = new List<Transform>();
             foreach (Transform child in enemyBlocks.transform)
             {
-                Debug.Log("Activating child: " + child.name);
-                child.gameObject.SetActive(true); // Activate the current enemy block
+                children.Add(child);
+            }
+
+            // Activate children in pairs
+            for (int i = 0; i < children.Count; i += 2)
+            {
+                if (i < children.Count)
+                {
+                    Debug.Log("Activating children: " + children[i].name + " and " + children[i + 1].name);
+                    children[i].gameObject.SetActive(true); // Activate the current enemy block
+                    children[i + 1].gameObject.SetActive(true); // Activate the next enemy block
+                }
+
                 yield return new WaitForSeconds(delayBetweenEnemyBlocks); // Wait for specified delay
             }
         }
@@ -60,4 +73,4 @@ public class sixteen : MonoBehaviour
         }
         obj.SetActive(isActive);
     }
-} 
+}

@@ -35,7 +35,7 @@ public class EnemyMonster : MonoBehaviour
         // Display damage indicator
         DamageIndicator indicator = Instantiate(damageText, spawnPos.position, Quaternion.identity).GetComponent<DamageIndicator>();
         indicator.SetDamageText(value);
-        indicator.transform.localScale = new Vector3(3, 3, 3); 
+        indicator.transform.localScale = new Vector3(1, 1, 1); 
 
         if (health <= 0 && !isDying)
         {
