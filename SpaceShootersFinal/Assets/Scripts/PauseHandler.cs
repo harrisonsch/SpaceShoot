@@ -92,21 +92,28 @@ public class PauseHandler : MonoBehaviour {
         }
 
         public void StartGame(){
-                if(GameController.Instance != null) {
-                        GameController.Instance.health = GameController.Instance.baseHealth;
-                        powerUpManager = FindObjectOfType<PowerUpManager>();
-                        foreach (PowerUp powerUp in GameController.Instance.activePowerUps) {
-                                if (!powerUpManager.powerUpRegister.Contains(powerUp)) {
-                                        powerUpManager.powerUpRegister.Add(powerUp);
-                                }
-                        }
-                        GameController.Instance.activePowerUps.Clear();
-                }
                 if(GameObject.FindGameObjectWithTag("MusicManager") != null) {
                         
                 Destroy(GameObject.FindGameObjectWithTag("MusicManager").gameObject);
                 }
-            SceneManager.LoadScene("0Scene");
+                if(GameController.Instance != null) {
+                        GameController.Instance.health = GameController.Instance.baseHealth;
+                        GameController.Instance.maxHealth = GameController.Instance.baseHealth;
+                        GameController.Instance.balance = 0;
+                        powerUpManager = FindObjectOfType<PowerUpManager>();
+                        foreach (PowerUp powerUp in GameController.Instance.activePowerUps) {
+                                if (!powerUpManager.powerUpRegister.Contains(powerUp)) {
+                                        powerUp.Deactivate();
+                                        powerUpManager.powerUpRegister.Add(powerUp);
+                                }
+                        }
+                        GameController.Instance.activePowerUps.Clear();
+                        Debug.Log("loading trans");
+                        SceneManager.LoadScene("LevelOneTransition");
+                } else {
+                         SceneManager.LoadScene("0Scene");
+                }
+                
         }
 
         public void Credits(){
