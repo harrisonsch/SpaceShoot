@@ -19,6 +19,7 @@ TagManager:
   - finalRoomText
   - finalRoom
   - finalWall
+  - PlayerHealth
   layers:
   - Default
   - TransparentFX

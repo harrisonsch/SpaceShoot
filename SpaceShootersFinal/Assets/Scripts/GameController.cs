@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
         powerUpManager = FindObjectOfType<PowerUpManager>();
         healthText.text = "Health: " + health.ToString();
         audioSource = GetComponent<AudioSource>(); 
+        healthBar = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
         // DoubleSpeed doubleSpeed = new DoubleSpeed();
         // powerUpManager.RegisterPowerUp(doubleSpeed);
         // activePowerUps.Add(doubleSpeed);
@@ -61,6 +62,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.FindGameObjectWithTag("PlayerHealth") != null) {
+
+        healthBar = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        }
         if(GameObject.FindGameObjectWithTag("Health") != null) {
 
                 healthText = GameObject.FindGameObjectWithTag("Health").GetComponent<TextMeshProUGUI>();
