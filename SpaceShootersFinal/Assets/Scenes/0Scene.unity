@@ -1477,6 +1477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 0}
   camTransform: {fileID: 1963067423}
+  looking: 1
 --- !u!114 &57295124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6517,8 +6518,9 @@ MonoBehaviour:
   currDamageMult: 1
   currDamageAdds: 0
   baseHealth: 100
+  maxHealth: 100
   health: 100
-  balance: 0
+  balance: 50
   fireRate: 5
   shots: 1
   player: {fileID: 2139789412}
@@ -6528,6 +6530,7 @@ MonoBehaviour:
   boostCooldown: 10
   boostDuration: 0.1
   dmgSFX: {fileID: 38040719}
+  healthBar: {fileID: 0}
 --- !u!114 &559225389
 MonoBehaviour:
   m_ObjectHideFlags: 0

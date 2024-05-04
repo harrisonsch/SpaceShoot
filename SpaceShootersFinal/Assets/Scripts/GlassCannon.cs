@@ -17,15 +17,15 @@ public class GlassCannon : PowerUp
 
     public override void Activate()
     {
-        oldHP = GameController.Instance.baseHealth;
-        GameController.Instance.baseHealth = oldHP / 2;
+        oldHP = GameController.Instance.maxHealth;
         GameController.Instance.health = GameController.Instance.health / 2;
+        GameController.Instance.maxHealth = GameController.Instance.maxHealth / 2;
         GameController.Instance.currDamageMult = GameController.Instance.currDamageMult * 2;
     }
 
     public override void Deactivate()
     {
-        GameController.Instance.baseHealth = oldHP;
+        GameController.Instance.maxHealth = oldHP;
         GameController.Instance.currDamageMult =  GameController.Instance.currDamageMult / 2;
     }
 }
