@@ -104,7 +104,7 @@ public Transform shipVisual; // Assign this in the inspector
     public float maxYAngle = 80f;
     public float minYAngle = -80f;
     public float deadzoneRadius = 50f;
-    public float sensitivity = 5f;
+    public float sensitivity = 2.5f;
 
     public float maxRollAngle = 30f;
     public float maxTiltAngle = 15f;
