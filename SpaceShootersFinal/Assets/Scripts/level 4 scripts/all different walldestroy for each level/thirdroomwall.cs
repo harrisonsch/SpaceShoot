@@ -12,10 +12,12 @@ public class thirdroomwall : MonoBehaviour
     public Vector3 hPositionOffset = new Vector3(0, 0, -700);
     private float groupDelay = 2.5f;
     public string roomTag = "thirdroom";
+    private AudioSource spawn;
 
     // Start is called before the first frame update
     void Start()
     {
+        spawn = GetComponent<AudioSource>();
         // Set the enemyBlocks GameObject and its children to be inactive initially
         if (enemyBlocks != null)
         {
@@ -31,6 +33,7 @@ public class thirdroomwall : MonoBehaviour
             Debug.Log("Enemy collision");
             if (enemyBlocks != null) // Check if the reference is not null
             {
+                
                 StartCoroutine(ActivateEnemyBlocks()); // Start coroutine to activate enemy blocks gradually
             }
         }
@@ -55,6 +58,7 @@ public class thirdroomwall : MonoBehaviour
         }
         for (int i = 0; i < children.Count; i += 3)
         {
+                spawn.Play();
             for (int j = i; j < Mathf.Min(i + 3, children.Count); j++)
             {
                 Transform child = children[j];
