@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61a03c68aeea4ae6bb3da1e2d495603, type: 3}
   m_Name: TripleDamage
   m_EditorClassIdentifier: 
-  powerUpName: Triple Damage
+  powerUpName: TripleDam
   duration: 999
   cost: 8
   description: Triples Damage
