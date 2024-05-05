@@ -39,6 +39,7 @@ public class BossEnemy : MonoBehaviour
     public Transform mapCenter;
     public bool finalBoss = false;
     public bool destroying = false;
+    public AudioSource boomSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -215,6 +216,7 @@ IEnumerator ShootSpiralPattern3D() {
                 SceneManager.LoadScene("ShopScene");
                 Destroy(gameObject);
             } else if(!destroying) {
+                boomSFX.Play();
                 StartCoroutine(destroyShip());
             }
         }
@@ -224,7 +226,7 @@ IEnumerator ShootSpiralPattern3D() {
         destroying = true;
         GameObject gremlin = Instantiate(gremlinPrefab, transform.position, Quaternion.identity);
         gremlin.GetComponent<GremlinScript>().EjectToCenter(mapCenter.position);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 

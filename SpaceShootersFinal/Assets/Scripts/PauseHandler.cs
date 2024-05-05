@@ -23,6 +23,7 @@ public class PauseHandler : MonoBehaviour {
         // public GameObject slider2;
         // public GameObject slider3;
         public AudioSource buySFX;
+        public AudioSource rejectSFX;
 
         void Awake (){
                 Scene currentScene = SceneManager.GetActiveScene();
@@ -172,16 +173,28 @@ public class PauseHandler : MonoBehaviour {
         public void BuyHP() {
                 int healthGain = 20;
         if (PlayerHasEnoughCurrency(2)) {
-                if(buySFX != null) {
+                if(GameController.Instance.health < GameController.Instance.maxHealth) {
+                        if(buySFX != null) {
                         buySFX.Play();
                 }
-            GameController.Instance.balance -= 2;
-            if(GameController.Instance.health + healthGain > GameController.Instance.maxHealth) {
-                GameController.Instance.health = GameController.Instance.maxHealth;
-            } else {
-                GameController.Instance.health += healthGain;
-            }
+                
+                GameController.Instance.balance -= 2;
+                if(GameController.Instance.health + healthGain > GameController.Instance.maxHealth) {
+                        GameController.Instance.health = GameController.Instance.maxHealth;
+                } else {
+                        GameController.Instance.health += healthGain;
+                }
+                } else {
+                        if(rejectSFX != null) {
+                        rejectSFX.Play();
+                        }
+                }
+                
 
+        } else {
+                if(rejectSFX != null) {
+                        rejectSFX.Play();
+                }
         }
         }
         public bool PlayerHasEnoughCurrency(float cost)
