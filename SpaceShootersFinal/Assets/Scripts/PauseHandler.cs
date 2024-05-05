@@ -30,9 +30,7 @@ public class PauseHandler : MonoBehaviour {
                         levelNum = 0;
                 }
                 //volume:
-                pauseMenuUI.SetActive(true);
-                SetLevel(volumeLevel);
-                pauseMenuUI.SetActive(false);
+                
                 
                 // SetLevel(volumeLevel);
                 // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
@@ -44,6 +42,9 @@ public class PauseHandler : MonoBehaviour {
         }
 
         void Start (){
+                pauseMenuUI.SetActive(true);
+                SetLevel(volumeLevel);
+                pauseMenuUI.SetActive(false);
                 
                 // GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
                 // if (sliderTemp != null){
