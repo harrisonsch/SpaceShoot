@@ -195,10 +195,10 @@ public class PauseHandler : MonoBehaviour {
 
         public void SetLevel (float sliderValue){
                 //set volume:
-                //if(mixer != null && sliderValue != null) {
+                if(mixer != null && sliderValue != null) {
                 mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
                 volumeLevel = sliderValue;
-                //}
+                }
 
                 //set slider display:
                 GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");

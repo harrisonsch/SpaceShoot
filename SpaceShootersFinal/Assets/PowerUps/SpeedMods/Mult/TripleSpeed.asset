@@ -17,4 +17,4 @@ MonoBehaviour:
   cost: 10
   description: Triples your speed
   value: 3
-  icon: {fileID: 21300000, guid: 6068e58bc1cd04548849ac293370afdb, type: 3}
+  icon: {fileID: 21300000, guid: 970bff2390ea2488caf2270eeee86744, type: 3}

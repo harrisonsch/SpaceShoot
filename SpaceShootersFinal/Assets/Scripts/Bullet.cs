@@ -27,12 +27,15 @@ public class Bullet : MonoBehaviour
                 EnemyMonster monster = other.gameObject.GetComponent<EnemyMonster>();
                 Lvl1Boss boss = other.gameObject.GetComponent<Lvl1Boss>();
                 DestroyableWall wallBoss = other.gameObject.GetComponent<DestroyableWall>();
+                GremlinScript gremlin = other.gameObject.GetComponent<GremlinScript>();
                 if(enemy != null) {
                         enemy.Damage(damage);
                 } else if (monster != null){
                                 monster.Damage(damage);
                 } else if (boss != null) {
                        boss.Damage(damage);
+                } else if (gremlin != null) {
+                        gremlin.Damage(damage);
                 } else {
                         wallBoss.Damage(damage);
                 }

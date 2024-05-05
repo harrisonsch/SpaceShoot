@@ -32,6 +32,7 @@ TagManager:
   - asteroid
   - hblock
   - vblock
+  - gremlin
   layers:
   - Default
   - TransparentFX

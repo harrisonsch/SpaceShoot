@@ -35,6 +35,9 @@ public class BossEnemy : MonoBehaviour
     public float burstCD = 0.5f;
     public Vector3 indicatorSize = new Vector3(3,3,3);
     public int bounty = 10;
+    public GameObject gremlinPrefab;
+    public Transform mapCenter;
+    public bool finalBoss = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -206,8 +209,14 @@ IEnumerator ShootSpiralPattern3D() {
             if(audioSource != null) {
                 audioSource.Play();
             }
-            GameController.Instance.balance += bounty;
-            SceneManager.LoadScene("ShopScene");
+            if(!finalBoss) {
+                GameController.Instance.balance += bounty;
+                SceneManager.LoadScene("ShopScene");
+            } else {
+                GameObject gremlin = Instantiate(gremlinPrefab, transform.position, Quaternion.identity);
+                gremlin.GetComponent<GremlinScript>().EjectToCenter(mapCenter.position);
+                Destroy(gameObject);
+            }
             Destroy(gameObject);
         }
     }
