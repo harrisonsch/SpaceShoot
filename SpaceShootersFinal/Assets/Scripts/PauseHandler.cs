@@ -22,6 +22,7 @@ public class PauseHandler : MonoBehaviour {
         // public GameObject slider1;
         // public GameObject slider2;
         // public GameObject slider3;
+        public AudioSource buySFX;
 
         void Awake (){
                 Scene currentScene = SceneManager.GetActiveScene();
@@ -167,6 +168,30 @@ public class PauseHandler : MonoBehaviour {
             Application.Quit();
             #endif
         }
+
+        public void BuyHP() {
+                int healthGain = 20;
+        if (PlayerHasEnoughCurrency(2)) {
+                if(buySFX != null) {
+                        buySFX.Play();
+                }
+            GameController.Instance.balance -= 2;
+            if(GameController.Instance.health + healthGain > GameController.Instance.maxHealth) {
+                GameController.Instance.health = GameController.Instance.maxHealth;
+            } else {
+                GameController.Instance.health += healthGain;
+            }
+
+        }
+        }
+        public bool PlayerHasEnoughCurrency(float cost)
+        {
+                if(GameController.Instance.balance >= cost) {
+                return true; 
+                }
+                return false;
+        }
+
 
         public void SetLevel (float sliderValue){
                 //set volume:

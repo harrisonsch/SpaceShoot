@@ -22,11 +22,13 @@ public class ShopInstance : MonoBehaviour
     public AudioSource buySFX;
     public GameObject shopWelcome;
     [SerializeField] public static bool firstTimeInShop = true;
+    public TextMeshProUGUI healthText;
 
     void Update()
     {
         balanceText.text = $"Balance: ${GameController.Instance.balance}";
         rerollText.text = $"Cost: ${reroll}";
+        healthText.text = $"Health: {GameController.Instance.health}";
     }
     void Start()
     {
