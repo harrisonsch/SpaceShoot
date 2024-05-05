@@ -2662,10 +2662,11 @@ MonoBehaviour:
   indicatorSize: {x: 3, y: 3, z: 3}
   healthText: {fileID: 233165410}
   audioSource: {fileID: 77944368}
-  bounty: 20
+  bounty: 11
   winning: 0
   hitSFX: {fileID: 7716504927761909633}
   dmgSound: 1
+  boss: 1
 --- !u!54 &531609220
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3403,8 +3404,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   damageText: {fileID: 4664434894970500506, guid: 3a6e7d9a7d85047ed9bc54fecadb88e9, type: 3}
   spawnPos: {fileID: 666580697}
-  strafeRange: 10
-  strafeSpeed: 5
   strafeDelay: 0.5
   moveAwaySpeed: 75
   changeDirectionTime: 2.5
@@ -3415,6 +3414,7 @@ MonoBehaviour:
   burstCount: 1
   burstCD: 0.5
   indicatorSize: {x: 3, y: 3, z: 3}
+  bounty: 10
 --- !u!54 &929559825
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6507,6 +6507,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8700617353114198275, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -6670,14 +6678,6 @@ PrefabInstance:
     - target: {fileID: 9013638940889411661, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

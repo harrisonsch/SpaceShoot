@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad9c06bf577f462c9473485f4454f88, type: 3}
   m_Name: AddTwoShots
   m_EditorClassIdentifier: 
-  powerUpName: TripleShot
+  powerUpName: Double Shot
   duration: 999
   cost: 5
-  description: Shoots three bullets at once
+  description: Add another bullet
   value: 2
   icon: {fileID: 21300000, guid: dc3b4743321ed4f838e188cbe05bd5e5, type: 3}

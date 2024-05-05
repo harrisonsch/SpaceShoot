@@ -517,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8191464424044326439, guid: e3266ef62b6b346eebed0d210601e15b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 444.59174
+      value: 274.93494
       objectReference: {fileID: 0}
     - target: {fileID: 8191464424044326439, guid: e3266ef62b6b346eebed0d210601e15b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1562,7 +1562,7 @@ MonoBehaviour:
   shopPanelTransform: {fileID: 1081159732}
   balanceText: {fileID: 1521975025}
   rerollText: {fileID: 2135022262}
-  reroll: 3
+  reroll: 2
   rerollInc: 1
   buySFX: {fileID: 1795508176}
 --- !u!224 &1856118193
@@ -1812,6 +1812,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 446.86395, y: 58.698223}
+  m_AnchoredPosition: {x: 427.92905, y: 125.349106}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}

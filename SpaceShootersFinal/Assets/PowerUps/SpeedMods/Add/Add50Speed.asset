@@ -17,4 +17,4 @@ MonoBehaviour:
   cost: 5
   description: Adds 50 to your speed
   value: 50
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3d14b7a57eff34b3fbfc4376b92863bb, type: 3}
