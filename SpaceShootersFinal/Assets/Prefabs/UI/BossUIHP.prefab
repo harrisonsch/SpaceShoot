@@ -155,9 +155,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 6.816559
       objectReference: {fileID: 0}
+    - target: {fileID: 3204973073322528229, guid: 98d5fd0fa3b6c4d0595afcc1a7ad5043, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3803598670521041570, guid: 98d5fd0fa3b6c4d0595afcc1a7ad5043, type: 3}
       propertyPath: m_Name
-      value: BossHealth Variant
+      value: BossUIHP
       objectReference: {fileID: 0}
     - target: {fileID: 4556985718873965680, guid: 98d5fd0fa3b6c4d0595afcc1a7ad5043, type: 3}
       propertyPath: m_SizeDelta.x
