@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     public Vector3 offset = new Vector3(0, 5, -10);
     public float followSpeed = 5.0f;
     public float rotationSpeed = 5.0f;
+    public bool lowerCameraFocus = false;
 
 //     private void LateUpdate()
 //     {

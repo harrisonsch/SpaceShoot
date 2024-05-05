@@ -30,6 +30,8 @@ TagManager:
   - 13room
   - 17room
   - asteroid
+  - hblock
+  - vblock
   layers:
   - Default
   - TransparentFX

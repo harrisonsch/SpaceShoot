@@ -7,7 +7,11 @@ public class thirdroomwall : MonoBehaviour
 {
     public TextMeshProUGUI finalText;
     public GameObject enemyBlocks; // Reference to the enemy blocks GameObject
-    public float delayBetweenEnemyBlocks = 5f; // Delay between each enemy block activation
+    private float moveDuration = 1.5f; // Duration for each block to reach its final position
+    public Vector3 vPositionOffset = new Vector3(0, -800, 0); // Start position offset to make blocks appear from above
+    public Vector3 hPositionOffset = new Vector3(0, 0, -700);
+    private float groupDelay = 2.5f;
+    public string roomTag = "thirdroom";
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +26,7 @@ public class thirdroomwall : MonoBehaviour
     // OnCollisionStay is called once per frame for every collider/rigidbody that is touching another rigidbody/collider
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("thirdroom"))
+        if (collision.gameObject.CompareTag(roomTag))
         {
             Debug.Log("Enemy collision");
             if (enemyBlocks != null) // Check if the reference is not null
@@ -32,44 +36,59 @@ public class thirdroomwall : MonoBehaviour
         }
     }
 
-    // Coroutine to activate enemy blocks gradually
     private IEnumerator ActivateEnemyBlocks()
     {
         Debug.Log("Activating enemy blocks...");
-        if (enemyBlocks != null)
+        enemyBlocks.SetActive(true);
+
+        List<Transform> children = new List<Transform>();
+        foreach (Transform child in enemyBlocks.transform)
         {
-            enemyBlocks.SetActive(true); // Activate the enemyBlocks GameObject
-
-            // Get all children of enemyBlocks
-            List<Transform> children = new List<Transform>();
-            foreach (Transform child in enemyBlocks.transform)
-            {
-                children.Add(child);
-            }
-
-            // Activate children in pairs
-            for (int i = 0; i < children.Count; i += 2)
-            {
-                if (i < children.Count)
-                {
-                    Debug.Log("Activating children: " + children[i].name + " and " + children[i + 1].name);
-                    children[i].gameObject.SetActive(true); // Activate the current enemy block
-                    children[i + 1].gameObject.SetActive(true); // Activate the next enemy block
-                }
-
-                yield return new WaitForSeconds(delayBetweenEnemyBlocks); // Wait for specified delay
-            }
+        children.Add(child);
+        // Set the initial position for each block
+        if (child.gameObject.tag == "vblock") { // Fixed missing quotation mark and extra parenthesis
+                child.position += vPositionOffset;
+        } else if (child.gameObject.tag == "hblock") { // Fixed missing quotation mark and extra parenthesis
+                child.position += hPositionOffset;
         }
-        Debug.Log("Enemy blocks activation complete.");
+        child.gameObject.SetActive(true);
+        }
+        for (int i = 0; i < children.Count; i += 3)
+        {
+            for (int j = i; j < Mathf.Min(i + 3, children.Count); j++)
+            {
+                Transform child = children[j];
+                if (child.gameObject.tag == "vblock") {
+                    StartCoroutine(MoveBlock(child, child.position - vPositionOffset, moveDuration));
+                } else if (child.gameObject.tag == "hblock") {
+                    StartCoroutine(MoveBlock(child, child.position - hPositionOffset, moveDuration));
+                }
+            }
+            // Wait for the group to move and then delay before the next group
+            yield return new WaitForSeconds(groupDelay);
+        }
+        yield return new WaitForSeconds(moveDuration); 
+        Debug.Log("All enemy blocks are in position.");
     }
 
-    // Function to set a GameObject and its children active/inactive
+    private IEnumerator MoveBlock(Transform block, Vector3 targetPosition, float duration)
+    {
+        float time = 0;
+        Vector3 startPosition = block.position;
+        while (time < duration)
+        {
+            block.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        block.position = targetPosition; // Ensure it ends exactly at the target position
+    }
+
     private void SetGameObjectAndChildrenActive(GameObject obj, bool isActive)
     {
-        // Set the GameObject itself active/inactive
         foreach (Transform child in obj.transform)
         {
-            child.gameObject.SetActive(isActive); // Set each child GameObject active/inactive
+            child.gameObject.SetActive(isActive);
         }
         obj.SetActive(isActive);
     }
