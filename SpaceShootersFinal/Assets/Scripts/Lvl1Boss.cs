@@ -11,7 +11,7 @@ public class Lvl1Boss : MonoBehaviour
     public GameObject damageText;
     public Transform spawnPos;
     public Vector3 indicatorSize = new Vector3(3,3,3);
-    public TextMeshProUGUI healthText;
+    public HealthBar healthBar;
     public AudioSource audioSource;
     public int bounty = 15;
     public bool winning = false;
@@ -25,20 +25,16 @@ public class Lvl1Boss : MonoBehaviour
     }
 
     void Update () {
-        if(healthText != null) {
-
-                healthText.text = "Boss: " + health.ToString();
-        }
 
     }
     public void Damage(float value)
     {
         
         health -= value;
-        // if (healthBar != null)
-        // {
-        //         healthBar.SetHealth(health, startHealth); 
-        // }
+        if (healthBar != null && boss)
+        {
+                healthBar.SetHealth(health, startHealth); 
+        }
         Debug.Log("hit " + gameObject.name +  " for " + value + " health is now " + health);
         // Vector3 temp = new Vector3(60f, 0, 0);
         DamageIndicator indicator = Instantiate(damageText, spawnPos.position, Quaternion.identity).GetComponent<DamageIndicator>();
@@ -48,12 +44,6 @@ public class Lvl1Boss : MonoBehaviour
         }
         indicator.SetDamageText(value);
         indicator.transform.localScale = indicatorSize;
-        if(boss) {
-            if(healthText != null) 
-                {
-                        healthText.text = "Boss: " + health.ToString();
-                }    
-        }
 
         if(health <= 0) {
             Debug.Log("killed");
