@@ -57,7 +57,7 @@ public class TinyShipHandler : MonoBehaviour
         transform.position = player.position + offset;
     }
 
-        void OrbitPlayer()
+        public void OrbitPlayer()
         {
     
     float randomOffset = Random.Range(-0.5f, 0.5f); 

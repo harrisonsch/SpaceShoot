@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 8841188191653054477}
   - component: {fileID: 8969908134398612375}
   - component: {fileID: 7960444205662829241}
+  - component: {fileID: -2968263247396209760}
   m_Layer: 0
   m_Name: TinyShipFinal
   m_TagString: TinyShip
@@ -173,7 +174,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783343531366088889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86ce2a122512a4b6195ccf163c26675b, type: 3}
   m_Name: 
@@ -182,7 +183,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2460905112816403247, guid: 4ccad804e1f514b9fb53c92ab33c3b45, type: 3}
   orbitDistance: 3000
   orbitSpeed: 8
-  shootRate: 2
+  shootRate: 3
   health: 40
   boom: {fileID: 7615435462199677208}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
@@ -240,6 +241,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2968263247396209760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783343531366088889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5607e98e9d937403e96171f474e35c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  bulletPrefab: {fileID: 2460905112816403247, guid: 6434abee73fc84b2aa7e186c4a204aca, type: 3}
+  orbitDistance: 3000
+  orbitSpeed: 8
+  shootRate: 3
+  health: 40
+  boom: {fileID: 7615435462199677208}
+  damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
+  spawnPos: {fileID: 1653322442125656466}
+  minOrbitDistance: 800
+  maxOrbitDistance: 2000
+  shooting: 1
+  orbit: 0
+  spawner: 0
+  strafeSpeed: 1
+  strafeRange: 1
+  strafeSmoothness: 5
 --- !u!1 &2363702373895630023
 GameObject:
   m_ObjectHideFlags: 0
