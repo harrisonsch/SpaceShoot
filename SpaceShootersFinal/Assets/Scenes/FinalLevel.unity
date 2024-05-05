@@ -1544,6 +1544,7 @@ MonoBehaviour:
   gremlinPrefab: {fileID: 0}
   mapCenter: {fileID: 0}
   finalBoss: 0
+  destroying: 0
 --- !u!1001 &287605031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6646,6 +6647,7 @@ MonoBehaviour:
   gremlinPrefab: {fileID: 0}
   mapCenter: {fileID: 0}
   finalBoss: 0
+  destroying: 0
 --- !u!1 &959343464
 GameObject:
   m_ObjectHideFlags: 0
@@ -7141,6 +7143,7 @@ MonoBehaviour:
   gremlinPrefab: {fileID: 0}
   mapCenter: {fileID: 0}
   finalBoss: 0
+  destroying: 0
 --- !u!65 &1159873051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8269,7 +8272,7 @@ MonoBehaviour:
   bulletDamage: 10
   lifetime: 3
   shootingRate: 0.2
-  health: 10
+  health: 40000
   startHealth: 0
   healthText: {fileID: 454079334}
   player: {fileID: 0}
@@ -8290,6 +8293,7 @@ MonoBehaviour:
   gremlinPrefab: {fileID: 1972511058146709849}
   mapCenter: {fileID: 959343465}
   finalBoss: 1
+  destroying: 0
 --- !u!4 &1408642320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 286b4110dad804141af7dacd35722c4b, type: 3}
@@ -8788,6 +8792,7 @@ MonoBehaviour:
   gremlinPrefab: {fileID: 0}
   mapCenter: {fileID: 0}
   finalBoss: 0
+  destroying: 0
 --- !u!54 &1638221728
 Rigidbody:
   m_ObjectHideFlags: 0
