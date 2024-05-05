@@ -8081,7 +8081,7 @@ MonoBehaviour:
   bulletDamage: 10
   lifetime: 3
   shootingRate: 0.2
-  health: 20
+  health: 40000
   startHealth: 0
   healthText: {fileID: 454079334}
   player: {fileID: 0}
@@ -10486,7 +10486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645068563895355597, guid: 4346640e247424cfc8d31a38cc6d7966, type: 3}
       propertyPath: health
-      value: 20
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 645068563895355597, guid: 4346640e247424cfc8d31a38cc6d7966, type: 3}
       propertyPath: arcHeight
