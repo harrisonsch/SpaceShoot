@@ -13,6 +13,7 @@ public class DestroyableWall : MonoBehaviour
     public AudioSource boom; // Audio source component for playing sound effects
     private bool died = false;
     private Rigidbody rb;
+    public TextMeshProUGUI finalText;
     
     public HealthBar healthBar;
 
@@ -38,6 +39,7 @@ public class DestroyableWall : MonoBehaviour
 
         if (health <= 0 && !isDying)
         {
+                finalText.gameObject.SetActive(false);
             isDying = true;
             boom.Play();
             gameObject.SetActive(false);
