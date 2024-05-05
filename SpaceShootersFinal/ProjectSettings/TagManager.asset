@@ -33,6 +33,14 @@ TagManager:
   - hblock
   - vblock
   - gremlin
+  - 5 room
+  - 6room
+  - 10room
+  - 11room
+  - 12 room
+  - 18room
+  - 19room
+  - 15room
   layers:
   - Default
   - TransparentFX
