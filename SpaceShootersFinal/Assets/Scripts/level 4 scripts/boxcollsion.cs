@@ -11,7 +11,8 @@ public class boxcollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameController.Instance.Damage(damage); // Corrected method name to Damage
+            GameController.Instance.Damage(damage);
+            Destroy(gameObject); // Corrected method name to Damage
         }
     }
 }
