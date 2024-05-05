@@ -664,7 +664,7 @@ MonoBehaviour:
   intro: 0
   levelone: 0
   levelzero: 0
-  level: level3
+  level: level 3
 --- !u!4 &1094162930
 Transform:
   m_ObjectHideFlags: 0
