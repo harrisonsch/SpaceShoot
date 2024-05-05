@@ -968,13 +968,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701859443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8be83b9fa09bb4cf58488597f72e79f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1013064792}
   mixer: {fileID: 24100000, guid: 41a7e4d5e5e2b4c258d600aefdf4ff03, type: 2}
+  buySFX: {fileID: 0}
 --- !u!114 &1701859445
 MonoBehaviour:
   m_ObjectHideFlags: 0
