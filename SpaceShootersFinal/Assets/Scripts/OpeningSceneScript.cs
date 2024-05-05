@@ -8,6 +8,7 @@ public class OpeningSceneScript : MonoBehaviour
         public bool intro = true;
         public bool levelone = false;
         public bool levelzero = false;
+        public string level = "Lvl2";
     void OnEnable()
     {
         if(intro) {
@@ -17,6 +18,8 @@ public class OpeningSceneScript : MonoBehaviour
                 SceneManager.LoadScene("NewScene1", LoadSceneMode.Single);
         } else if (levelzero) {
                 SceneManager.LoadScene("0Scene", LoadSceneMode.Single);
+        } else {
+                SceneManager.LoadScene(level, LoadSceneMode.Single);
         }
     }
 }

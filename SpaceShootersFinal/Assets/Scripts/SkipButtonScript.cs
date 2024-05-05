@@ -8,6 +8,7 @@ public class SkipButtonScript : MonoBehaviour
          public bool intro = true;
         public bool levelone = false;
         public bool levelzero = false;
+        public string level = "Lvl2";
     public void ButtonClicked() {
         if(intro) {
 
@@ -16,6 +17,8 @@ public class SkipButtonScript : MonoBehaviour
                 SceneManager.LoadScene("NewScene1");
         } else if (levelzero) {
                 SceneManager.LoadScene("0Scene");
+        } else {
+                SceneManager.LoadScene(level);
         }
     }
 }
