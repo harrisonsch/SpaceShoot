@@ -28,12 +28,14 @@ public class GremlinScript : MonoBehaviour
         targetPosition = center;
         healthBar.SetHealth(health, startHealth);
         StartCoroutine(ArcMoveToCenter());
+        Camera.main.GetComponent<CameraController>().alternateTarget = gameObject.transform;
+        Camera.main.GetComponent<CameraController>().useAlternateTarget = true;
     }
 
     IEnumerator GremlinText() {
         gremlinText.enabled = true;
         gremlinText.gameObject.SetActive(true);
-        yield return new WaitForSeconds (10f);
+        yield return new WaitForSeconds (20f);
         gremlinText.gameObject.SetActive(false);
     }
 
@@ -62,6 +64,7 @@ public class GremlinScript : MonoBehaviour
     void OnReachedCenter()
     {
         Debug.Log("reached center");
+        Camera.main.GetComponent<CameraController>().useAlternateTarget = false;
         damageable = true;
         StartCoroutine(GremlinText());
     }
