@@ -112,7 +112,7 @@ public class PauseHandler : MonoBehaviour {
                         Debug.Log("loading trans");
                         SceneManager.LoadScene("LevelOneTransition");
                 } else {
-                         SceneManager.LoadScene("0Scene");
+                         SceneManager.LoadScene("level0Transition");
                 }
                 
         }

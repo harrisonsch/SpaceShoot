@@ -7,6 +7,7 @@ public class OpeningSceneScript : MonoBehaviour
 {
         public bool intro = true;
         public bool levelone = false;
+        public bool levelzero = false;
     void OnEnable()
     {
         if(intro) {
@@ -14,6 +15,8 @@ public class OpeningSceneScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         } else if (levelone) {
                 SceneManager.LoadScene("NewScene1", LoadSceneMode.Single);
+        } else if (levelzero) {
+                SceneManager.LoadScene("0Scene", LoadSceneMode.Single);
         }
     }
 }
