@@ -2540,7 +2540,7 @@ MonoBehaviour:
   indicatorSize: {x: 3, y: 3, z: 3}
   healthBar: {fileID: 1808891815}
   audioSource: {fileID: 77944368}
-  bounty: 10
+  bounty: 8
   winning: 0
   hitSFX: {fileID: 35005293}
   dmgSound: 0

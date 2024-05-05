@@ -9948,7 +9948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a92fa5f79cd94be981da41927368e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10000
+  health: 11000
   startHealth: 0
   healthText: {fileID: 0}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
@@ -9956,7 +9956,7 @@ MonoBehaviour:
   boom: {fileID: 1953106774}
   boss: 1
   sceneToLoad: ShopScene
-  bounty: 10
+  bounty: 8
   healthBar: {fileID: 2144328144}
 --- !u!114 &633230967
 MonoBehaviour:

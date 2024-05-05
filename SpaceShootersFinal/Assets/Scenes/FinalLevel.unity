@@ -7988,7 +7988,7 @@ MonoBehaviour:
   burstCount: 1
   burstCD: 0.5
   indicatorSize: {x: 3, y: 3, z: 3}
-  bounty: 10
+  bounty: 7
 --- !u!4 &1408642320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 286b4110dad804141af7dacd35722c4b, type: 3}

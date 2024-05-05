@@ -7,7 +7,7 @@ public class thirdroomwall : MonoBehaviour
 {
     public TextMeshProUGUI finalText;
     public GameObject enemyBlocks; // Reference to the enemy blocks GameObject
-    private float moveDuration = 1.5f; // Duration for each block to reach its final position
+    private float moveDuration = 2f; // Duration for each block to reach its final position
     public Vector3 vPositionOffset = new Vector3(0, -800, 0); // Start position offset to make blocks appear from above
     public Vector3 hPositionOffset = new Vector3(0, 0, -700);
     private float groupDelay = 2.5f;
