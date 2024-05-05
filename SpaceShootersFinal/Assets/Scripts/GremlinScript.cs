@@ -33,7 +33,7 @@ public class GremlinScript : MonoBehaviour
     IEnumerator GremlinText() {
         gremlinText.enabled = true;
         gremlinText.gameObject.SetActive(true);
-        yield return WaitForSeconds (10f);
+        yield return new WaitForSeconds (10f);
         gremlinText.gameObject.SetActive(false);
     }
 
