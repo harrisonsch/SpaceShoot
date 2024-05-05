@@ -30,6 +30,13 @@ public class GremlinScript : MonoBehaviour
         StartCoroutine(ArcMoveToCenter());
     }
 
+    IEnumerator GremlinText() {
+        gremlinText.enabled = true;
+        gremlinText.gameObject.SetActive(true);
+        yield return WaitForSeconds (10f);
+        gremlinText.gameObject.SetActive(false);
+    }
+
     IEnumerator ArcMoveToCenter()
     {
         Debug.Log("arc moving");
@@ -56,8 +63,7 @@ public class GremlinScript : MonoBehaviour
     {
         Debug.Log("reached center");
         damageable = true;
-        gremlinText.enabled = true;
-        gremlinText.gameObject.SetActive(true);
+        StartCoroutine(GremlinText());
     }
 
     public void Damage(float value)
