@@ -145,16 +145,16 @@ public class PauseHandler : MonoBehaviour {
                 levelNum++;
                 switch(levelNum) {
                         case 1:
-                                SceneManager.LoadScene("Lvl2");
+                                SceneManager.LoadScene("Lvl2Transition");
                         break;
                 case 2:
-                        SceneManager.LoadScene("level 3");
+                        SceneManager.LoadScene("Lvl3Transition");
                         break;
                 case 3:
-                        SceneManager.LoadScene("FrankScene");
+                        SceneManager.LoadScene("Lvl4Transition");
                         break;
                 default:
-                        SceneManager.LoadScene("FinalLevel"); 
+                        SceneManager.LoadScene("Lvl5Transition"); 
                         break;
                 }
         }
