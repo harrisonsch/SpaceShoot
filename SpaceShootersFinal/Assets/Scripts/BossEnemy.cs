@@ -212,15 +212,19 @@ IEnumerator ShootSpiralPattern3D() {
             if(!finalBoss) {
                 GameController.Instance.balance += bounty;
                 SceneManager.LoadScene("ShopScene");
-            } else {
-                GameObject gremlin = Instantiate(gremlinPrefab, transform.position, Quaternion.identity);
-                gremlin.GetComponent<GremlinScript>().EjectToCenter(mapCenter.position);
                 Destroy(gameObject);
+            } else {
+                StartCoroutine(destroyShip());
             }
-            Destroy(gameObject);
         }
     }
     
+    IEnumerator destroyShip() {
+        GameObject gremlin = Instantiate(gremlinPrefab, transform.position, Quaternion.identity);
+        gremlin.GetComponent<GremlinScript>().EjectToCenter(mapCenter.position);
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
 
 
 

@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
     private AudioSource audioSource;
     public AudioSource dmgSFX;
     public HealthBar healthBar;
+    public bool damageable = true;
     
     
     private void Awake()
@@ -138,17 +139,19 @@ public class GameController : MonoBehaviour
     
     public void Damage(float value)
     {
+        if(damageable) {
+                health -= value;
+                Debug.Log("Ship hit for " + value + " health is now " + health);
+                dmgSFX.Play();
+                if (healthBar != null)
+                {
+                        healthBar.SetHealth(health, maxHealth); 
+                }
+                if(health <= 0){
+                        Debug.Log("Game Over");
+                        SceneManager.LoadScene("LoseScene");
+                }
+        }
         
-        health -= value;
-        Debug.Log("Ship hit for " + value + " health is now " + health);
-        dmgSFX.Play();
-        if (healthBar != null)
-        {
-                healthBar.SetHealth(health, maxHealth); 
-        }
-        if(health <= 0){
-                Debug.Log("Game Over");
-                SceneManager.LoadScene("LoseScene");
-        }
     }
 }
