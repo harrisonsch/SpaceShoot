@@ -65,6 +65,7 @@ public class GremlinScript : MonoBehaviour
 
     IEnumerator OnReachedCenter()
     {
+        healthBar.SetHealth(health, startHealth);
         yield return new WaitForSeconds(0.5f);
         Debug.Log("reached center");
         Camera.main.GetComponent<CameraController>().useAlternateTarget = false;

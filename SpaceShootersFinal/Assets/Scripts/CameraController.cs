@@ -28,21 +28,26 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {
         if (followTarget == null) return;
+        if(useAlternateTarget) {
+                Vector3 desiredPosition = alternateTarget.position + alternateTarget.TransformDirection(alternateOffset);
         
-        Transform currentTarget = useAlternateTarget ? alternateTarget : followTarget;
-        Vector3 currentOffset = useAlternateTarget ? alternateOffset : offset;
+                transform.position = desiredPosition;
 
-        if (currentTarget == null) return; 
+                Quaternion desiredRotation = Quaternion.LookRotation(alternateTarget.position - transform.position, Vector3.up);
 
-        Vector3 desiredPosition = currentTarget.position + currentTarget.TransformDirection(currentOffset);
+                transform.rotation = desiredRotation;
+
+        } else {
+               
+
+                Vector3 desiredPosition = followTarget.position + followTarget.TransformDirection(offset);
         
+                transform.position = desiredPosition;
+
+                Quaternion desiredRotation = Quaternion.LookRotation(followTarget.position - transform.position, Vector3.up);
+
+                transform.rotation = desiredRotation;
+        }
         
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
-
-       
-        Quaternion desiredRotation = Quaternion.LookRotation(currentTarget.position - transform.position, Vector3.up);
-
-       
-        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
     }
 }

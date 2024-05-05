@@ -8269,7 +8269,7 @@ MonoBehaviour:
   bulletDamage: 10
   lifetime: 3
   shootingRate: 0.2
-  health: 40000
+  health: 10
   startHealth: 0
   healthText: {fileID: 454079334}
   player: {fileID: 0}
