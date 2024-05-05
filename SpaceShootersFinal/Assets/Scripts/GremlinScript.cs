@@ -15,13 +15,14 @@ public class GremlinScript : MonoBehaviour
     public float startHealth;
     public HealthBar healthBar;
     public Vector3 indicatorSize = new Vector3(3,3,3);
-
     public GameObject damageText;
     public Transform spawnPos;
+    public AudioSource scream;
 
 
     public void EjectToCenter(Vector3 center)
     {
+        scream.Play();
         startHealth = health;
         startPosition = transform.position;
         targetPosition = center;
