@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc9ad223cb464f84bd43316ca59c517, type: 3}
   m_Name: Add50Speed
   m_EditorClassIdentifier: 
-  powerUpName: Increase Speed
+  powerUpName: IncSpeed
   duration: 999
   cost: 5
   description: Adds 50 to your speed

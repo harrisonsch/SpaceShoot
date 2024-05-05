@@ -15,6 +15,6 @@ MonoBehaviour:
   powerUpName: DoubleDam
   duration: 999
   cost: 5
-  description: Double Damage doubles your current damage
+  description: Doubles your current damage
   value: 2
   icon: {fileID: 21300000, guid: f33a52748b5e646d4b0941d86e79f763, type: 3}

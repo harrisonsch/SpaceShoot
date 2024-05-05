@@ -15,6 +15,6 @@ MonoBehaviour:
   powerUpName: Double Shot
   duration: 999
   cost: 5
-  description: Add another bullet
+  description: Add +1 Bullet
   value: 2
   icon: {fileID: 21300000, guid: dc3b4743321ed4f838e188cbe05bd5e5, type: 3}

@@ -26,7 +26,6 @@ public class GremlinScript : MonoBehaviour
         startHealth = health;
         startPosition = transform.position;
         targetPosition = center;
-        healthBar.SetHealth(health, startHealth);
         transform.Rotate(0,90,0);
         GameController.Instance.damageable = false;
         StartCoroutine(ArcMoveToCenter());
