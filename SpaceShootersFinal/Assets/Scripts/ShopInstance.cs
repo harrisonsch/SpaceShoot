@@ -20,6 +20,8 @@ public class ShopInstance : MonoBehaviour
     public int rerollInc = 1;
     private Dictionary<PowerUp, GameObject> powerUpToGameObjectMap = new Dictionary<PowerUp, GameObject>();
     public AudioSource buySFX;
+    public GameObject shopWelcome;
+    [SerializeField] public static bool firstTimeInShop = true;
 
     void Update()
     {
@@ -32,6 +34,17 @@ public class ShopInstance : MonoBehaviour
         availablePowerUps = powerUpManager.powerUpRegister;
         InitializeShop();
         PopulateShopUI();
+        Debug.Log("first time in shop is " + firstTimeInShop);
+        if (firstTimeInShop)
+        {
+            ShowWelcomeDialog();
+            firstTimeInShop = false; // Set the flag to false after showing the dialog
+        }
+    }
+
+    void ShowWelcomeDialog() {
+        shopWelcome.SetActive(true);
+
     }
     void PopulateShopUI()
     {

@@ -50,4 +50,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalLevel.unity
     guid: 0d7c2117e85734e05a8d2a33dabba976
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Lvl2Transition.unity
+    guid: b44600456585747f88093f7685930984
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Lvl3Transition.unity
+    guid: d70534e5be805428e9efc44cc9ea5ebb
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Lvl4Transition.unity
+    guid: 3b3ee9157bae6441e95429435f70b91c
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Lvl5Transition.unity
+    guid: 77cbd167e29784b68a20212b983aef34
   m_configObjects: {}
