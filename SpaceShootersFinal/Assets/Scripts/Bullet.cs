@@ -48,6 +48,8 @@ public class Bullet : MonoBehaviour
                 TinyShipHandler tinyShip = other.gameObject.GetComponent<TinyShipHandler>();
                 tinyShip.Damage(damage);
                 Destroy(gameObject);
+        } else if (other.gameObject.tag == "asteroid") {
+                Destroy(gameObject);
         }
         
     }
