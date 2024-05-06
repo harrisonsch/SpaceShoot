@@ -532,9 +532,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8743939457429737619, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 567823461}
-    - targetCorrespondingSourceObject: {fileID: 8743939457429737619, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 567823460}
   m_SourcePrefab: {fileID: 100100000, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
 --- !u!1 &122258803
@@ -4640,30 +4637,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &567823461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567823459}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85e7f9d1565fa4677aa084f45ee75e1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5000
-  startHealth: 0
-  damageText: {fileID: 4664434894970500506, guid: 3a6e7d9a7d85047ed9bc54fecadb88e9, type: 3}
-  spawnPos: {fileID: 2124148748}
-  indicatorSize: {x: 3, y: 3, z: 3}
-  healthBar: {fileID: 0}
-  audioSource: {fileID: 874115162}
-  bounty: 20
-  winning: 0
-  hitSFX: {fileID: 2099781378}
-  dmgSound: 1
-  boss: 0
 --- !u!4 &567823465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6309296389539842457, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
@@ -5152,7 +5125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dd861d218b944eca1930046ce5bf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 567823461}
+  boss: {fileID: 0}
   critMultiplier: 3
 --- !u!135 &756480322
 SphereCollider:
@@ -8415,9 +8388,9 @@ MonoBehaviour:
   changeDirectionTime: 2
   moveAway: 0
   audioSource: {fileID: 0}
-  accuracy: 0.8
+  accuracy: 0.9
   playerLook: 1
-  burstCount: 1
+  burstCount: 2
   burstCD: 0.5
   indicatorSize: {x: 3, y: 3, z: 3}
   bounty: 7
@@ -8449,7 +8422,7 @@ MonoBehaviour:
   turret4: {fileID: 536282757}
   canShootTurrets: 1
   delayTime: 0.5
-  timeBTWNshoot: 3
+  timeBTWNshoot: 1
   spawn1: {fileID: 1629518999}
   spawn2: {fileID: 49038055}
   spawn3: {fileID: 1141252475}
@@ -10386,11 +10359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d810cd4e9f8f5b14388363ef4cb97a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &2099781378 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8512651836357921596, guid: 1bf43f05462274bb59b507c57df25a84, type: 3}
-  m_PrefabInstance: {fileID: 120140902}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2109884256
 GameObject:
   m_ObjectHideFlags: 0

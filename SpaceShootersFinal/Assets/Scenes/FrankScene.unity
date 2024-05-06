@@ -29093,7 +29093,7 @@ MonoBehaviour:
   burstCount: 1
   burstCD: 0.5
   indicatorSize: {x: 1, y: 1, z: 1}
-  bounty: 10
+  bounty: 9
   gremlinPrefab: {fileID: 0}
   mapCenter: {fileID: 0}
   finalBoss: 0
