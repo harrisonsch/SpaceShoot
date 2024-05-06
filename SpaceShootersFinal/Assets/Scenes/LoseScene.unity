@@ -528,6 +528,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Return
       objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2075562533}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleAutorun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7649587174112279174, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -976,6 +996,7 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1013064792}
   mixer: {fileID: 24100000, guid: 41a7e4d5e5e2b4c258d600aefdf4ff03, type: 2}
   buySFX: {fileID: 0}
+  rejectSFX: {fileID: 0}
 --- !u!114 &1701859445
 MonoBehaviour:
   m_ObjectHideFlags: 0

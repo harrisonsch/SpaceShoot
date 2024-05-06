@@ -30586,6 +30586,7 @@ MonoBehaviour:
   dmgSFX: {fileID: 2011551631}
   healthBar: {fileID: 0}
   damageable: 1
+  autoRun: 0
 --- !u!114 &1150005032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37748,6 +37749,26 @@ PrefabInstance:
     - target: {fileID: 3713397748829602185, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 205784620}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleAutorun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5691877815998312729, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_AnchorMax.x

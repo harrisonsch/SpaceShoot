@@ -221,6 +221,15 @@ public class PauseHandler : MonoBehaviour {
                         Debug.Log("volume level is: " + volumeLevel + ", slider value is" + sliderVolumeCtrl.value);
                 }
         }
+
+        public void ToggleAutorun(bool isOn)
+        {
+                
+                if (GameController.Instance != null)
+                {
+                        GameController.Instance.autoRun = isOn;
+                }
+        }
         
 
 }

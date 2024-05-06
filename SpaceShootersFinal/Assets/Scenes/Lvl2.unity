@@ -2295,10 +2295,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 1964209583}
+  alternateTarget: {fileID: 0}
   offset: {x: 0, y: 100, z: -290}
+  alternateOffset: {x: 0, y: 5, z: -10}
   followSpeed: 100
   rotationSpeed: 20
   lowerCameraFocus: 0
+  useAlternateTarget: 0
 --- !u!143 &393185807
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2523,6 +2526,26 @@ PrefabInstance:
     - target: {fileID: 3713397748829602185, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1742930068}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleAutorun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5691877815998312729, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3556,6 +3579,8 @@ MonoBehaviour:
   gremlinPrefab: {fileID: 0}
   mapCenter: {fileID: 0}
   finalBoss: 0
+  destroying: 0
+  boomSFX: {fileID: 0}
 --- !u!54 &929559825
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5985,6 +6010,8 @@ MonoBehaviour:
   boostDuration: 0.1
   dmgSFX: {fileID: 322846477}
   healthBar: {fileID: 717774799}
+  damageable: 1
+  autoRun: 0
 --- !u!114 &1857332786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6649,14 +6676,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -8700617353114198275, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -6820,6 +6839,14 @@ PrefabInstance:
     - target: {fileID: 9013638940889411661, guid: 85044b1b407584c45a8b556a069a84cd, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6197551877168076425, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469601406266158627, guid: 921456f5120aa4eaa8e0b1ebc5612abf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

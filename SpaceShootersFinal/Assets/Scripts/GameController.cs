@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
     public AudioSource dmgSFX;
     public HealthBar healthBar;
     public bool damageable = true;
+    public bool autoRun = false;
     
     
     private void Awake()

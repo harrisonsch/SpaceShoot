@@ -277,9 +277,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 327630350}
+  alternateTarget: {fileID: 0}
   offset: {x: 0, y: 80, z: -125}
+  alternateOffset: {x: 0, y: 5, z: -10}
   followSpeed: 100
   rotationSpeed: 5
+  lowerCameraFocus: 0
+  useAlternateTarget: 0
 --- !u!143 &155641101
 CharacterController:
   m_ObjectHideFlags: 0
@@ -627,6 +631,9 @@ MonoBehaviour:
   cam: {fileID: 0}
   mousePos: {x: 0, y: 0, z: 0}
   shots: 1
+  audioSource: {fileID: 0}
+  shoot2: {fileID: 0}
+  shoot3: {fileID: 0}
 --- !u!64 &327630353
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -661,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921a9e34e041f4fe59f2b39bf4ae29ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
+  shipVisual: {fileID: 0}
   moveSpeed: 500
   turnSpeed: 2
   rotationSpeed: 5
@@ -669,6 +676,8 @@ MonoBehaviour:
   minYAngle: -20
   deadzoneRadius: 75
   sensitivity: 0.5
+  maxRollAngle: 30
+  maxTiltAngle: 15
   pressingThrottle: 0
   pitchPower: 90
   rollPower: 250
@@ -1032,7 +1041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3aaeb4840c7417b8ebdf1884e43168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
   camTransform: {fileID: 155641099}
+  looking: 1
 --- !u!114 &492766691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,12 +1289,22 @@ MonoBehaviour:
   healthBar: {fileID: 492766690}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
   spawnPos: {fileID: 1974101652}
-  strafeRange: 100
-  strafeSpeed: 125
   strafeDelay: 0.5
   moveAwaySpeed: 40
   changeDirectionTime: 2
   moveAway: 0
+  audioSource: {fileID: 0}
+  accuracy: 0.5
+  playerLook: 0
+  burstCount: 1
+  burstCD: 0.5
+  indicatorSize: {x: 3, y: 3, z: 3}
+  bounty: 10
+  gremlinPrefab: {fileID: 0}
+  mapCenter: {fileID: 0}
+  finalBoss: 0
+  destroying: 0
+  boomSFX: {fileID: 0}
 --- !u!54 &532047939
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1384,6 +1405,26 @@ PrefabInstance:
     - target: {fileID: 3713397748829602185, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2124026674}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleAutorun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191328323976692361, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6232647219899948454, guid: a86edaa95695a43d6ade168a5ef54d0b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -3130,7 +3171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3aaeb4840c7417b8ebdf1884e43168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
   camTransform: {fileID: 155641099}
+  looking: 1
 --- !u!114 &1529306467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3829,12 +3872,22 @@ MonoBehaviour:
   healthBar: {fileID: 1529306466}
   damageText: {fileID: 4664434894970500506, guid: aab2bc339a1a04f4ca4186cd3a40d339, type: 3}
   spawnPos: {fileID: 1974101652}
-  strafeRange: 10
-  strafeSpeed: 5
   strafeDelay: 0.5
   moveAwaySpeed: 75
   changeDirectionTime: 2.5
   moveAway: 0
+  audioSource: {fileID: 0}
+  accuracy: 0.5
+  playerLook: 0
+  burstCount: 1
+  burstCD: 0.5
+  indicatorSize: {x: 3, y: 3, z: 3}
+  bounty: 10
+  gremlinPrefab: {fileID: 0}
+  mapCenter: {fileID: 0}
+  finalBoss: 0
+  destroying: 0
+  boomSFX: {fileID: 0}
 --- !u!54 &1921642373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4183,6 +4236,7 @@ MonoBehaviour:
   currDamageMult: 1
   currDamageAdds: 0
   baseHealth: 100
+  maxHealth: 100
   health: 100
   balance: 100
   fireRate: 5
@@ -4193,6 +4247,10 @@ MonoBehaviour:
   boostActive: 0
   boostCooldown: 10
   boostDuration: 0.1
+  dmgSFX: {fileID: 0}
+  healthBar: {fileID: 0}
+  damageable: 1
+  autoRun: 0
 --- !u!114 &2040262854
 MonoBehaviour:
   m_ObjectHideFlags: 0

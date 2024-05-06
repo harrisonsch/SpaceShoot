@@ -123,10 +123,15 @@ public Transform shipVisual; // Assign this in the inspector
 
     private float currentRoll = 0f;
     private float currentTilt = 0f;
+    public static bool autoRun = false;
 
     private void Start()
     {  
         gameController = FindObjectOfType<GameController>();
+        if(gameController != null) {
+
+        autoRun = GameController.Instance.autoRun;
+        }
         mainCamera = FindObjectOfType<Camera>(); 
         currentRotation = new Vector2(transform.localEulerAngles.y, -transform.localEulerAngles.x);
         rb = GetComponent<Rigidbody>(); 
@@ -137,6 +142,7 @@ public Transform shipVisual; // Assign this in the inspector
     {
         if (gameController != null)
         {
+            autoRun = GameController.Instance.autoRun;    
             moveSpeed = GameController.Instance.GetEnginePower();
         }
 
@@ -162,6 +168,7 @@ public Transform shipVisual; // Assign this in the inspector
             rb.MoveRotation(xQuaternion * yQuaternion); 
         } 
         else {
+                
                 rb.angularVelocity = Vector3.zero;
         }
     }
@@ -169,7 +176,8 @@ public Transform shipVisual; // Assign this in the inspector
 
 private void HandleMovement()
 {
-    Vector3 movement = new Vector3(Input.GetAxis("Turn") * moveSpeed, Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
+        float verticalInput = autoRun ? 1.0f : Input.GetAxis("Vertical");
+    Vector3 movement = new Vector3(Input.GetAxis("Turn") * moveSpeed, Input.GetAxis("Horizontal") * moveSpeed, verticalInput * moveSpeed);
     rb.velocity = transform.TransformDirection(movement);
         float targetUp = Input.GetAxis("Horizontal") * maxTiltAngle;
     float targetRoll = Input.GetAxis("Turn") * maxRollAngle;
