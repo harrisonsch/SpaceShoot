@@ -19,6 +19,10 @@ public class GremlinScript : MonoBehaviour
     public Transform spawnPos;
     public AudioSource scream;
     public GameObject flyingVFX;
+    private bool dead = false;
+    public GameObject goblinGFX;
+    public GameObject boomVFX;
+    public AudioSource boomSFX;
 
 
     public void EjectToCenter(Vector3 center)
@@ -93,11 +97,19 @@ public class GremlinScript : MonoBehaviour
         indicator.SetDamageText(value);
         indicator.transform.localScale = indicatorSize;
 
-        if(health <= 0) {
+        if(health <= 0 && !dead) {
+                dead = true;
             Debug.Log("killed");
-            SceneManager.LoadScene("WinScene");
-            Destroy(gameObject);
+            StartCoroutine(killGoblin());
         }
     }
+    }
+    IEnumerator killGoblin() {
+        boomSFX.Play();
+        boomVFX.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        goblinGFX.SetActive(false);
+        yield return new WaitForSeconds(2.2f);
+        SceneManager.LoadScene("WinScene");
     }
 }
