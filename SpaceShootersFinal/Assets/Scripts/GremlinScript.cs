@@ -18,10 +18,12 @@ public class GremlinScript : MonoBehaviour
     public GameObject damageText;
     public Transform spawnPos;
     public AudioSource scream;
+    public GameObject flyingVFX;
 
 
     public void EjectToCenter(Vector3 center)
     {
+        flyingVFX.SetActive(true);
         scream.Play();
         startHealth = health;
         startPosition = transform.position;
@@ -67,6 +69,7 @@ public class GremlinScript : MonoBehaviour
         healthBar.SetHealth(health, startHealth);
         yield return new WaitForSeconds(0.5f);
         Debug.Log("reached center");
+        flyingVFX.SetActive(false);
         Camera.main.GetComponent<CameraController>().useAlternateTarget = false;
         yield return new WaitForSeconds(2f);
         GameController.Instance.damageable = true;
