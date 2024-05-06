@@ -50,10 +50,10 @@ public class Lvl1Boss : MonoBehaviour
             if(audioSource != null) {
                 audioSource.Play();
             }
-            Destroy(gameObject);
             if(boss) {
                  GameController.Instance.balance += bounty;
             }
+            Destroy(gameObject);
             if(winning) {
                 Destroy(GameController.Instance.gameObject);
                 SceneManager.LoadScene("WinScene");

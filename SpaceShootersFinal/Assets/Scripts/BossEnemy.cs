@@ -40,6 +40,7 @@ public class BossEnemy : MonoBehaviour
     public bool finalBoss = false;
     public bool destroying = false;
     public AudioSource boomSFX;
+    private bool dying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -206,7 +207,8 @@ IEnumerator ShootSpiralPattern3D() {
         healthText.text = "Boss: " + health.ToString();
         }
 
-        if(health <= 0) {
+        if(health <= 0 && !dying) {
+                dying = true;
             Debug.Log("killed");
             if(audioSource != null) {
                 audioSource.Play();
