@@ -109,7 +109,7 @@ public class GremlinScript : MonoBehaviour
         boomVFX.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         goblinGFX.SetActive(false);
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(boomSFX.clip.length - 0.5f);
         SceneManager.LoadScene("WinScene");
     }
 }

@@ -74,10 +74,10 @@ public class PauseHandler : MonoBehaviour {
                                 Pause();
                         }
                 }
-                if (Input.GetKeyDown(KeyCode.K)){
-                        Debug.Log("swap");
-                        SceneManager.LoadScene("ShopScene");
-                }
+                // if (Input.GetKeyDown(KeyCode.K)){
+                //         Debug.Log("swap");
+                //         SceneManager.LoadScene("ShopScene");
+                // }
         }
 
         public void Pause(){
