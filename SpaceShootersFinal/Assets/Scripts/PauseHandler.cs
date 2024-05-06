@@ -112,12 +112,11 @@ public class PauseHandler : MonoBehaviour {
                         }
                         GameController.Instance.activePowerUps.Clear();
                         Debug.Log("loading trans");
-                        SceneManager.LoadScene("LevelOneTransition");
-                } else {
-                         SceneManager.LoadScene("level0Transition");
+                        SceneManager.LoadScene("level0Transition");
+                }
+                         
                 }
                 
-        }
 
         public void Credits(){
             SceneManager.LoadScene("CreditScene");

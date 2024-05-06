@@ -14,4 +14,12 @@ public class Portal : MonoBehaviour
                 SceneManager.LoadScene(levelToLoad);
         }
     }
+    private void OnCollisionStay(Collision collision)
+        {
+                Debug.Log("Hit the portal!");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+                SceneManager.LoadScene(levelToLoad);
+        }
+    }
 }
