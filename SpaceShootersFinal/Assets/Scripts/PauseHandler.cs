@@ -111,9 +111,9 @@ public class PauseHandler : MonoBehaviour {
                                 }
                         }
                         GameController.Instance.activePowerUps.Clear();
-                        Debug.Log("loading trans");
-                        SceneManager.LoadScene("level0Transition");
+                        Debug.Log("loading trans");    
                 }
+                SceneManager.LoadScene("level0Transition");
                          
                 }
                 
