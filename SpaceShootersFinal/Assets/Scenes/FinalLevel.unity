@@ -932,7 +932,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8123777142620342780, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 472409165}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83ea67fe2f00e47bf835681213fb51d0, type: 3}
 --- !u!1001 &143189728
@@ -3206,6 +3209,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 79fa87ccab1d64e288bee8d5798e09cc, type: 3}
   m_PrefabInstance: {fileID: 462111640}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &472409164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472409165}
+  m_Layer: 2
+  m_Name: focusPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &472409165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472409164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 658675494}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &520738560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5132,7 +5166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &756480321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5401,7 +5435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4f021da54e34d35a72632f729f1003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 658675494}
+  followTarget: {fileID: 472409165}
   alternateTarget: {fileID: 1972511058146709850}
   offset: {x: 0, y: 100, z: -290}
   alternateOffset: {x: 1000, y: 1000, z: 4000}

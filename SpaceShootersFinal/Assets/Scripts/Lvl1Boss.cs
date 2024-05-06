@@ -18,6 +18,7 @@ public class Lvl1Boss : MonoBehaviour
     public AudioSource hitSFX;
     public bool dmgSound = false;
     public bool boss = true;
+    public bool dying = false;
     // Start is called before the first frame update
 
     void Start() {
@@ -45,7 +46,8 @@ public class Lvl1Boss : MonoBehaviour
         indicator.SetDamageText(value);
         indicator.transform.localScale = indicatorSize;
 
-        if(health <= 0) {
+        if(health <= 0 && !dying) {
+                dying = true;
             Debug.Log("killed");
             if(audioSource != null) {
                 audioSource.Play();
