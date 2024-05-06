@@ -41,6 +41,7 @@ public class BossEnemy : MonoBehaviour
     public bool destroying = false;
     public AudioSource boomSFX;
     private bool dying = false;
+    public GameObject boomVisual;
     // Start is called before the first frame update
     void Start()
     {
@@ -228,7 +229,8 @@ IEnumerator ShootSpiralPattern3D() {
         destroying = true;
         GameObject gremlin = Instantiate(gremlinPrefab, transform.position, Quaternion.identity);
         gremlin.GetComponent<GremlinScript>().EjectToCenter(mapCenter.position);
-        yield return new WaitForSeconds(1f);
+        boomVisual.SetActive(true);
+        yield return new WaitForSeconds(.75f);
         Destroy(gameObject);
     }
 
