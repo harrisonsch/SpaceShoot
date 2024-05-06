@@ -13760,7 +13760,7 @@ MonoBehaviour:
   boom: {fileID: 1953106774}
   boss: 1
   sceneToLoad: ShopScene
-  bounty: 8
+  bounty: 10
   healthBar: {fileID: 2144328144}
 --- !u!114 &633230967
 MonoBehaviour:
