@@ -171,7 +171,7 @@ public class PauseHandler : MonoBehaviour {
         }
 
         public void BuyHP() {
-                int healthGain = 20;
+                int healthGain = 30;
         if (PlayerHasEnoughCurrency(2)) {
                 if(GameController.Instance.health < GameController.Instance.maxHealth) {
                         if(buySFX != null) {

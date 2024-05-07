@@ -18,7 +18,7 @@ public class Tank : PowerUp
     {
         oldHP = GameController.Instance.maxHealth;
         GameController.Instance.maxHealth = oldHP * 3;
-        GameController.Instance.health += oldHP * 2;
+        GameController.Instance.health *= 3;
     }
 
     public override void Deactivate()

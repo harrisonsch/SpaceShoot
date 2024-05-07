@@ -18,7 +18,7 @@ public class Shield : PowerUp
     {
         oldHP = GameController.Instance.maxHealth;
         GameController.Instance.maxHealth = oldHP + (int)value;
-        GameController.Instance.health += oldHP + (int)value;
+        GameController.Instance.health = oldHP + (int)value;
     }
 
     public override void Deactivate()
