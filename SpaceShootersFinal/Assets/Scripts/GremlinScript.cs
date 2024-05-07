@@ -76,7 +76,6 @@ public class GremlinScript : MonoBehaviour
         flyingVFX.SetActive(false);
         Camera.main.GetComponent<CameraController>().useAlternateTarget = false;
         yield return new WaitForSeconds(2f);
-        GameController.Instance.damageable = true;
         damageable = true;
         StartCoroutine(GremlinText());
     }

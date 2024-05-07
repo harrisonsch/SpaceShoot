@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpName: Shield
   duration: 999
-  cost: 4
+  cost: 2
   description: Adds 100 HP
   value: 100
   icon: {fileID: 21300000, guid: d694bc058d80b4ee0b10fec93d4c6313, type: 3}

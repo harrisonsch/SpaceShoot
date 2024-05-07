@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpName: Shoot Faster
   duration: 999
-  cost: 7
+  cost: 6
   description: Increases Fire Rate by 50%
   value: 2
   icon: {fileID: 21300000, guid: e0f48ed3a2a6f46c4aba907a18f29739, type: 3}
